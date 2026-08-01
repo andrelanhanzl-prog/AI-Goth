@@ -10,7 +10,7 @@
   "global_style": {
     "style": "1956 archival feel, 16mm film grain, halation blooming on the highlights, slight gate weave, shallow depth of field, desaturated muted grade, 16:9",
     "palette": "wet slate grey, dirty snow white, lamp amber, marsh brown, cold moon blue",
-    "avoid": "text, subtitles, captions, watermarks, logos, interface elements, distorted hands, extra limbs, fast cuts, camera shake, handheld jitter, modern clothing, modern cars, plastic, mobile phones, faces in close-up, swastikas, Nazi imagery, World War Two uniforms, weapons aimed at people, blood, gore, saturated red"
+    "avoid": "text, subtitles, captions, watermarks, logos, interface elements, distorted hands, extra limbs, fast cuts, camera shake, handheld jitter, faces in close-up"
   },
 
   "shots": [
@@ -22,7 +22,7 @@
       "camera": "static locked-off medium, 50mm, framed square on the door with the hook at chest height, no camera movement",
       "lighting": "single warm table lamp behind camera, no fill, the top corners of the door falling into deep shadow",
       "audio": "a clock ticking in the next room, faint street noise muffled through glass, one unaccompanied violin note held underneath, no dialogue",
-      "extra_avoid": "other people in frame, packed suitcases piled up, wartime propaganda posters"
+      "extra_avoid": "modern clothing, modern cars, plastic, mobile phones, saturated red, swastikas, Nazi imagery, World War Two uniforms, weapons, blood, gore, other people in frame, packed suitcases piled up, propaganda posters"
     },
     {
       "id": 2,
@@ -32,7 +32,7 @@
       "camera": "static locked-off extreme wide, 28mm, one-point perspective straight down the tram rails, horizon locked, no camera movement",
       "lighting": "flat grey overcast dawn, no visible sun, low contrast everywhere except the black interior of the tram",
       "audio": "wind, loose paper scraping over stone, a distant unattended tram bell, no dialogue",
-      "extra_avoid": "crowds, soldiers, tanks, fire, explosions, rubble piles, bodies"
+      "extra_avoid": "modern clothing, modern cars, plastic, mobile phones, saturated red, swastikas, Nazi imagery, World War Two uniforms, weapons, blood, gore, crowds, soldiers, tanks, fire, explosions, rubble piles, bodies"
     },
     {
       "id": 3,
@@ -42,7 +42,7 @@
       "camera": "static locked-off wide from directly behind her at her shoulder height, 50mm, the figure small in the lower third of the frame, no camera movement",
       "lighting": "one overhead streetlamp directly above her throwing a hard pool of amber light, everything beyond the pool completely black",
       "audio": "her boots on wet stone, then silence, one low sustained cello note, no dialogue",
-      "extra_avoid": "other pedestrians, car headlights, her face turning fully to camera"
+      "extra_avoid": "modern clothing, modern cars, plastic, mobile phones, saturated red, swastikas, Nazi imagery, World War Two uniforms, weapons, blood, gore, other pedestrians, car headlights, her face turning fully to camera"
     },
     {
       "id": 4,
@@ -52,7 +52,7 @@
       "camera": "steady low tracking shot at ankle height moving backwards ahead of her at walking pace, 35mm, shallow depth of field",
       "lighting": "one weak handheld torch beam entering from off-frame and raking across the mud, everything past two metres in total darkness",
       "audio": "boots pulling out of thick mud, steady breathing, wind in dry grass, no dialogue",
-      "extra_avoid": "faces, other walkers, road surfaces, streetlights"
+      "extra_avoid": "modern clothing, plastic, saturated red, weapons, blood, gore, faces, other walkers, paved roads, streetlights"
     },
     {
       "id": 5,
@@ -62,7 +62,7 @@
       "camera": "static locked-off extreme wide, 24mm, horizon locked in the lower quarter of the frame, no camera movement",
       "lighting": "cold moonlight from high camera left, the distant figure backlit and completely black, mist glowing where the moonlight passes through it",
       "audio": "water moving around legs, reeds knocking together, a dog barking a long way off, a low sub-bass drone, no dialogue",
-      "extra_avoid": "soldiers, dogs in frame, gunfire, searchlight towers, fences with barbed wire in close-up, boats"
+      "extra_avoid": "modern clothing, plastic, saturated red, soldiers, dogs in frame, gunfire, weapons, searchlight towers, barbed wire in close-up, boats, buildings"
     },
     {
       "id": 6,
@@ -72,7 +72,7 @@
       "camera": "static locked-off wide from directly behind her at her shoulder height, 50mm, the figure small in the lower third of the frame, no camera movement",
       "lighting": "cold moonlight from high camera left, a hard rim of light on one shoulder only, everything ahead of her black",
       "audio": "wind in reeds, one long breath, an unaccompanied violin note held a beat too long, no dialogue",
-      "extra_avoid": "her face turning fully to camera, other figures, torchlight hitting her"
+      "extra_avoid": "modern clothing, plastic, saturated red, weapons, her face turning fully to camera, other figures, torchlight hitting her, buildings"
     },
     {
       "id": 7,
@@ -82,7 +82,7 @@
       "camera": "static locked-off low medium, 40mm, framed on the doorstep from inside the house looking out, no camera movement",
       "lighting": "warm interior lamplight spilling from behind camera onto the step, cold blue dawn beyond the door, the two colours meeting exactly at the threshold",
       "audio": "a door hinge, wind cutting off as the door opens, a kettle somewhere inside, the violin resolving onto a second note, no dialogue",
-      "extra_avoid": "faces, welcome signs, flags, uniformed officials, paperwork"
+      "extra_avoid": "modern clothing, modern cars, plastic, mobile phones, saturated red, faces, welcome signs, flags, uniformed officials, paperwork"
     },
     {
       "id": 8,
@@ -91,20 +91,21 @@
       "prompt": "The same dark green wool overcoat with a hand-stitched grey repair on the left cuff hangs on an iron hook on the back of a door in a warm modern family kitchen. Beyond it and out of focus a long table is being laid for a party and someone walks past carrying a cake. No faces are visible. Style: clean modern digital capture, no film grain, natural colour, shallow depth of field, 16:9. Palette: warm daylight white, oak brown, and one deep saturated red on the party table.",
       "camera": "static locked-off medium, 50mm, framed square on the door with the hook at chest height exactly as in the first shot, one slow focus rack from the coat to the room behind it",
       "lighting": "bright soft daylight through a large window camera right, warm and even, no hard shadow anywhere on the coat",
-      "style_note_for_humans": "shot 8 deliberately leaves the 1956 look behind; its style and palette are written into the prompt above because skip_global drops the shared block",
+      "style_note_for_humans": "skip_global drops the shared 1956 style and palette here on purpose; shot 8's own look is written into the prompt text above",
       "skip_global": true,
       "audio": "indistinct warm room tone of many people talking with no intelligible words, cutlery on plates, the violin joined by a second violin, no dialogue",
-      "extra_avoid": "film grain, sepia, vintage look, text, banners with lettering, numerals, balloons or candles spelling a number, party hats, faces"
+      "extra_avoid": "film grain, sepia, vintage look, banners with lettering, numerals, balloons or candles spelling a number, party hats, faces"
     }
   ],
 
   "notes": {
     "assumed_clip_length": "Written to hold 8 seconds of content each. Sora's clip options run longer than that depending on your plan; generate at the longest length available and trim in the edit rather than letting the model invent a second event to fill the time.",
     "consistency_anchor": "The dark green wool overcoat with a hand-stitched grey repair on the left cuff. It appears in every single shot and its state is the film's clock: clean on a hook (1), on her back (3), mud to the knee (4), soaked and frozen (6), steaming in a doorway (7), clean on a hook again (8).",
-    "second_anchor_the_light": "The light travels warm lamp -> grey overcast -> single streetlamp -> one torch beam -> moonlight -> warm and cold meeting at a threshold -> full daylight. If a regenerated shot fights the sequence, it is the wrong take.",
+    "second_anchor_the_light": "The light travels warm lamp -> grey overcast -> single streetlamp -> one torch beam -> moonlight -> warm and cold meeting at a threshold -> full daylight. If a regenerated shot fights that sequence, it is the wrong take.",
     "rhyming_framings": "Shots 3 and 6 share a camera line word for word, and shots 1 and 8 share a camera line word for word. Do not paraphrase either pair. That repetition is the whole structure.",
     "palette_break": "Shot 8 deliberately drops the shared 1956 style and palette: modern digital, full colour, and the first saturated red in the film on the party table. This is intentional. Do not 'fix' shot 8 to match the others.",
     "no_faces_rule": "The film is shot entirely from behind, beside, and below its subject. No clear face in any shot. This is a style, and it is also the only reliable way to stop the model inventing eight different women.",
-    "settings_to_hold_fixed": "Same aspect ratio, same model, same resolution, same seed if Sora exposes one, on all eight generations. Change nothing between shots except the prompt."
+    "settings_to_hold_fixed": "Same aspect ratio, same model, same resolution, same seed if Sora exposes one, on all eight generations. Change nothing between shots except the prompt.",
+    "facts_to_check_with_her": "Shots 2, 3, 5 and 7 assume the common 1956 route: Budapest, then the border marshes near Andau, then an Austrian farmhouse. If she left from a village, or crossed by train, or arrived somewhere else, change those four prompts and rerun build_paste.py."
   }
 }
