@@ -15,6 +15,7 @@ Film se záměrně nerozhodne, kterou cestou se jde.
 |---|---|
 | `prompts/cyklus_do_gemini.md` | **10 hotových promptů k vložení do Gemini** — kopíruj blok po bloku |
 | `prompts/cyklus_veo_prompt.json` | strukturovaný scénář (kamera, světlo, zvuk, negative prompt) |
+| `prompts/tezke_zabery_7_9_10.md` | **záběry 7, 9 a 10 z jednoho promptu nevyjdou** — náhradní varianty a ffmpeg postup |
 | `scripts/generate_video.py` | vygeneruje všechny záběry přes API a slepí je do `out/film.mp4` |
 
 ## Ručně (bez API)
