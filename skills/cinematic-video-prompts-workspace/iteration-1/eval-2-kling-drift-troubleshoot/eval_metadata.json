@@ -1,0 +1,14 @@
+{
+  "eval_id": 2,
+  "eval_name": "kling-drift-troubleshoot",
+  "prompt": "ok so I'm making an 8 shot horror short about a lighthouse keeper who realises the light has been off for weeks. generating in kling. problem is my clips all look like they're from completely different films — different color, the lighthouse changes shape, one came back looking like a cartoon. what am I doing wrong",
+  "assertions": [
+    "Diagnoses the root cause explicitly: the model has no memory between clips, so style must be restated inside every single prompt",
+    "Delivers all 8 shots rewritten as self-contained prompts rather than only giving advice",
+    "Names one explicit consistency anchor — a concrete recurring visual element repeated across all shots",
+    "Every shot prompt carries an avoid / negative list, including the cartoon failure mode the user actually hit",
+    "Prescribes last-frame chaining or a fixed reference image for the lighthouse, which is the shape-drift the user reported",
+    "Mentions a shared grade pass or identical repeated palette wording as the fix for colour drift",
+    "Keeps one event per shot rather than stacking multiple actions into a single 8-second prompt"
+  ]
+}

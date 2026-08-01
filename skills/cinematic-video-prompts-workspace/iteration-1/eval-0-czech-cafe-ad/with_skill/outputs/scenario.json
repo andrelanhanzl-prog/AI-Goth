@@ -1,0 +1,81 @@
+{
+  "film": {
+    "title": "Zimni nabidka - 30s vertical spot",
+    "logline": "Cold blue dusk outside the glass turns into amber warmth inside a cup: six macro shots that sell the winter menu without ever showing the room.",
+    "clip_seconds": 8,
+    "aspect_ratio": "9:16 vertical (Instagram Reels / Stories)",
+    "tool": "Veo via Gemini",
+    "final_cut": "6 clips generated at 8s, trimmed to 30s total"
+  },
+  "global_style": {
+    "style": "shot on 35mm film, shallow depth of field, fine natural grain, gentle halation on the warm highlights, vertical 9:16 framing, slow deliberate motion, photographed not rendered",
+    "palette": "deep espresso brown, mulled-wine burgundy, amber candlelight, cold slate blue, bone white",
+    "avoid": "text, subtitles, captions, watermarks, logos, brand labels, packaging, interface elements, fast cuts, camera shake, handheld jitter, flat overhead fluorescent light, oversaturated colours, plastic cups, cluttered background"
+  },
+  "shots": [
+    {
+      "id": 1,
+      "title": "Okno / The window",
+      "prompt": "Extreme close macro of frost crystals and condensation on the inside of a cafe window at blue winter dusk. One single drop of condensation slides slowly down the cold glass. Far behind the glass, heavily out of focus, a warm amber lamp burns as one soft round halo of light.",
+      "camera": "slow push-in, 85mm macro, locked horizon, no movement other than the push, vertical 9:16 framing",
+      "lighting": "cold slate-blue dusk light through the window as the only key, one small warm amber practical far in the background as the single warm source, roughly ninety percent cold to ten percent warm, the lower third of the frame falling into deep shadow",
+      "audio": "muffled winter street outside the glass, a faint low interior room hum, one sustained warm synth pad held under everything",
+      "extra_avoid": "people, faces, any red or burgundy anywhere in frame, the cafe interior in sharp focus, direct view of the lamp bulb"
+    },
+    {
+      "id": 2,
+      "title": "Nalev / The pour",
+      "prompt": "Dark mulled wine pours in one slow steady stream from a battered copper pan into a heavy footed glass mug standing on a dark oiled wood counter, steam curling off the rising surface as the mug fills. Slow motion, 60fps feel.",
+      "camera": "static locked-off medium close, 50mm, framed on the mug with the pan entering from the top of the frame, shallow depth of field, vertical 9:16 framing",
+      "lighting": "single warm amber practical just out of frame camera left, no fill, the background falling to near black, one thin cold slate-blue rim from a window far camera right, roughly sixty percent warm to forty percent cold",
+      "audio": "the low pour of hot liquid into thick glass, quiet crackle of a room in winter, the same sustained warm synth pad continuing",
+      "extra_avoid": "splashing, spilling, overflowing, hands, faces, steel or plastic vessels"
+    },
+    {
+      "id": 3,
+      "title": "Koreni / The spices",
+      "prompt": "Extreme macro on the dark surface of mulled wine inside a glass mug: a cinnamon stick, one star anise and a curl of orange peel float on the liquid, and the orange peel turns slowly in place as thin steam rises past the lens.",
+      "camera": "extreme macro, 100mm, very slow push-in over the rim of the mug, shallow depth of field with the far rim already soft, vertical 9:16 framing",
+      "lighting": "warm amber practical low from camera left raking across the liquid surface so the steam catches the light, deep shadow beyond the rim, a faint cold slate-blue reflection on the far side of the glass, roughly seventy percent warm to thirty percent cold",
+      "audio": "close quiet liquid settling, a distant espresso machine two rooms away, the warm synth pad with one soft low piano note added",
+      "extra_avoid": "hands, spoons, stirring, faces, scattered spices outside the mug"
+    },
+    {
+      "id": 4,
+      "title": "Para / The steam",
+      "prompt": "A thick slow ribbon of steam rises off the surface of dark red mulled wine and drifts across the amber lamp burning behind it, glowing bright as it passes through the light and vanishing into the dark above.",
+      "camera": "static locked-off close, 85mm, the mug low and slightly left of centre, the lamp a soft blown-out disc behind the steam, shallow depth of field, vertical 9:16 framing",
+      "lighting": "the amber practical sits directly behind the steam as a hard backlight so the steam edges glow, no fill at all, everything outside the steam near black, one cold slate-blue sliver at the extreme frame edge, roughly eighty percent warm to twenty percent cold",
+      "audio": "near silence, a slow ticking clock, the warm synth pad swelling very slightly",
+      "extra_avoid": "smoke that looks like fog machine haze, fire, sparks, hands, faces"
+    },
+    {
+      "id": 5,
+      "title": "Ruce / The hands",
+      "prompt": "Two hands wrap around the warm glass mug and lift it slowly off the wooden counter towards the top of the frame. Only the hands, the sleeves of a thick charcoal wool sweater and the mug are visible.",
+      "camera": "slow push-in, 50mm, framed from the wrists down to the counter surface, the face never in frame, shallow depth of field, vertical 9:16 framing",
+      "lighting": "warm amber practical from camera left as the key with a soft falloff across the knuckles, deep shadow on the right side of the hands, thin cold slate-blue edge light on the far side of the glass, roughly eighty percent warm to twenty percent cold",
+      "audio": "the small sound of glass leaving a wooden surface, a low winter room tone, the warm synth pad with a single sustained cello note underneath",
+      "extra_avoid": "distorted hands, extra fingers, fused fingers, six fingers, rings, jewellery, wristwatch, long fingernails, faces, arms in unnatural poses"
+    },
+    {
+      "id": 6,
+      "title": "Stul u okna / The table by the window",
+      "prompt": "The full glass mug of mulled wine steams gently on a small dark wooden table beside the fogged cafe window. Beyond the glass, snow falls slowly through the blue evening. The upper third of the frame stays empty dark wall.",
+      "camera": "slow continuous pull-back from close to medium wide, 35mm, locked horizon, ending with the mug low in the lower third and clean empty space above it, vertical 9:16 framing",
+      "lighting": "the warm amber practical now the dominant key from camera left filling the room, the cold slate-blue window light reduced to a thin rim on the glass and on the falling snow, roughly eighty-five percent warm to fifteen percent cold",
+      "audio": "quiet cafe room tone, a spoon somewhere off frame, snow-muffled street, the warm synth pad and cello resolving to one held chord",
+      "extra_avoid": "people, faces, chairs pulled out, menus, signage, a busy or cluttered room, anything in sharp focus behind the window"
+    }
+  ],
+  "notes": {
+    "spine": "Outside it is cold and blue; in here it is amber and warm. Nothing else happens, and nothing else needs to.",
+    "anchor": "One warm amber practical lamp plus one cold slate-blue window, present in every single shot. The ratio between them is the clock: 90/10 cold in shot 1, 85/15 warm in shot 6. Keep those ratios in the prompt whenever you regenerate a shot.",
+    "palette_break": "Burgundy is deliberately banned from shot 1 and appears for the first time in shot 2 with the pour. That is intentional - do not add red to the opening shot to 'match'.",
+    "structure": "1 establish (cold) - 2 escalate (the product arrives) - 3 and 4 texture (the reason it is expensive) - 5 turn (it becomes yours) - 6 pay off (the room, and room for your text).",
+    "match_cuts": "Shot 1 ends on the round halo of the lamp, shot 2 opens on the round rim of the mug. Shot 3 ends on the round orange peel, shot 4 opens on the round disc of the lamp. Shot 1 and shot 6 look at the same window - first from the cold side, last from the warm side.",
+    "cut": "Generate all six at 8s, then trim: 1 = 4s, 2 = 5s, 3 = 4s, 4 = 5s, 5 = 5s, 6 = 7s. Total 30s.",
+    "text_and_logo": "Veo cannot render legible Czech text or your logo. Every word in the ad goes on in the editor, over shot 6, which is framed with empty space for exactly that.",
+    "seed": "Hold one seed for the whole set. If a shot drifts warm or cool, fix it in the grade rather than regenerating."
+  }
+}

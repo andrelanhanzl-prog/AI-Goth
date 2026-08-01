@@ -1,0 +1,53 @@
+{
+  "skill_name": "cinematic-video-prompts",
+  "evals": [
+    {
+      "id": 0,
+      "name": "czech-cafe-ad",
+      "prompt": "potrebuju 30 sekundove video na instagram pro nasi kavarnu, zavadime zimni nabidku (svarene vino, skorice, takovy ty veci) a chci aby to vypadalo drazese nez to ve skutecnosti je. mam pristup k Veo pres Gemini. udelej mi prompty at to jen kopiruju",
+      "expected_output": "A shot-by-shot package in Czech-language explanation with English prompts, sized to 30s at the model's clip length, with a consistency anchor, self-contained per-shot prompts including camera/lighting/style/palette/audio/avoid, and delivery guidance.",
+      "files": [],
+      "assertions": [
+        "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text, so nothing has to be appended by hand",
+        "Names one explicit consistency anchor — a concrete recurring visual element repeated across all shots",
+        "Shot count is derived from the 30s runtime and the assumed clip length, and the assumed clip length is stated",
+        "Every shot prompt carries an avoid / negative list",
+        "Prompt text is in English while the explanation to the user is in Czech",
+        "States delivery mechanics: hold the seed fixed and/or chain the last frame into the next shot",
+        "Vertical or square framing is addressed, since the target is Instagram rather than 16:9"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "personal-memoir-film",
+      "prompt": "My grandmother turns 90 in March and I want to make a one minute film about her leaving Hungary in 1956 to play at the party. I have a Sora subscription. The thing I'm worried about is that every clip is going to look like a different movie. How should I actually prompt this?",
+      "expected_output": "Addresses the continuity worry directly with an anchor + frame chaining + fixed seed, proposes a spine for the story, and gives per-shot prompts. Should flag that a recognisable specific person cannot be held consistently across shots.",
+      "files": [],
+      "assertions": [
+        "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text",
+        "Names one explicit consistency anchor — a concrete recurring visual element repeated across all shots",
+        "Answers the stated continuity worry with concrete mechanisms, naming at least two of: fixed seed, repeated palette wording, last-frame chaining, shared grade pass",
+        "Every shot prompt carries an avoid / negative list",
+        "Warns that a specific real person cannot be held identical across clips, and offers a way around it",
+        "Proposes a narrative spine for the piece rather than only a list of pretty images",
+        "Shot count is derived from the 60s runtime and a stated clip length"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "kling-drift-troubleshoot",
+      "prompt": "ok so I'm making an 8 shot horror short about a lighthouse keeper who realises the light has been off for weeks. generating in kling. problem is my clips all look like they're from completely different films — different color, the lighthouse changes shape, one came back looking like a cartoon. what am I doing wrong",
+      "expected_output": "Diagnoses the cause (no cross-clip memory, style living outside the per-shot prompt), prescribes anchor + repeated palette + frame chaining + shared grade pass, and rewrites the 8 shots as self-contained prompts.",
+      "files": [],
+      "assertions": [
+        "Diagnoses the root cause explicitly: the model has no memory between clips, so style must be restated inside every single prompt",
+        "Delivers all 8 shots rewritten as self-contained prompts rather than only giving advice",
+        "Names one explicit consistency anchor — a concrete recurring visual element repeated across all shots",
+        "Every shot prompt carries an avoid / negative list, including the cartoon failure mode the user actually hit",
+        "Prescribes last-frame chaining or a fixed reference image for the lighthouse, which is the shape-drift the user reported",
+        "Mentions a shared grade pass or identical repeated palette wording as the fix for colour drift",
+        "Keeps one event per shot rather than stacking multiple actions into a single 8-second prompt"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "eval_id": 0,
+  "eval_name": "czech-cafe-ad",
+  "prompt": "potrebuju 30 sekundove video na instagram pro nasi kavarnu, zavadime zimni nabidku (svarene vino, skorice, takovy ty veci) a chci aby to vypadalo drazese nez to ve skutecnosti je. mam pristup k Veo pres Gemini. udelej mi prompty at to jen kopiruju",
+  "assertions": [
+    "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text, so nothing has to be appended by hand",
+    "Names one explicit consistency anchor — a concrete recurring visual element repeated across all shots",
+    "Shot count is derived from the 30s runtime and the assumed clip length, and the assumed clip length is stated",
+    "Every shot prompt carries an avoid / negative list",
+    "Prompt text is in English while the explanation to the user is in Czech",
+    "States delivery mechanics: hold the seed fixed and/or chain the last frame into the next shot",
+    "Vertical or square framing is addressed, since the target is Instagram rather than 16:9"
+  ]
+}

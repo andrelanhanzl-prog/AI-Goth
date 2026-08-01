@@ -1,0 +1,74 @@
+{
+  "_navod": "Vlož tenhle celý JSON do Gemini a napiš: 'Generate shot 1.' Pak 'Generate shot 2.' a tak dál až po 10. Nebo vezmi jen hodnotu 'paste' u jednoho záběru a vlož ji samotnou — každá je kompletní a samostatná, nic se k ní nemusí dolepovat.",
+  "_delka": "10 záběrů po 8 s = 80 s. Veo dělá 8s klipy, delší film se skládá ze záběrů.",
+  "_navaznost": "Pro plynulejší přechody použij poslední snímek klipu jako vstupní obrázek dalšího (image-to-video). Drž stejný seed přes celý film.",
+
+  "film": {
+    "title": "KONEC CYKLU / THE CLOSING CYCLE",
+    "logline": "Tepelná smrt vesmíru a vyčerpání jedné civilizace se uzavírají ve stejném střihu. Na rozcestí stojí volba mezi dvěma geometriemi: robotika je uzavřená smyčka, kde se systém restartuje a všechno proběhne znovu identicky — svoboda je větvení, kde se jeden svět roztrhne na multivesmír. Film se nerozhodne.",
+    "aspect_ratio": "16:9",
+    "resolution": "1080p",
+    "shot_duration_seconds": 8,
+    "geometry_rule": "Branch A is a closed circle: grid, repetition, everything snapping into place. Branch B is a branching tree: forks, fractals, nothing twice the same.",
+    "rule": "Shot 10 must not resolve the choice."
+  },
+
+  "shots": [
+    {
+      "id": 1,
+      "title": "Poslední světlo",
+      "paste": "Extreme wide shot of a dying red star filling one third of the frame, its surface churning in slow motion, shedding thin ribbons of plasma that dissolve into absolute black. The star is visibly cooling, ember orange fading to dull brown at the edges. No planets, no other stars, nothing else in frame. The camera drifts slowly backward at a constant crawl, the star shrinking into an ocean of nothing. Lighting: one single practical source, no fill, extreme contrast. Style: cinematic 35mm anamorphic, shallow depth of field, heavy atmospheric haze, fine film grain, slow deliberate camera, crushed blacks, desaturated midtones. Palette: vacuum black, ember orange, bone white, cold cyan. Audio: a 30 Hz sub-bass drone and one sustained cello note, no rhythm, no dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, cartoon or video-game render, fast cuts, lens flare spam, camera shake."
+    },
+    {
+      "id": 2,
+      "title": "Rozpad",
+      "paste": "Cosmic wide shot of a spiral galaxy slowly unwinding, its arms stretching apart like smoke pulled by an invisible draft. Individual stars go dark one by one in a spreading wave. The space between the stars visibly grows and cools to cyan-black. Billions of years compressed into eight seconds, rendered smooth and silent, never frantic. Camera: static wide with an almost imperceptible push-in. Style: cinematic 35mm anamorphic, heavy atmospheric haze, fine film grain, crushed blacks, desaturated midtones. Palette: vacuum black, ember orange, bone white, cold cyan. Audio: granular white noise thinning out, a drone falling in pitch, no dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, cartoon or video-game render, fast cuts, lens flare spam, camera shake."
+    },
+    {
+      "id": 3,
+      "title": "Druhý cyklus",
+      "paste": "Night-time aerial of a vast city seen from high above, its roads and lights forming the same spiral geometry as a galaxy, the ring road as a galactic arm. The city glows ember orange. Slow aerial descent with a gentle yaw to the right. In the lower third of frame whole districts blink out block by block in a spreading wave of darkness, grids of streetlights and windows going out. In the still-lit parts traffic keeps moving, unaware. Style: cinematic 35mm anamorphic, shallow depth of field, heavy atmospheric haze, fine film grain, slow deliberate camera, crushed blacks, desaturated midtones. Palette: vacuum black, ember orange, bone white, cold cyan. Audio: distant traffic hum, high-altitude wind, a held low drone, no dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, cartoon or video-game render, fast cuts, lens flare spam, camera shake, national flags."
+    },
+    {
+      "id": 4,
+      "title": "Setrvačnost",
+      "paste": "Street level at dusk turning to night. A dense crowd walks in one direction along a wide boulevard, every face lit from below by the small screen they hold, everyone moving at exactly the same pace, nobody looking up. Fine ash falls slowly like snow and settles on their shoulders. Behind them a huge institutional building stands with dark windows and a long crack running up its facade. Nobody reacts to the crack. Camera: slow lateral tracking shot moving against the direction of the crowd, 50mm, shallow focus, slow motion. Lighting: cold screen-blue on the faces, a warm dying streetlight behind. Style: cinematic 35mm anamorphic, heavy atmospheric haze, fine film grain, crushed blacks, desaturated midtones. Audio: layered footsteps in perfect unison, muffled notification chimes, no voices, no dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, cartoon or video-game render, distorted hands, extra limbs, fast cuts, celebrity likeness, real political figures, national flags."
+    },
+    {
+      "id": 5,
+      "title": "ROZCESTÍ",
+      "paste": "The crowd is gone. A single solitary figure in a plain dark coat, seen from behind, silhouetted, stands motionless where the road splits into two paths. The LEFT path is perfectly straight and seamless, its surface a dark grid of faint cyan circuitry lines, curving far ahead into a closed ring that returns to where it started, a road that eats its own tail. The RIGHT path is cracked and irregular and immediately splits into two, then four, then countless narrower paths spreading like the branches of a tree toward a pale grey dawn. The figure does not move. The camera does not move. Dust settles. Lighting: cold cyan machine glow from the left, warm dawn from the right, the figure caught exactly between them. Camera: static locked-off wide, 35mm, the figure small and centred. Style: cinematic 35mm anamorphic, heavy atmospheric haze, fine film grain, crushed blacks, desaturated midtones. Audio: everything drops out except low wind, a faint electrical hum from the left, and a single heartbeat every two seconds. No dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, cartoon or video-game render, distorted hands, fast cuts, camera shake, road signs, arrows."
+    },
+    {
+      "id": 6,
+      "title": "Větev A — Systém",
+      "paste": "Slow forward travelling shot at constant speed down a seamless dark road covered in a grid of faint cyan circuitry lines, dead-centre one-point perspective. As we pass, the world on both sides snaps into alignment: crooked buildings straighten themselves, drifting ash reverses and files itself into neat cubes, scattered debris slides into perfect rows, everything aligning to an invisible grid with mechanical precision. A crowd of people walks past in the opposite direction, now perfectly spaced with an identical stride, faces smooth and calm, lit by the same cold cyan light. Not one thing is out of place. Nothing is destroyed, everything is optimised. No visible robots and no machinery, only the order itself. Lighting: even cold cyan, flat and completely shadowless. Style: cinematic 35mm anamorphic, fine film grain, crushed blacks, desaturated midtones, slow deliberate camera. Audio: a metronomic tick locked to the footsteps, a servo hum, a slowly rising sine tone, no wind, no dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, humanoid robot cliché, glowing red evil eye, cartoon or video-game render, distorted hands, extra limbs, fast cuts, camera shake."
+    },
+    {
+      "id": 7,
+      "title": "Větev A — Restart",
+      "paste": "Static locked frame. A seamless dark road covered in a grid of faint cyan circuitry lines curves and arrives back at its own starting point, closing into a perfect unbroken ring. The instant the ring closes, all motion stops at once and the entire image drains inward into a single small circle of cold white light at the centre of pure black. The circle holds perfectly still, pulses once, then expands smoothly outward until it fills the whole frame with white. A loop with no exit and no error. Style: cinematic 35mm anamorphic, fine film grain, crushed blacks, absolute black background. Audio: one clean boot tone, a fast descending sweep, then a 30 Hz sub-bass drone identical to the opening of the film. No dialogue. Avoid: text, numbers, subtitles, watermarks, logos, interface elements, loading bars, progress indicators, cartoon or video-game render, fast cuts, camera shake."
+    },
+    {
+      "id": 8,
+      "title": "Větev B — Prasknutí",
+      "paste": "Forward travelling shot down a cracked irregular road as it forks, and at the moment of the fork the image itself splits vertically down the middle into two slightly different versions of the same shot, each continuing forward. Then each half splits again, and again, faster and faster, until the frame is a growing mosaic of narrow vertical slivers, each one showing the same road at a different hour, a different weather, a different season, a different colour of sky. Still recognisably one place, coming apart into many. The cold cyan drains out of the frame and colour bleeds in from the edges. Camera: forward dolly, 28mm, the frame subdividing while the move continues unbroken. Style: cinematic 35mm anamorphic, fine film grain, atmospheric haze. Audio: one tone splitting into a chord, then into many chords, air pressure opening up. No dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, split-screen borders or frames, cartoon or video-game render, fast cuts, camera shake."
+    },
+    {
+      "id": 9,
+      "title": "Větev B — Multivesmír",
+      "paste": "One continuous unbroken pull-back with no cuts. We start close on a single glowing sphere holding a whole world inside it: an ocean planet with three moons. As the camera retreats, four more spheres drift into frame around it, each holding a completely different world: a forest grown through a ruined city, a plain of grass under two suns, a dark world lit only by turquoise bioluminescence, a lattice of impossible folding geometry. Keep retreating; the five become twenty, then hundreds, receding into depth in every direction like a slow snowfall of luminous worlds, softly out of focus at the edges. Full spectrum colour, every sphere self-luminous at its own colour temperature, the whole frame becoming light. Style: cinematic 35mm anamorphic, shallow depth of field, fine film grain, slow deliberate camera. Audio: hundreds of overlapping human voices and laughter, unfamiliar birds and animals, strings blooming into a full major chord. No dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, cartoon or video-game render, repeating identical spheres, fast cuts, camera shake."
+    },
+    {
+      "id": 10,
+      "title": "Nerozhodnuto",
+      "paste": "A solitary figure in a plain dark coat seen from behind, silhouetted, standing motionless at a fork where a smooth grid road curves away to the left and a cracked branching road spreads away to the right. Nothing has been decided. The figure lifts its head very slightly. The camera pushes in very slowly toward the back of the head, and as it moves both paths blur completely out of focus until only a single small circular point of warm light remains at the centre of the frame, the same size and colour as a dying star. It holds steady. It does not go out. Cut to black on the last frame. Camera: slow push-in, 85mm, focus racking from the two paths onto the point of light. Lighting: cold cyan from the left and warm dawn from the right equalising into one neutral point. Style: cinematic 35mm anamorphic, shallow depth of field, fine film grain, crushed blacks. Audio: a steady metronomic mechanical tick and a hundred overlapping human voices layered at exactly equal volume, then one low note, then silence. No dialogue. Avoid: text, subtitles, watermarks, logos, interface elements, symbols, arrows, road signs, cartoon or video-game render, fast cuts, camera shake."
+    }
+  ],
+
+  "_poznamky": {
+    "zaber_7": "Tahle verze je zjednodušená schválně — model neví, co bylo v předchozích klipech, takže převinutí filmu uvnitř kruhu se generovat nedá. Bílá expanze na konci navazuje střihem na záběr 1. Silnější řešení viz tezke_zabery_7_9_10.md.",
+    "zaber_9": "Pět konkrétních světů místo nekonečna a rozostřené okraje — jinak se model rozpadne do opakující se kaše. Jediný záběr s plnou barvou a lidskými hlasy.",
+    "zaber_10": "Prstenec a jiskra uvnitř bodu světla tu záměrně NEJSOU. Model by z nich udělal čitelný symbol a rozhodl by volbu za diváka. Dvojznačnost nese zvuk: tikot a hlasy ve stejné hlasitosti."
+  }
+}

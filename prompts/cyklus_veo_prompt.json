@@ -1,0 +1,119 @@
+{
+  "project": "KONEC CYKLU / THE CLOSING CYCLE",
+  "concept": "Dva cykly se uzavírají v jednom střihu: tepelná smrt vesmíru a vyčerpání jedné civilizace. Oba dojdou do bodu, kde už není setrvačnost — jen volba mezi dvěma geometriemi. Robotika: uzavřená smyčka, systém se restartuje a všechno proběhne znovu identicky. Svoboda: větvení, jedna čára se roztrhne na multivesmír, kde se stane všechno možné. Film končí dřív, než je volba učiněna.",
+  "format": {
+    "aspect_ratio": "16:9",
+    "resolution": "1080p",
+    "fps": 24,
+    "shot_duration_seconds": 8,
+    "total_shots": 10,
+    "audio": "native (ambience + score, no dialogue unless noted)"
+  },
+  "global_style": {
+    "look": "cinematic 35mm anamorphic, shallow depth of field, heavy atmospheric haze, fine film grain, slight gate weave, no camera shake",
+    "palette": "deep vacuum black, ember orange, bone white, cold cyan — the palette holds for shots 1–8 and is deliberately broken open into full spectrum in shot 9 only",
+    "grade": "crushed blacks, desaturated midtones, specular highlights allowed to bloom",
+    "motion": "slow, deliberate, mostly 1–2 axis moves; the universe never hurries",
+    "consistency_anchor": "Every shot contains one circular light source — sun, lamp, screen, iris, pupil. It shrinks across the film. In the machine branch it closes into a perfect unbroken ring. In the freedom branch it fractures into countless points. In the final shot it is one point that holds both and does not resolve.",
+    "geometry_rule": "Branch A is a closed loop: circles, grids, perfect repetition, everything snapping to alignment. Branch B is a branching fractal: forks, splits, tree structures, nothing repeating twice.",
+    "negative_prompt": "text overlays, subtitles, watermarks, logos, UI elements, cartoon style, anime, video-game render, distorted hands, extra limbs, fast cuts, lens flare spam, jump scares, gore, celebrity likeness, real political figures, national flags, religious symbols, humanoid robot cliché, glowing red evil eye"
+  },
+  "shots": [
+    {
+      "id": 1,
+      "title": "Poslední světlo / The Last Light",
+      "prompt": "Extreme wide shot of a dying red star filling one third of frame, its surface churning in slow motion, shedding thin ribbons of plasma that dissolve into absolute black. The star is visibly cooling, ember orange fading toward dull brown at the edges. No planets, no dust, no other stars. Camera drifts backward at a constant crawl, making the star smaller and smaller in an ocean of nothing.",
+      "camera": "slow dolly back, locked horizon, anamorphic 40mm",
+      "lighting": "single practical source (the star), no fill, 100:1 contrast",
+      "audio": "sub-bass drone at 30 Hz, a single sustained cello note, no rhythm",
+      "duration_seconds": 8
+    },
+    {
+      "id": 2,
+      "title": "Rozpad / Dissolution",
+      "prompt": "Cosmic wide shot: a spiral galaxy unwinding in slow motion, its arms stretching apart like smoke pulled by an invisible draft, individual stars going dark one by one in a spreading wave. Space between the stars grows visibly. Everything drifts outward and cools to cyan-black. Billions of years compressed into eight seconds, but rendered smooth and silent, not frantic.",
+      "camera": "static wide, imperceptible push-in",
+      "lighting": "self-luminous subject, deep vacuum falloff",
+      "audio": "granular white noise thinning out, drone dropping in pitch",
+      "duration_seconds": 8
+    },
+    {
+      "id": 3,
+      "title": "Druhý cyklus / The Second Cycle",
+      "prompt": "Match cut from the galaxy spiral to a night-time aerial of a vast city seen from high above — the same spiral geometry in roads and lights, ring road as galactic arm. The city glows ember orange. Slow aerial descent. In the lower third, whole districts blink out block by block, the same spreading wave of darkness as the dying stars, but now it is grids of streetlights and windows going out. Traffic still moves in the lit parts, unaware.",
+      "camera": "high aerial descent, 24mm, slow yaw right",
+      "lighting": "sodium-vapour city glow, low cloud catching light from below",
+      "audio": "distant traffic hum, wind at altitude, drone note held from previous shot",
+      "duration_seconds": 8
+    },
+    {
+      "id": 4,
+      "title": "Setrvačnost / Inertia",
+      "prompt": "Street level, dusk turning to night. A dense crowd of people walking in one direction along a wide boulevard, all faces lit from below by the small screens they hold, all moving at exactly the same pace, none looking up. Ash or fine dust falls slowly like snow and settles on their shoulders. In the background a huge institutional building stands with dark windows and a long crack running up its facade. No one reacts to the crack. Slow motion.",
+      "camera": "slow lateral tracking shot against the direction of the crowd, 50mm, shallow focus",
+      "lighting": "cold screen-blue on faces, warm dying streetlight behind",
+      "audio": "layered footsteps in perfect unison, muffled notification chimes, no voices",
+      "duration_seconds": 8
+    },
+    {
+      "id": 5,
+      "title": "Rozcestí / The Fork",
+      "prompt": "The crowd is gone. One solitary figure in a plain dark coat, seen from behind, silhouetted, standing motionless where the road splits into two paths. The left path is perfectly straight, its surface a seamless dark grid of faint cyan circuitry lines, curving far ahead into a closed ring that returns to where it started — a road that eats its own tail. The right path is cracked and irregular and immediately splits into two, then four, then countless narrower paths spreading like the branches of a tree toward a pale grey dawn. The figure does not move. Camera holds. Dust settles. This is the hinge of the film.",
+      "camera": "static locked-off wide, 35mm, figure centred and small in frame",
+      "lighting": "two-source: cold cyan machine glow from the left path, warm dawn from the right, figure caught exactly between them",
+      "audio": "everything drops out except low wind, a faint electrical hum from the left, and one heartbeat every two seconds",
+      "duration_seconds": 8
+    },
+    {
+      "id": 6,
+      "title": "Větev A I — Systém / Branch A I — The System",
+      "prompt": "The left path taken. Slow forward travelling shot down the seamless grid road. On both sides the world snaps into alignment as we pass: crooked buildings straighten, drifting ash reverses and files itself into neat cubes, scattered debris slides into rows, everything aligning to an invisible grid with mechanical precision. The same crowd from earlier walks past in the opposite direction, but now perfectly spaced, identical stride, faces smooth and calm and lit by the same cold cyan light. Not a single thing is out of place. Nothing is destroyed — everything is optimised. No humanoid robots, no machinery visible: only the order itself.",
+      "camera": "steady forward dolly at constant speed, 28mm, dead-centre one-point perspective",
+      "lighting": "even cold cyan, no shadows, no highlights, flat and shadowless",
+      "audio": "a metronomic tick locked to the footsteps, servo hum, a rising sine tone, no wind",
+      "duration_seconds": 8
+    },
+    {
+      "id": 7,
+      "title": "Větev A II — Restart / Branch A II — Reboot",
+      "prompt": "The grid road curves and arrives exactly back at its own beginning: the closed ring completes. Everything stops at once, absolutely still, and the image drains to a single circle of cold white light in the centre of black. The circle holds for one full second, then the entire film replays inside it in miniature and at high speed and in reverse order — the crowd, the city, the galaxy, the dying star — until the star reaches full brightness again as it was before it died. The circle expands and the sequence begins again identically, frame for frame. A loop with no exit and no error. Nothing is lost, nothing is new.",
+      "camera": "static locked frame; all motion happens inside the circle of light",
+      "lighting": "single cold white circular source in pure black",
+      "audio": "one clean boot tone, then the entire soundtrack replayed backwards and compressed, then the same 30 Hz drone from shot 1 exactly as before",
+      "duration_seconds": 8
+    },
+    {
+      "id": 8,
+      "title": "Větev B I — Prasknutí / Branch B I — The Split",
+      "prompt": "The right path taken. Forward travelling shot down the cracked road as it forks — and at the moment of the fork the image itself splits vertically down the middle into two slightly different versions of the same shot, each continuing forward. Then each half splits again, and again, faster and faster, the frame becoming a growing mosaic of narrow vertical slivers, each one showing the same road at a different hour, a different weather, a different season, a different colour of sky. Still recognisably one place, coming apart into many. The cold cyan drains out of the frame and colour begins bleeding in from the edges.",
+      "camera": "forward dolly, 28mm, the frame subdividing while the move continues unbroken",
+      "lighting": "each sliver lit differently — dawn, storm, noon, aurora — no two alike",
+      "audio": "one tone splitting into a chord, then into many chords, air pressure opening up",
+      "duration_seconds": 8
+    },
+    {
+      "id": 9,
+      "title": "Větev B II — Multivesmír / Branch B II — Everything Possible",
+      "prompt": "Continuous pull-back out of the mosaic: each sliver becomes a whole world seen from outside, and the worlds keep multiplying as we retreat — an ocean planet with three moons, a forest grown through a ruined city, a lattice of impossible non-Euclidean architecture, a sky full of migrating whales, a plain of grass under two suns, a dark world lit only by bioluminescence, a world of pure geometry folding through itself. Keep pulling back until they are an endless branching tree of glowing bubbles filling the entire frame in every direction, still branching at the edges, no two the same, none of them repeating. This is the only shot in the film with full-spectrum colour and human voices.",
+      "camera": "continuous unbroken pull-back from 50mm to extreme wide, no cuts",
+      "lighting": "every bubble self-luminous in a different colour temperature; the whole frame becomes light",
+      "audio": "hundreds of overlapping human voices, laughter, unfamiliar birds and animals, strings blooming into a full major chord",
+      "duration_seconds": 8
+    },
+    {
+      "id": 10,
+      "title": "Nerozhodnuto / Undecided",
+      "prompt": "Hard cut back to the exact framing of the fork — the same solitary figure, the same two paths, the loop road on the left and the branching road on the right. Nothing has been decided; both futures were only possibilities. The figure lifts its head slightly. Camera pushes in very slowly toward the back of the head, and as it moves both paths blur out of focus until a single circular point of light remains in the centre of frame — the same size and colour as the dying star in the opening shot. Inside that point, too small to read clearly, a thin ring closes and a spark branches, over and over, neither one winning. Hold for two full seconds. It does not go out. Cut to black on the last frame.",
+      "camera": "slow push-in, 85mm, focus racking from the two paths to the single point of light",
+      "lighting": "cyan from the left and dawn from the right equalising into one neutral point",
+      "audio": "the metronomic tick of the loop and the hundred voices of the multiverse layered at exactly equal volume, then one low note, then silence",
+      "duration_seconds": 8
+    }
+  ],
+  "editing_notes": {
+    "match_cuts": "2→3 (galaxy spiral to city spiral), 7→1 (the reboot literally returns to the first shot), 5→10 (identical framing, different meaning)",
+    "structure": "cosmic cycle (1–2) → civilisational cycle (3–4) → the hinge (5) → machine branch: closed loop, system restarts, everything repeats identically (6–7) → freedom branch: the line splits, one world becomes every possible world (8–9) → the choice returned to the viewer, still open (10)",
+    "thesis": "Branch A is not destruction — it is perfect preservation with no exit. Branch B is not salvation — it is unbounded possibility with no guarantee. The horror and the hope are both real.",
+    "rule": "The film never states which branch is taken. Shot 10 must not resolve it."
+  }
+}
