@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>MOST — dítě devadesátek (tisková verze)</title>
+<style>
+  /* Zdroj pro most.pdf — A4, tiskový sourozenec index.html */
+
+  @page{ size:A4; margin:0; }
+
+  :root{
+    --serif: Georgia, "DejaVu Serif", "Times New Roman", serif;
+    --mono: "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace;
+    --ink:#12241a;
+    --cyan:#00a8c6;
+    --magenta:#c81e6e;
+    --moss:#3f6b3a;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:var(--serif); color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  .page{
+    width:210mm; height:297mm;
+    position:relative; overflow:hidden;
+    page-break-after:always; break-after:page;
+  }
+  .page:last-child{ page-break-after:auto; break-after:auto; }
+
+  /* ---------------- 1 / OBÁLKA ---------------- */
+  .cover .half{ position:absolute; top:0; bottom:0; width:50%; }
+  .cover .left{
+    left:0;
+    background:
+      radial-gradient(90% 60% at 70% 34%, rgba(200,30,110,.28), transparent 62%),
+      linear-gradient(180deg,#080c1a 0%,#101a34 44%,#1b1140 72%,#05070f 100%);
+  }
+  .cover .right{
+    right:0;
+    background:
+      radial-gradient(80% 50% at 30% 20%, rgba(255,250,225,.95), transparent 60%),
+      linear-gradient(180deg,#cfe6ef 0%,#e6f1e6 36%,#a9c9ac 62%,#3f6b45 100%);
+  }
+  /* obrysy dvou světů na stejné čáře obzoru */
+  .cover .skyline, .cover .ridge{ position:absolute; left:0; right:0; bottom:0; height:52%; }
+  .cover .skyline{ opacity:.9; }
+
+  .cover .seam{
+    position:absolute; top:0; bottom:0; left:50%; width:.6mm; margin-left:-.3mm;
+    background:linear-gradient(180deg, rgba(255,255,255,0), #ffffff 14%, #ffffff 86%, rgba(255,255,255,0));
+  }
+  .cover .node{
+    position:absolute; top:50%; left:50%; width:15mm; height:15mm;
+    margin:-7.5mm 0 0 -7.5mm; border-radius:50%;
+    border:.4mm solid #fff; background:rgba(255,255,255,.14);
+  }
+  .cover .node::after{
+    content:"⟷"; position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:6mm; color:#fff;
+  }
+
+  /* Typografie je vysázená dvakrát na stejném místě a oříznutá švem —
+     stejný princip jako v interaktivní verzi: jedna geometrie, dvě světla. */
+  .cover .type{
+    position:absolute; left:0; right:0; top:24%;
+    text-align:center; z-index:3;
+  }
+  .cover .t-left{
+    color:#fff; text-shadow:0 0 6mm rgba(0,0,0,.5);
+    clip-path:inset(0 50% 0 0);
+  }
+  .cover .t-right{
+    color:#12241a; text-shadow:0 .4mm 0 rgba(255,255,255,.65);
+    clip-path:inset(0 0 0 50%);
+  }
+  .cover .kicker{
+    font-family:var(--mono); font-size:3mm; letter-spacing:.42em;
+    text-transform:uppercase; padding-left:.42em; margin-bottom:9mm;
+  }
+  .cover h1{ font-weight:400; font-size:19mm; line-height:1.03; letter-spacing:-.02em; }
+  .cover h1 em{ font-style:italic; }
+  .cover .sub{
+    margin-top:8mm; font-size:5mm; line-height:1.5; font-style:italic;
+  }
+  .cover .foot{
+    position:absolute; left:0; right:0; bottom:16mm; z-index:3;
+    text-align:center;
+    font-family:var(--mono); font-size:2.8mm; letter-spacing:.3em; text-transform:uppercase;
+  }
+  .cover .f-left { color:#eaf7ff; clip-path:inset(0 50% 0 0); }
+  .cover .f-right{ color:#eaf7ff; clip-path:inset(0 0 0 50%); }
+
+  /* ---------------- 2 / MANIFEST ---------------- */
+  .sheet{ padding:26mm 22mm; height:100%; display:flex; flex-direction:column; }
+  .sheet .eyebrow{
+    font-family:var(--mono); font-size:2.9mm; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--moss); margin-bottom:10mm;
+  }
+  .sheet h2{
+    font-weight:400; font-size:11mm; line-height:1.1; margin-bottom:7mm;
+  }
+  .sheet h2 em{ font-style:italic; }
+  .sheet p{ font-size:4.1mm; line-height:1.62; margin-bottom:4.5mm; max-width:150mm; }
+  .sheet .rule{ height:.25mm; background:linear-gradient(90deg,var(--cyan),var(--moss)); margin:8mm 0; }
+
+  table.pairs{ width:100%; border-collapse:collapse; margin:2mm 0 6mm; }
+  table.pairs td{
+    font-family:var(--mono); font-size:3.5mm; padding:2.4mm 3mm;
+    border-bottom:.15mm solid rgba(18,36,26,.14);
+  }
+  table.pairs td.then{ text-align:right; width:44%; color:#1c4423; }
+  table.pairs td.arrow{ text-align:center; width:12%; color:var(--magenta); }
+  table.pairs td.now { text-align:left;  width:44%; color:var(--cyan); }
+
+  .quote{
+    margin-top:auto;
+    border-left:.6mm solid var(--cyan);
+    padding:2mm 0 2mm 7mm;
+    font-style:italic; font-size:5mm; line-height:1.5;
+  }
+  .quote .sign{
+    display:block; margin-top:5mm; font-style:normal;
+    font-family:var(--mono); font-size:2.8mm;
+    letter-spacing:.3em; text-transform:uppercase; color:var(--moss);
+  }
+
+  /* ---------------- 3 / JAK TO POUŽÍT ---------------- */
+  .steps{ counter-reset:s; margin:2mm 0 6mm; }
+  .steps li{
+    list-style:none; counter-increment:s; position:relative;
+    padding-left:11mm; margin-bottom:4.5mm; font-size:4mm; line-height:1.55;
+  }
+  .steps li::before{
+    content:counter(s); position:absolute; left:0; top:-.4mm;
+    width:6.5mm; height:6.5mm; border-radius:50%;
+    border:.25mm solid var(--cyan); color:var(--cyan);
+    font-family:var(--mono); font-size:3mm;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .box{
+    border:.25mm solid rgba(18,36,26,.28);
+    background:#f6f8f4;
+    padding:6mm 7mm; border-radius:1.5mm;
+  }
+  .box .lbl{
+    font-family:var(--mono); font-size:2.7mm; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--moss); margin-bottom:4mm;
+  }
+  .box p{ font-family:var(--mono); font-size:3.2mm; line-height:1.62; margin-bottom:3mm; }
+  .box p:last-child{ margin-bottom:0; }
+
+  .files{ font-family:var(--mono); font-size:3.2mm; line-height:1.9; margin-top:6mm; }
+  .files b{ color:var(--cyan); font-weight:400; }
+</style>
+</head>
+<body>
+
+<!-- ======================= 1 / OBÁLKA ======================= -->
+<section class="page cover">
+  <div class="half left">
+    <svg class="skyline" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <g fill="#05080f">
+        <rect x="2"  y="42" width="13" height="58"/>
+        <rect x="17" y="24" width="11" height="76"/>
+        <rect x="30" y="52" width="14" height="48"/>
+        <rect x="46" y="14" width="10" height="86"/>
+        <rect x="58" y="46" width="15" height="54"/>
+        <rect x="75" y="30" width="12" height="70"/>
+        <rect x="89" y="56" width="11" height="44"/>
+      </g>
+      <g fill="#00a8c6" opacity=".8">
+        <rect x="4"  y="48" width="1.6" height="2.6"/><rect x="9"  y="56" width="1.6" height="2.6"/>
+        <rect x="19" y="30" width="1.6" height="2.6"/><rect x="24" y="41" width="1.6" height="2.6"/>
+        <rect x="33" y="58" width="1.6" height="2.6"/><rect x="48" y="21" width="1.6" height="2.6"/>
+        <rect x="61" y="53" width="1.6" height="2.6"/><rect x="78" y="36" width="1.6" height="2.6"/>
+        <rect x="92" y="63" width="1.6" height="2.6"/>
+      </g>
+      <g fill="#c81e6e" opacity=".85">
+        <rect x="6"  y="62" width="1.6" height="2.6"/><rect x="21" y="52" width="1.6" height="2.6"/>
+        <rect x="37" y="69" width="1.6" height="2.6"/><rect x="51" y="34" width="1.6" height="2.6"/>
+        <rect x="66" y="64" width="1.6" height="2.6"/><rect x="81" y="47" width="1.6" height="2.6"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="half right">
+    <svg class="ridge" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,58 18,26 34,48 52,18 70,44 86,30 100,52 100,100 0,100" fill="#7e9896" opacity=".62"/>
+      <polygon points="0,74 16,48 33,66 50,42 68,64 84,52 100,70 100,100 0,100" fill="#4e7460" opacity=".82"/>
+      <rect x="0" y="78" width="100" height="22" fill="#3a8c8e" opacity=".9"/>
+    </svg>
+  </div>
+
+  <div class="seam"></div>
+  <div class="node"></div>
+
+  <div class="type t-left">
+    <div class="kicker">ročník 9× · most</div>
+    <h1>Jsem dítě<br><em>devadesátek</em>.</h1>
+    <div class="sub">Vyrostl jsem mezi analogem a algoritmem.<br>Nejsem ani jeden ten svět — jsem přechod mezi nimi.</div>
+  </div>
+  <div class="type t-right">
+    <div class="kicker">ročník 9× · most</div>
+    <h1>Jsem dítě<br><em>devadesátek</em>.</h1>
+    <div class="sub">Vyrostl jsem mezi analogem a algoritmem.<br>Nejsem ani jeden ten svět — jsem přechod mezi nimi.</div>
+  </div>
+
+  <div class="foot f-left">most mezi starým a novým světem</div>
+  <div class="foot f-right">most mezi starým a novým světem</div>
+</section>
+
+<!-- ======================= 2 / MANIFEST ======================= -->
+<section class="page">
+  <div class="sheet">
+    <div class="eyebrow">manifest</div>
+    <h2>Stejný člověk,<br><em>dvě světla</em>.</h2>
+
+    <p>
+      Nejsem nostalgik, který zůstal stát v roce 1998. A nejsem ani člověk, kterému
+      začal svět až s prvním chytrým telefonem. Zažil jsem obojí naostro — a přechod
+      mezi tím jsem si odžil, ne přečetl.
+    </p>
+    <p>
+      Proto nemusím volit stranu. Umím rozumět tomu, co se ztratilo, i tomu,
+      co přišlo. To je celá výhoda mojí generace: byli jsme poslední, kdo si
+      pamatuje ticho, a první, kdo se naučil mluvit se stroji.
+    </p>
+
+    <div class="rule"></div>
+
+    <table class="pairs">
+      <tr><td class="then">kazeta</td><td class="arrow">→</td><td class="now">playlist</td></tr>
+      <tr><td class="then">vytáčené připojení</td><td class="arrow">→</td><td class="now">pořád online</td></tr>
+      <tr><td class="then">papírová mapa</td><td class="arrow">→</td><td class="now">satelit v kapse</td></tr>
+      <tr><td class="then">Nokia 3310</td><td class="arrow">→</td><td class="now">neuronová síť</td></tr>
+      <tr><td class="then">hřiště za barákem</td><td class="arrow">→</td><td class="now">nekonečný feed</td></tr>
+      <tr><td class="then">vzkaz na papírku</td><td class="arrow">→</td><td class="now">prompt</td></tr>
+      <tr><td class="then">ticho</td><td class="arrow">→</td><td class="now">notifikace</td></tr>
+    </table>
+
+    <p>
+      Ten sloupec vlevo není ztráta — je to zdroj. A ten vpravo není hrozba —
+      je to nástroj. Most drží jen tehdy, když stojí na obou březích zároveň.
+      Jakmile jeden opustíš, spadne.
+    </p>
+
+    <div class="quote">
+      Pamatuju si zvuk modemu i ticho lesa.<br>
+      Umím žít v obou. Proto jsem most.
+      <span class="sign">— dítě devadesátek</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 3 / JAK TO POUŽÍT ======================= -->
+<section class="page">
+  <div class="sheet">
+    <div class="eyebrow">jak to spustit a jak s tím pracovat v Gemini</div>
+    <h2>Kód jako<br><em>vyjádření</em>.</h2>
+
+    <p>
+      Přiložený <b>index.html</b> je jeden soubor bez jediné externí závislosti.
+      Obsah je napsaný jen jednou a vykreslený do obou světů, takže má na obou
+      stranách naprosto stejnou geometrii — mění se pouze atmosféra. Táhlem
+      uprostřed jezdíš mezi světy a text se pod ním převléká. Částice, které
+      přeletí šev, se změní z datového glyfu na list. To je ten most.
+    </p>
+
+    <ol class="steps">
+      <li>Otevři <b>index.html</b> v prohlížeči — funguje i offline, dvojklikem.</li>
+      <li>Táhni myší doleva a doprava. <b>Mezerník</b> zapne a vypne automatický přejezd, <b>šipky</b> posouvají po krocích.</li>
+      <li>Nahraj soubor do Gemini (Canvas nebo AI Studio) a nech si ho měnit — obsah i vzhled jsou v souboru pojmenované česky, takže se dá popsat slovy, co chceš jinak.</li>
+    </ol>
+
+    <div class="box">
+      <div class="lbl">prompt do Gemini</div>
+      <p>Tohle je moje osobní vizuální vyjádření: jsem dítě devadesátek, most mezi
+      starým a novým světem. Levá strana je kyberpunkový nový svět, pravá je
+      příroda a starý svět, uprostřed je táhlo — ten most.</p>
+      <p>Zachovej klíčovou zásadu: obsah je definovaný jednou v &lt;template&gt; a
+      klonovaný do obou světů, takže musí mít v obou naprosto stejnou geometrii.
+      Skiny se smějí lišit jen barvou, stínem a dekorací — nikdy ne velikostí
+      písma, řezem ani rozestupy. Jinak se most rozbije.</p>
+      <p>Uprav teď: ______________________________</p>
+    </div>
+
+    <div class="files">
+      <b>index.html</b> — interaktivní verze, jeden soubor<br>
+      <b>most-tisk.html</b> — zdroj této tiskové verze<br>
+      <b>most.pdf</b> — tenhle dokument<br>
+      <b>README.md</b> — popis a nápady na další úpravy
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

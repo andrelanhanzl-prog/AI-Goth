@@ -2,6 +2,8 @@
 *.db
 *.avi
 *.pdf
+# tisková verze projektu MOST je součástí repozitáře
+!most.pdf
 *.ps
 *.mid
 *.midi

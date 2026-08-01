@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOST — dítě devadesátek</title>
+<meta name="description" content="Interaktivní vyjádření: jsem dítě devadesátek, most mezi starým a novým světem.">
+<style>
+  /* ------------------------------------------------------------------
+     MOST / THE BRIDGE
+     Dva světy, jedna geometrie. Text má na obou stranách naprosto
+     stejné rozměry — mění se jen atmosféra. To je celá myšlenka:
+     stejný člověk, dvě světla.
+     ------------------------------------------------------------------ */
+
+  :root{
+    --p: 50;                 /* pozice mostu v % */
+    --seam: 1.5px;
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{ height:100%; overflow:hidden; background:#05070d; }
+  body{
+    font-family:var(--serif);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    cursor:ew-resize;
+    touch-action:none;
+  }
+
+  #stage{ position:fixed; inset:0; overflow:hidden; }
+
+  .world{ position:absolute; inset:0; }
+  .world canvas{ position:absolute; inset:0; width:100%; height:100%; }
+
+  /* svět vlevo je oříznutý na pozici mostu */
+  #cyber{ clip-path: inset(0 calc(100% - var(--p) * 1%) 0 0); }
+
+  /* ---------- obsah (identická geometrie v obou světech) ---------- */
+  .content{
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    gap:clamp(10px,2.2vh,22px);
+    padding:clamp(16px,4vw,48px);
+    width:100vw;                     /* nikdy se nezmenšuje s ořezem */
+    text-align:center;
+    user-select:none;
+  }
+
+  .kicker{
+    font-family:var(--mono);
+    font-size:clamp(9px,1.35vw,13px);
+    letter-spacing:.42em; text-transform:uppercase;
+    padding-left:.42em;
+  }
+
+  h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(30px,6.6vw,78px);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    position:relative;
+  }
+  h1 em{ font-style:italic; }
+
+  .lead{
+    font-family:var(--serif);
+    font-size:clamp(13px,1.9vw,21px);
+    line-height:1.55;
+    max-width:min(760px,88vw);
+    opacity:.92;
+  }
+
+  /* dvojice: staré  →  nové. Šipky sedí přesně na švu = most sám. */
+  .pairs{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    column-gap:clamp(10px,2.4vw,26px);
+    row-gap:clamp(4px,1.05vh,11px);
+    font-family:var(--mono);
+    font-size:clamp(10px,1.5vw,16px);
+    width:min(880px,94vw);
+    margin-block:clamp(2px,1.2vh,14px);
+  }
+  .pairs .then{ text-align:right; }
+  .pairs .now { text-align:left;  }
+  .pairs .arrow{ font-size:.9em; opacity:.75; }
+
+  .closing{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(12px,1.75vw,19px);
+    line-height:1.55;
+    max-width:min(680px,88vw);
+  }
+  .sign{
+    font-family:var(--mono);
+    font-size:clamp(9px,1.25vw,12px);
+    letter-spacing:.3em; text-transform:uppercase;
+    opacity:.75; padding-left:.3em;
+  }
+
+  /* ================= SKIN: KYBER (starý svět zvenčí, nový uvnitř) ===== */
+  #cyber .content{ color:#dff3ff; }
+  #cyber .kicker{ color:#00e5ff; text-shadow:0 0 14px rgba(0,229,255,.65); }
+  #cyber h1{
+    color:#f2fbff;
+    text-shadow:
+      -1px 0 rgba(255,45,149,.55),
+       1px 0 rgba(0,229,255,.55),
+       0 0 34px rgba(0,229,255,.28);
+  }
+  #cyber .lead{ color:#a8c6d8; }
+  #cyber .pairs .then{ color:#5d7386; }                                  /* staré bledne  */
+  #cyber .pairs .now { color:#00e5ff; text-shadow:0 0 12px rgba(0,229,255,.5); }
+  #cyber .pairs .arrow{ color:#ff2d95; text-shadow:0 0 12px rgba(255,45,149,.6); }
+  #cyber .closing{ color:#cfe6f2; }
+  #cyber .sign{ color:#ff2d95; }
+  #cyber .scan{
+    position:absolute; inset:0; pointer-events:none; mix-blend-mode:overlay; opacity:.35;
+    background:repeating-linear-gradient(to bottom, rgba(255,255,255,.09) 0 1px, transparent 1px 3px);
+  }
+  #cyber .vig{
+    position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(120% 85% at 30% 45%, transparent 35%, rgba(2,4,10,.82) 100%);
+  }
+  #cyber .scrim{
+    position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(64% 56% at 50% 50%, rgba(3,7,16,.78) 0%, rgba(3,7,16,.5) 45%, rgba(3,7,16,0) 78%);
+  }
+
+  /* ================= SKIN: PŘÍRODA ==================================== */
+  #nature .content{ color:#16281c; }
+  #nature .kicker{ color:#3f6b3a; text-shadow:0 1px 0 rgba(255,255,255,.85); }
+  #nature h1{ color:#12241a; text-shadow:0 2px 22px rgba(255,255,255,.75); }
+  #nature .lead{ color:#2c4634; text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  #nature .pairs .then{ color:#1c4423; text-shadow:0 1px 0 rgba(255,255,255,.75); } /* staré svítí */
+  #nature .pairs .now { color:#6c8570; }                                             /* nové couvá */
+  #nature .pairs .arrow{ color:#c08a2e; }
+  #nature .closing{ color:#20402a; text-shadow:0 1px 0 rgba(255,255,255,.6); }
+  #nature .sign{ color:#46683c; text-shadow:0 1px 0 rgba(255,255,255,.7); }
+  #nature .vig{
+    position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(120% 90% at 70% 45%, transparent 40%, rgba(30,50,25,.42) 100%);
+  }
+  #nature .scrim{
+    position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(64% 56% at 50% 50%, rgba(249,253,245,.86) 0%, rgba(249,253,245,.55) 45%, rgba(249,253,245,0) 78%);
+  }
+
+  /* ================= MOST (šev + tažítko) ============================= */
+  #cross{ position:absolute; inset:0; pointer-events:none; }
+
+  #seam{
+    position:absolute; top:0; bottom:0; left:calc(var(--p) * 1%);
+    width:var(--seam); margin-left:calc(var(--seam) / -2);
+    background:linear-gradient(to bottom,
+      rgba(255,255,255,0) 0%, rgba(255,255,255,.9) 12%,
+      rgba(255,255,255,.95) 88%, rgba(255,255,255,0) 100%);
+    /* poslední stín je hairline, aby byl šev čitelný i na světlé straně */
+    box-shadow:0 0 18px rgba(180,240,255,.75), 0 0 42px rgba(255,255,255,.35),
+               0 0 0 .5px rgba(18,42,30,.45);
+    pointer-events:none;
+  }
+
+  #handle{
+    position:absolute; top:50%; left:calc(var(--p) * 1%);
+    width:clamp(46px,6.4vw,62px); aspect-ratio:1;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    display:grid; place-items:center;
+    color:#eafcff;
+    font-family:var(--mono); font-size:clamp(12px,1.6vw,15px); letter-spacing:.06em;
+    background:rgba(10,16,24,.42);
+    border:1.5px solid rgba(235,255,255,.9);
+    box-shadow:0 0 22px rgba(150,230,255,.55), inset 0 0 22px rgba(120,220,255,.25);
+    backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+    pointer-events:none;
+  }
+  #handle::after{
+    content:""; position:absolute; inset:-9px; border-radius:50%;
+    border:1px solid rgba(235,255,255,.28);
+    animation:pulse 3.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ transform:scale(1);    opacity:.55; }
+    50%    { transform:scale(1.16); opacity:.12; }
+  }
+
+  #hint{
+    position:absolute; left:50%; bottom:clamp(12px,3vh,30px);
+    transform:translateX(-50%);
+    font-family:var(--mono);
+    font-size:clamp(8px,1.15vw,11px);
+    letter-spacing:.28em; text-transform:uppercase;
+    color:#cfe9f2; text-shadow:0 0 10px rgba(0,0,0,.85);
+    opacity:.72; pointer-events:none; white-space:nowrap;
+    transition:opacity .5s ease;
+  }
+  #hint.off{ opacity:0; }
+
+  @media (prefers-reduced-motion: reduce){
+    #handle::after{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="stage">
+
+  <!-- ---------- SVĚT VPRAVO: příroda (základ) ---------- -->
+  <section class="world" id="nature">
+    <canvas id="natBg"></canvas>
+    <canvas id="natFx"></canvas>
+    <div class="scrim"></div>
+    <div class="vig"></div>
+  </section>
+
+  <!-- ---------- SVĚT VLEVO: kyber (ořezaný mostem) ---------- -->
+  <section class="world" id="cyber">
+    <canvas id="cybBg"></canvas>
+    <canvas id="cybFx"></canvas>
+    <div class="scrim"></div>
+    <div class="vig"></div>
+    <div class="scan"></div>
+  </section>
+
+  <!-- ---------- částice, které přecházejí přes šev ---------- -->
+  <canvas id="cross"></canvas>
+
+  <div id="seam"></div>
+  <div id="handle">⟷</div>
+  <div id="hint">táhni ⟷ · mezerník = přejezd · šipky = krok</div>
+</div>
+
+<!-- Obsah je napsaný jednou a vložený do obou světů,
+     aby seděl na pixel a šev jím projížděl jako světlo. -->
+<template id="tpl">
+  <div class="content">
+    <div class="kicker">ročník 9× · most</div>
+
+    <h1>Jsem dítě<br><em>devadesátek</em>.</h1>
+
+    <p class="lead">
+      Vyrostl jsem mezi analogem a algoritmem.<br>
+      Nejsem ani jeden ten svět — jsem přechod mezi nimi.
+    </p>
+
+    <div class="pairs">
+      <span class="then">kazeta</span>          <span class="arrow">→</span> <span class="now">playlist</span>
+      <span class="then">vytáčené připojení</span><span class="arrow">→</span> <span class="now">pořád online</span>
+      <span class="then">papírová mapa</span>   <span class="arrow">→</span> <span class="now">satelit v kapse</span>
+      <span class="then">Nokia 3310</span>      <span class="arrow">→</span> <span class="now">neuronová síť</span>
+      <span class="then">hřiště za barákem</span><span class="arrow">→</span> <span class="now">nekonečný feed</span>
+      <span class="then">vzkaz na papírku</span><span class="arrow">→</span> <span class="now">prompt</span>
+      <span class="then">ticho</span>           <span class="arrow">→</span> <span class="now">notifikace</span>
+    </div>
+
+    <p class="closing">
+      Pamatuju si zvuk modemu i ticho lesa.<br>
+      Umím žít v obou. Proto jsem most.
+    </p>
+
+    <div class="sign">— dítě devadesátek</div>
+  </div>
+</template>
+
+<script>
+(() => {
+  "use strict";
+
+  const tpl = document.getElementById("tpl");
+  for (const id of ["nature", "cyber"]) {
+    document.getElementById(id).appendChild(tpl.content.cloneNode(true));
+  }
+
+  const root   = document.documentElement;
+  const stage  = document.getElementById("stage");
+  const hint   = document.getElementById("hint");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------------- plátna ---------------- */
+  const DPR = Math.min(devicePixelRatio || 1, 2);
+  const layer = id => {
+    const c = document.getElementById(id);
+    return { c, x: c.getContext("2d") };
+  };
+  const natBg = layer("natBg"), natFx = layer("natFx");
+  const cybBg = layer("cybBg"), cybFx = layer("cybFx");
+  const cross = layer("cross");
+  const all   = [natBg, natFx, cybBg, cybFx, cross];
+
+  let W = 0, H = 0, horizon = 0;
+
+  /* ---------------- pozice mostu ---------------- */
+  let p = 0.5;            // 0..1
+  let target = 0.5;
+  let sweeping = true;    // sám od sebe přejíždí, dokud se nedotkneš
+  let dragging = false;
+  let t = 0;
+
+  const setP = v => {
+    p = Math.min(1, Math.max(0, v));
+    root.style.setProperty("--p", (p * 100).toFixed(3));
+  };
+
+  /* =================================================================
+     STATICKÁ POZADÍ
+     ================================================================= */
+
+  function drawCyberBg() {
+    const { x } = cybBg;
+    x.clearRect(0, 0, W, H);
+
+    const sky = x.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0.00, "#080c1a");
+    sky.addColorStop(0.45, "#101a34");
+    sky.addColorStop(0.72, "#1b1140");
+    sky.addColorStop(1.00, "#05070f");
+    x.fillStyle = sky;
+    x.fillRect(0, 0, W, H);
+
+    // neonový opar nad městem
+    const haze = x.createRadialGradient(W * .42, horizon, 0, W * .42, horizon, H * .75);
+    haze.addColorStop(0, "rgba(255,45,149,.20)");
+    haze.addColorStop(.5, "rgba(0,180,255,.10)");
+    haze.addColorStop(1, "rgba(0,0,0,0)");
+    x.fillStyle = haze;
+    x.fillRect(0, 0, W, H);
+
+    // mrakodrapy: tři vrstvy do hloubky
+    const layers = [
+      { n: 11, h: .50, col: "#0b1024", win: .06, a: .55 },
+      { n: 9,  h: .38, col: "#080d1d", win: .10, a: .8  },
+      { n: 7,  h: .27, col: "#04070f", win: .16, a: 1   }
+    ];
+    let seed = 7;
+    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+    for (const L of layers) {
+      const bw = W / L.n;
+      for (let i = 0; i < L.n; i++) {
+        const bh = H * L.h * (0.45 + rnd() * 0.85);
+        const bx = i * bw + rnd() * bw * .18;
+        const by = horizon - bh;
+        x.globalAlpha = L.a;
+        x.fillStyle = L.col;
+        x.fillRect(bx, by, bw * .82, bh + H);
+
+        // okna
+        const cols = Math.max(2, Math.floor(bw / 16));
+        const rows = Math.max(3, Math.floor(bh / 18));
+        for (let cx = 0; cx < cols; cx++) {
+          for (let cy = 0; cy < rows; cy++) {
+            if (rnd() > L.win) continue;
+            x.fillStyle = rnd() > .45 ? "rgba(0,229,255,.85)" : "rgba(255,45,149,.75)";
+            x.fillRect(bx + 5 + cx * 14, by + 8 + cy * 16, 3, 5);
+          }
+        }
+      }
+      x.globalAlpha = 1;
+    }
+
+    // mokrý asfalt + odlesk
+    const road = x.createLinearGradient(0, horizon, 0, H);
+    road.addColorStop(0, "rgba(0,229,255,.12)");
+    road.addColorStop(.35, "rgba(255,45,149,.06)");
+    road.addColorStop(1, "rgba(2,3,8,.95)");
+    x.fillStyle = road;
+    x.fillRect(0, horizon, W, H - horizon);
+  }
+
+  function drawNatureBg() {
+    const { x } = natBg;
+    x.clearRect(0, 0, W, H);
+
+    const sky = x.createLinearGradient(0, 0, 0, H);
+    sky.addColorStop(0.00, "#cfe6ef");
+    sky.addColorStop(0.38, "#e6f1e6");
+    sky.addColorStop(0.62, "#bcd6bd");
+    sky.addColorStop(1.00, "#4e7350");
+    x.fillStyle = sky;
+    x.fillRect(0, 0, W, H);
+
+    // slunce
+    const sun = x.createRadialGradient(W * .68, H * .17, 0, W * .68, H * .17, H * .62);
+    sun.addColorStop(0, "rgba(255,250,225,.95)");
+    sun.addColorStop(.28, "rgba(255,244,205,.35)");
+    sun.addColorStop(1, "rgba(255,255,255,0)");
+    x.fillStyle = sun;
+    x.fillRect(0, 0, W, H);
+
+    // hory: tři hřebeny
+    const ridges = [
+      { top: .30, col: "rgba(126,152,150,.58)", jag: .085, step: 9 },
+      { top: .40, col: "rgba(78,116,96,.78)",   jag: .065, step: 7 },
+      { top: .50, col: "rgba(42,84,56,.92)",    jag: .045, step: 5 }
+    ];
+    let seed = 21;
+    const rnd = () => (seed = (seed * 48271) % 2147483647) / 2147483647;
+
+    for (const R of ridges) {
+      x.beginPath();
+      x.moveTo(0, H);
+      const segs = R.step;
+      for (let i = 0; i <= segs; i++) {
+        const px = (i / segs) * W;
+        const py = H * R.top + Math.sin(i * 1.7 + R.step) * H * R.jag - rnd() * H * R.jag;
+        x.lineTo(px, py);
+      }
+      x.lineTo(W, H);
+      x.closePath();
+      x.fillStyle = R.col;
+      x.fill();
+    }
+
+    // jezero
+    const lake = x.createLinearGradient(0, horizon, 0, H);
+    lake.addColorStop(0, "rgba(90,178,172,.92)");
+    lake.addColorStop(.45, "rgba(56,140,142,.9)");
+    lake.addColorStop(1, "rgba(24,72,64,.95)");
+    x.fillStyle = lake;
+    x.fillRect(0, horizon, W, H - horizon);
+
+    // vlnky na hladině
+    x.strokeStyle = "rgba(255,255,255,.22)";
+    x.lineWidth = 1;
+    for (let i = 0; i < 34; i++) {
+      const y = horizon + Math.pow(i / 34, 1.6) * (H - horizon);
+      const w = 40 + rnd() * 180;
+      const sx = rnd() * W;
+      x.globalAlpha = .5 - (i / 34) * .38;
+      x.beginPath();
+      x.moveTo(sx, y);
+      x.lineTo(sx + w, y);
+      x.stroke();
+    }
+    x.globalAlpha = 1;
+
+    // koruna stromu shora — hustý baldachýn, ne plovoucí kaňky
+    for (let pass = 0; pass < 2; pass++) {
+      x.fillStyle = pass === 0 ? "rgba(46,84,44,.92)" : "rgba(74,120,56,.75)";
+      const n = pass === 0 ? 70 : 46;
+      for (let i = 0; i < n; i++) {
+        const lx = rnd() * (W + 160) - 80;
+        const ly = (rnd() * rnd()) * H * (pass === 0 ? .17 : .13) - 14;
+        const lr = 26 + rnd() * 62;
+        x.beginPath();
+        x.ellipse(lx, ly, lr, lr * .58, rnd() * 3.14, 0, 6.283);
+        x.fill();
+      }
+    }
+  }
+
+  /* =================================================================
+     ANIMOVANÉ VRSTVY
+     ================================================================= */
+
+  // --- déšť kódu ---
+  const GLYPHS = "01アイウエオカキクケコサシスセソ▚▞◆◇█▓░<>/\\{}[]()=+*#$%&";
+  let cols = [], colW = 15;
+
+  function initRain() {
+    cols = [];
+    const n = Math.ceil(W / colW);
+    for (let i = 0; i < n; i++) {
+      cols.push({ y: Math.random() * -H, sp: 1.6 + Math.random() * 4.2, hot: Math.random() < .12 });
+    }
+  }
+
+  function drawRain(dt) {
+    const { x } = cybFx;
+    x.globalCompositeOperation = "destination-out";
+    x.fillStyle = "rgba(0,0,0,.085)";
+    x.fillRect(0, 0, W, H);
+    x.globalCompositeOperation = "source-over";
+
+    x.font = "13px " + getComputedStyle(document.body).getPropertyValue("--mono");
+    for (let i = 0; i < cols.length; i++) {
+      const c = cols[i];
+      const g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+      x.fillStyle = c.hot ? "rgba(255,45,149,.92)" : "rgba(0,229,255,.72)";
+      x.fillText(g, i * colW, c.y);
+      // hlava kapky svítí bíle
+      x.fillStyle = "rgba(230,255,255,.95)";
+      x.fillText(g, i * colW, c.y);
+      c.y += c.sp * dt * 60;
+      if (c.y > H + Math.random() * 380) {
+        c.y = -20 - Math.random() * 260;
+        c.sp = 1.6 + Math.random() * 4.2;
+        c.hot = Math.random() < .12;
+      }
+    }
+  }
+
+  // --- sluneční paprsky + pyl ---
+  let motes = [];
+  function initMotes() {
+    motes = [];
+    const n = Math.round((W * H) / 42000);
+    for (let i = 0; i < n; i++) {
+      motes.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: .8 + Math.random() * 2.4,
+        vx: -.12 - Math.random() * .3,
+        vy: -.05 - Math.random() * .22,
+        ph: Math.random() * 6.283
+      });
+    }
+  }
+
+  function drawNatureFx(dt) {
+    const { x } = natFx;
+    x.clearRect(0, 0, W, H);
+
+    // paprsky ze slunce
+    const sx = W * .68, sy = H * .17;
+    x.save();
+    x.globalCompositeOperation = "lighter";
+    for (let i = 0; i < 7; i++) {
+      const a = -1.15 + i * .19 + Math.sin(t * .00016 + i) * .035;
+      const len = H * 1.5;
+      const wdt = 26 + i * 11;
+      x.beginPath();
+      x.moveTo(sx, sy);
+      x.lineTo(sx + Math.cos(a) * len - wdt, sy + Math.sin(a) * len);
+      x.lineTo(sx + Math.cos(a) * len + wdt, sy + Math.sin(a) * len);
+      x.closePath();
+      const g = x.createLinearGradient(sx, sy, sx + Math.cos(a) * len, sy + Math.sin(a) * len);
+      g.addColorStop(0, "rgba(255,250,220,.16)");
+      g.addColorStop(1, "rgba(255,250,220,0)");
+      x.fillStyle = g;
+      x.fill();
+    }
+    x.restore();
+
+    // pyl ve světle
+    for (const m of motes) {
+      m.x += m.vx * dt * 60;
+      m.y += m.vy * dt * 60 + Math.sin(t * .0009 + m.ph) * .16;
+      if (m.x < -10) m.x = W + 10;
+      if (m.y < -10) m.y = H + 10;
+      x.beginPath();
+      x.arc(m.x, m.y, m.r, 0, 6.283);
+      x.fillStyle = "rgba(255,252,225,.55)";
+      x.fill();
+    }
+  }
+
+  /* --- částice, které přecházejí most ---
+     Jedna a ta samá částice. Vlevo je z ní datový glyf,
+     vpravo list. Změní se jen tím, kde zrovna je. */
+  let travelers = [];
+  function initTravelers() {
+    travelers = [];
+    const n = Math.round(Math.min(64, Math.max(26, W / 26)));
+    for (let i = 0; i < n; i++) {
+      travelers.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() < .5 ? -1 : 1) * (.25 + Math.random() * .85),
+        vy: -.1 - Math.random() * .45,
+        s: 5 + Math.random() * 9,
+        rot: Math.random() * 6.283,
+        vr: (Math.random() - .5) * .02,
+        ph: Math.random() * 6.283,
+        g: GLYPHS[(Math.random() * GLYPHS.length) | 0]
+      });
+    }
+  }
+
+  function drawTravelers(dt) {
+    const { x } = cross;
+    x.clearRect(0, 0, W, H);
+    const edge = p * W;
+
+    for (const o of travelers) {
+      o.x += o.vx * dt * 60;
+      o.y += (o.vy + Math.sin(t * .0007 + o.ph) * .18) * dt * 60;
+      o.rot += o.vr * dt * 60;
+      if (o.x < -30) o.x = W + 30;
+      if (o.x > W + 30) o.x = -30;
+      if (o.y < -30) o.y = H + 30;
+
+      const d = o.x - edge;
+
+      x.save();
+      x.translate(o.x, o.y);
+      x.rotate(o.rot);
+
+      if (d < 0) {
+        // --- svět dat ---
+        x.globalAlpha = .85;
+        x.fillStyle = "rgba(0,229,255,.9)";
+        x.shadowColor = "rgba(0,229,255,.9)";
+        x.shadowBlur = 12;
+        x.font = o.s + "px " + getComputedStyle(document.body).getPropertyValue("--mono");
+        x.textAlign = "center";
+        x.fillText(o.g, 0, 0);
+      } else {
+        // --- svět listů ---
+        x.globalAlpha = .8;
+        x.beginPath();
+        x.moveTo(0, -o.s * .8);
+        x.quadraticCurveTo(o.s * .62, 0, 0, o.s * .8);
+        x.quadraticCurveTo(-o.s * .62, 0, 0, -o.s * .8);
+        x.fillStyle = "rgba(96,142,72,.9)";
+        x.shadowColor = "rgba(40,70,30,.35)";
+        x.shadowBlur = 6;
+        x.fill();
+      }
+      x.restore();
+
+      // jiskra přesně v okamžiku přechodu — to je ten most
+      if (Math.abs(d) < 26) {
+        const k = 1 - Math.abs(d) / 26;
+        x.save();
+        x.globalCompositeOperation = "lighter";
+        const g = x.createRadialGradient(o.x, o.y, 0, o.x, o.y, 30 * k + 6);
+        g.addColorStop(0, "rgba(255,255,255," + (.85 * k) + ")");
+        g.addColorStop(.4, "rgba(180,245,255," + (.4 * k) + ")");
+        g.addColorStop(1, "rgba(255,255,255,0)");
+        x.fillStyle = g;
+        x.beginPath();
+        x.arc(o.x, o.y, 30 * k + 6, 0, 6.283);
+        x.fill();
+        x.restore();
+      }
+    }
+  }
+
+  /* =================================================================
+     ROZMĚRY / SMYČKA / OVLÁDÁNÍ
+     ================================================================= */
+
+  function resize() {
+    W = innerWidth;
+    H = innerHeight;
+    horizon = H * 0.62;
+    for (const L of all) {
+      L.c.width = Math.round(W * DPR);
+      L.c.height = Math.round(H * DPR);
+      L.x.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    drawCyberBg();
+    drawNatureBg();
+    initRain();
+    initMotes();
+    initTravelers();
+    if (reduce) {
+      drawRain(0.016);
+      drawNatureFx(0.016);
+      drawTravelers(0.016);
+    }
+  }
+
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    t = now;
+
+    if (sweeping && !dragging) target = 0.5 + Math.sin(now * 0.00021) * 0.34;
+    setP(p + (target - p) * (dragging ? 0.45 : 0.06));
+
+    drawRain(dt);
+    drawNatureFx(dt);
+    drawTravelers(dt);
+    requestAnimationFrame(frame);
+  }
+
+  /* --- ovládání --- */
+  const touched = () => { hint.classList.add("off"); };
+
+  const fromEvent = e => {
+    const px = e.touches ? e.touches[0].clientX : e.clientX;
+    target = px / W;
+  };
+
+  stage.addEventListener("pointerdown", e => {
+    dragging = true; sweeping = false; touched();
+    stage.setPointerCapture(e.pointerId);
+    fromEvent(e);
+  });
+  stage.addEventListener("pointermove", e => { if (dragging) fromEvent(e); });
+  addEventListener("pointerup", () => { dragging = false; });
+  addEventListener("pointercancel", () => { dragging = false; });
+
+  addEventListener("keydown", e => {
+    if (e.code === "Space") {
+      e.preventDefault();
+      sweeping = !sweeping;
+      touched();
+    } else if (e.code === "ArrowLeft" || e.code === "ArrowRight") {
+      e.preventDefault();
+      sweeping = false; touched();
+      target = Math.min(1, Math.max(0, target + (e.code === "ArrowLeft" ? -0.04 : 0.04)));
+    }
+  });
+
+  addEventListener("resize", resize);
+  resize();
+
+  if (reduce) {
+    sweeping = false;
+    setP(0.5);
+  } else {
+    requestAnimationFrame(frame);
+    setTimeout(touched, 9000);
+  }
+})();
+</script>
+</body>
+</html>
