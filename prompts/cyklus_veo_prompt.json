@@ -1,0 +1,99 @@
+{
+  "project": "KONEC CYKLU / THE CLOSING CYCLE",
+  "concept": "Dva cykly se uzavírají v jednom střihu: tepelná smrt vesmíru a vyčerpání jedné lidské civilizace. Oba dojdou do bodu, kde už není setrvačnost — jen volba. Film končí dřív, než je volba učiněna.",
+  "format": {
+    "aspect_ratio": "16:9",
+    "resolution": "1080p",
+    "fps": 24,
+    "shot_duration_seconds": 8,
+    "total_shots": 8,
+    "audio": "native (ambience + score, no dialogue unless noted)"
+  },
+  "global_style": {
+    "look": "cinematic 35mm anamorphic, shallow depth of field, heavy atmospheric haze, fine film grain, slight gate weave, no camera shake",
+    "palette": "deep vacuum black, ember orange, bone white, cold cyan; single accent of living green appears only in shot 7",
+    "grade": "crushed blacks, desaturated midtones, specular highlights allowed to bloom",
+    "motion": "slow, deliberate, mostly 1–2 axis moves; the universe never hurries",
+    "consistency_anchor": "Every shot contains one circular light source — sun, lamp, iris, seed, pupil. It shrinks across the film and reopens at the end.",
+    "negative_prompt": "text overlays, subtitles, watermarks, logos, UI elements, cartoon style, anime, video-game render, distorted hands, extra limbs, fast cuts, lens flare spam, jump scares, gore, celebrity likeness, real political figures, national flags, religious symbols"
+  },
+  "shots": [
+    {
+      "id": 1,
+      "title": "Poslední světlo / The Last Light",
+      "prompt": "Extreme wide shot of a dying red star filling one third of frame, its surface churning in slow motion, shedding thin ribbons of plasma that dissolve into absolute black. The star is visibly cooling — ember orange fading toward dull brown at the edges. No planets, no dust, no other stars. Camera drifts backward at a constant crawl, making the star smaller and smaller in an ocean of nothing.",
+      "camera": "slow dolly back, locked horizon, anamorphic 40mm",
+      "lighting": "single practical source (the star), no fill, 100:1 contrast",
+      "audio": "sub-bass drone at 30 Hz, a single sustained cello note, no rhythm",
+      "duration_seconds": 8
+    },
+    {
+      "id": 2,
+      "title": "Rozpad / Dissolution",
+      "prompt": "Cosmic wide shot: a spiral galaxy unwinding in slow motion, its arms stretching apart like smoke pulled by an invisible draft, individual stars going dark one by one in a spreading wave. Space between the stars grows visibly. Everything drifts outward and cools to cyan-black. Time-lapse of billions of years compressed into eight seconds, but rendered smooth and silent, not frantic.",
+      "camera": "static wide, imperceptible push-in",
+      "lighting": "self-luminous subject, deep vacuum falloff",
+      "audio": "granular white noise thinning out, drone dropping in pitch",
+      "duration_seconds": 8
+    },
+    {
+      "id": 3,
+      "title": "Druhý cyklus / The Second Cycle",
+      "prompt": "Match cut from the galaxy spiral to a night-time aerial of a vast city seen from high above — the same spiral geometry in roads and lights, ring road as galactic arm. The city glows ember orange. Slow aerial descent. In the lower third, whole districts blink out block by block, the same spreading wave of darkness as the dying stars, but now it is grids of streetlights and windows going out. Traffic still moves in the lit parts, unaware.",
+      "camera": "high aerial descent, 24mm, slow yaw right",
+      "lighting": "sodium-vapour city glow, low cloud catching light from below",
+      "audio": "distant traffic hum, wind at altitude, drone note held from previous shot",
+      "duration_seconds": 8
+    },
+    {
+      "id": 4,
+      "title": "Setrvačnost / Inertia",
+      "prompt": "Street level, dusk turning to night. A dense crowd of people walking in one direction along a wide boulevard, all faces lit from below by the small screens they hold, all moving at exactly the same pace, none looking up. Ash or fine dust falls slowly like snow and settles on their shoulders. In the background a huge institutional building stands with its windows dark and a long crack running up its facade. No one reacts to the crack. Slow-motion, 60 fps feel.",
+      "camera": "slow lateral tracking shot against the direction of the crowd, 50mm, shallow focus",
+      "lighting": "cold screen-blue on faces, warm dying streetlight behind",
+      "audio": "layered footsteps in perfect unison, muffled notification chimes, no voices",
+      "duration_seconds": 8
+    },
+    {
+      "id": 5,
+      "title": "Rozcestí / The Fork",
+      "prompt": "The crowd is gone. One solitary figure in a plain dark coat, seen from behind, silhouetted, standing motionless where the road splits into two paths. Left path: cracked asphalt leading into a low orange haze, burnt poles, a horizon of smoke. Right path: the same asphalt with a hairline seam of green pushing through it, leading toward a pale grey dawn. The figure does not move. Camera holds. Dust settles. This is the hinge of the film.",
+      "camera": "static locked-off wide, 35mm, figure centred and small in frame",
+      "lighting": "two-source: warm orange from the left path, cool dawn from the right, figure caught between them",
+      "audio": "everything drops out except low wind and one heartbeat every two seconds",
+      "duration_seconds": 8
+    },
+    {
+      "id": 6,
+      "title": "Větev A — Popel / Branch A — Ash",
+      "prompt": "The left path taken. Slow forward travelling shot through a landscape of collapsed structures reclaimed by nothing at all — no plants, no animals, only geometry and ash. Half-buried machines, a toppled antenna mast, drifts of grey powder. Everything is monochrome except a last ember glow on the horizon that is going out as we watch. The frame gradually loses contrast and light until it is nearly black.",
+      "camera": "steady forward dolly at walking pace, 28mm",
+      "lighting": "flat dead ambient, single dying ember on horizon",
+      "audio": "wind through hollow metal, no music, one distant structural groan",
+      "duration_seconds": 8
+    },
+    {
+      "id": 7,
+      "title": "Větev B — Klíček / Branch B — The Seed",
+      "prompt": "The right path taken. Extreme macro: a single green shoot pushing up through a crack in dark asphalt, dew on it catching first light. Pull back smoothly and continuously to reveal hands — many different hands, adult and child, working together to lift a broken concrete slab; then keep pulling back to a wide shot of a small settlement of low buildings with lit windows, wind turbines turning slowly, terraced fields, and above it a clear sky where new stars are igniting one by one — the reverse of shot 2. This is the only shot in the film that contains living green and voices.",
+      "camera": "continuous pull-back from macro to extreme wide, no cuts, 100mm to 24mm",
+      "lighting": "true dawn, warm key from horizon, soft ambient bounce",
+      "audio": "birds, distant human voices, strings entering for the first time in a major key",
+      "duration_seconds": 8
+    },
+    {
+      "id": 8,
+      "title": "Nerozhodnuto / Undecided",
+      "prompt": "Hard cut back to the exact framing of shot 5 — the same figure, the same fork, nothing has been decided; shots 6 and 7 were only possibilities. The figure lifts its head slightly. Camera pushes in very slowly toward the back of the head, and as it moves the two paths blur out until only a single circular point of light remains in the centre of frame, the same size and colour as the dying star in shot 1. Hold on it for two full seconds. It does not go out. Cut to black on the last frame.",
+      "camera": "slow push-in, 85mm, focus racking from paths to the single point of light",
+      "lighting": "both sources equalising into one neutral point",
+      "audio": "both branch textures — wind of ash and birdsong — layered at equal volume, then a single low note, then silence",
+      "duration_seconds": 8
+    }
+  ],
+  "editing_notes": {
+    "match_cuts": "2→3 (galaxy spiral to city spiral), 5→8 (identical framing, different meaning)",
+    "structure": "cosmic cycle (1–2) → civilisational cycle (3–4) → the hinge (5) → two mutually exclusive futures (6, 7) → the choice returned to the viewer, still open (8)",
+    "rule": "The film never states which branch is taken. Shot 8 must not resolve it."
+  }
+}
