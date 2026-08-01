@@ -13,17 +13,19 @@ Film se záměrně nerozhodne, kterou cestou se jde.
 
 | Soubor | K čemu |
 |---|---|
-| `prompts/cyklus_do_gemini.md` | **10 hotových promptů k vložení do Gemini** — kopíruj blok po bloku |
+| `prompts/GEMINI_PASTE.json` | **➡️ TOHLE VLOŽ DO GEMINI.** Jeden blok, 10 hotových promptů, každý samostatný a kompletní |
+| `prompts/cyklus_do_gemini.md` | totéž rozepsané po záběrech s vysvětlením |
 | `prompts/cyklus_veo_prompt.json` | strukturovaný scénář (kamera, světlo, zvuk, negative prompt) |
 | `prompts/tezke_zabery_7_9_10.md` | **záběry 7, 9 a 10 z jednoho promptu nevyjdou** — náhradní varianty a ffmpeg postup |
 | `scripts/generate_video.py` | vygeneruje všechny záběry přes API a slepí je do `out/film.mp4` |
 
 ## Ručně (bez API)
 
-Otevři `prompts/cyklus_do_gemini.md`, vlož záběr 1 do Gemini, stáhni klip,
-pokračuj záběrem 2 a tak dál. Na konec každého promptu přilep blok „Globální styl“
-(výjimka: záběr 9, kde se paleta záměrně trhá do plného spektra).
-Klipy pak slep v pořadí 1–10.
+Vlož celý `prompts/GEMINI_PASTE.json` do Gemini a napiš **„Generate shot 1.“**
+Stáhni klip, pak „Generate shot 2.“ a tak dál až po 10. Klipy slep v pořadí 1–10.
+
+Alternativně vezmi z JSONu jen hodnotu `paste` u jednoho záběru a vlož ji samotnou —
+každá už obsahuje styl, paletu, zvuk i zákazy, nic se nedolepuje.
 
 ## Přes API
 
