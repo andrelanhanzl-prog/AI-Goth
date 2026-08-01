@@ -1,11 +1,17 @@
 # KONEC CYKLU — prompty k vložení do Gemini
 
-Osm záběrů po 8 sekundách = ~64 s filmu. Každý blok vlož do Gemini (Veo) **zvlášť**,
-jeden po druhém, a výsledky pak slep za sebou v pořadí 1–8.
+Deset záběrů po 8 sekundách = ~80 s filmu. Každý blok vlož do Gemini (Veo) **zvlášť**,
+jeden po druhém, a výsledky pak slep za sebou v pořadí 1–10.
+
+**Volba na rozcestí:**
+- **Větev A — robotika:** cesta je uzavřená smyčka. Systém se restartuje, všechno
+  proběhne znovu identicky. Nic se neztratí a nic nového nevznikne.
+- **Větev B — svoboda:** cesta se roztrhne. Jeden svět se rozvětví na multivesmír,
+  kde se stane všechno možné. Žádná záruka, ale ani žádný strop.
 
 > Pozn.: Veo generuje 8s klipy. Delší film = generovat po záběrech a sestříhat.
 > Pro plynulý přechod použij poslední snímek klipu jako vstupní obrázek dalšího
-> (image-to-video), zvlášť mezi záběry 5 → 8.
+> (image-to-video), zvlášť mezi záběry 5 → 6, 5 → 8 a 5 → 10.
 
 ---
 
@@ -16,8 +22,12 @@ Style: cinematic 35mm anamorphic, shallow depth of field, heavy atmospheric haze
 fine film grain, slow deliberate camera, crushed blacks, desaturated midtones.
 Palette: vacuum black, ember orange, bone white, cold cyan.
 No text, no subtitles, no watermark, no logos, no UI, no cartoon or game render,
-no distorted hands, no fast cuts, no lens flare spam, no flags, no real people.
+no distorted hands, no fast cuts, no lens flare spam, no flags, no real people,
+no humanoid robot cliché, no glowing red evil eye.
 ```
+
+**Výjimka:** u záběru 9 (multivesmír) tenhle blok **nepřidávej** — tam se paleta
+záměrně trhá do plného spektra. Použij jen řádky `No text… no real people.`
 
 ---
 
@@ -73,51 +83,104 @@ Audio: footsteps in perfect unison, muffled notification chimes, no voices.
 ```
 The crowd is gone. A single solitary figure in a plain dark coat, seen from behind,
 silhouetted, standing motionless at the point where the road splits into two paths.
-The left path is cracked asphalt leading into low orange haze, burnt poles, a horizon
-of smoke. The right path is the same asphalt with a hairline seam of green pushing
-through it, leading toward a pale grey dawn. The figure does not move. The camera
+The LEFT path is perfectly straight and seamless, its surface a dark grid of faint
+cyan circuitry lines, curving far ahead into a closed ring that returns to where it
+started -- a road that eats its own tail. The RIGHT path is cracked and irregular and
+immediately splits into two, then four, then countless narrower paths spreading like
+the branches of a tree toward a pale grey dawn. The figure does not move. The camera
 does not move. Dust settles.
-Lighting: warm orange from the left path, cool dawn from the right, the figure caught
-exactly between them.
+Lighting: cold cyan machine glow from the left, warm dawn from the right, the figure
+caught exactly between them.
 Camera: static locked-off wide, 35mm, the figure small and centred.
-Audio: everything drops out except low wind and a single heartbeat every two seconds.
+Audio: everything drops out except low wind, a faint electrical hum from the left,
+and a single heartbeat every two seconds.
 ```
 
-## Záběr 6 — Větev A: Popel
+---
+
+## VĚTEV A — ROBOTIKA (smyčka)
+
+## Záběr 6 — Systém
 
 ```
-Slow forward travelling shot at walking pace through a landscape of collapsed
-structures reclaimed by nothing at all -- no plants, no animals, only geometry and
-ash. Half-buried machines, a toppled antenna mast, drifts of grey powder. Everything
-is monochrome except one last ember glow on the horizon that is going out as we
-watch. The frame gradually loses contrast and light until it is almost black.
-Audio: wind through hollow metal, one distant structural groan, no music. No dialogue.
+Slow forward travelling shot at constant speed down a seamless dark road covered in a
+grid of faint cyan circuitry lines, dead-centre one-point perspective. As we pass, the
+world on both sides snaps into alignment: crooked buildings straighten themselves,
+drifting ash reverses and files itself into neat cubes, scattered debris slides into
+perfect rows, everything aligning to an invisible grid with mechanical precision.
+A crowd of people walks past in the opposite direction, now perfectly spaced with an
+identical stride, faces smooth and calm, lit by the same cold cyan light. Not one
+thing is out of place. Nothing is destroyed -- everything is optimised.
+No visible robots and no machinery: only the order itself.
+Lighting: even cold cyan, flat and shadowless.
+Audio: a metronomic tick locked to the footsteps, servo hum, a rising sine tone.
 ```
 
-## Záběr 7 — Větev B: Klíček
+## Záběr 7 — Restart
 
 ```
-One continuous shot with no cuts. Begin on extreme macro: a single green shoot pushing
-up through a crack in dark asphalt, dew catching the first light. Pull back smoothly
-to reveal many different hands, adult and child, working together to lift a broken
-concrete slab. Keep pulling back to an extreme wide of a small settlement of low
-buildings with lit windows, wind turbines turning slowly, terraced fields, and above
-it a clear sky where new stars ignite one by one.
-Lighting: true dawn, warm key from the horizon, soft bounce.
-Audio: birds, distant human voices, strings entering in a major key.
+The grid road curves and arrives exactly back at its own beginning; the closed ring
+completes. Everything stops at once, absolutely still, and the image drains into a
+single circle of cold white light in the centre of pure black. The circle holds for
+one full second, then inside it the whole story replays in miniature at high speed and
+in reverse -- crowd, city, galaxy, dying star -- until the star reaches full brightness
+again exactly as it was before it died. The circle expands and it all begins again,
+identically, frame for frame. A loop with no exit and no error.
+Camera: static locked frame, all motion happening inside the circle of light.
+Audio: one clean boot tone, the soundtrack replayed backwards and compressed, then the
+same 30 Hz drone as the very beginning.
 ```
 
-## Záběr 8 — Nerozhodnuto (konec)
+---
+
+## VĚTEV B — SVOBODA (větvení)
+
+## Záběr 8 — Prasknutí
+
+```
+Forward travelling shot down a cracked irregular road as it forks -- and at the moment
+of the fork the image itself splits vertically down the middle into two slightly
+different versions of the same shot, each continuing forward. Then each half splits
+again, and again, faster and faster, until the frame is a growing mosaic of narrow
+vertical slivers, each showing the same road at a different hour, a different weather,
+a different season, a different colour of sky. Still recognisably one place, coming
+apart into many. Cold cyan drains out of the frame and colour bleeds in from the edges.
+Camera: forward dolly, 28mm, the frame subdividing while the move continues unbroken.
+Audio: one tone splitting into a chord, then into many chords, air pressure opening up.
+```
+
+## Záběr 9 — Multivesmír
+
+```
+One continuous unbroken pull-back out of a mosaic of images: each sliver becomes a
+whole world seen from outside, and the worlds keep multiplying as we retreat -- an
+ocean planet with three moons, a forest grown through a ruined city, a lattice of
+impossible non-Euclidean architecture, a sky full of migrating whales, a plain of
+grass under two suns, a dark world lit only by bioluminescence, a world of pure
+geometry folding through itself. Keep pulling back until they form an endless
+branching tree of glowing bubbles filling the frame in every direction, still
+branching at the edges, no two alike, none of them repeating.
+Full spectrum colour, every bubble self-luminous at a different colour temperature.
+Audio: hundreds of overlapping human voices, laughter, unfamiliar birds and animals,
+strings blooming into a full major chord.
+```
+
+---
+
+## Záběr 10 — Nerozhodnuto (konec)
 
 ```
 Return to the exact same framing as before: the solitary figure in the dark coat seen
-from behind, standing at the fork between the burnt path and the dawn path. Nothing
-has been decided. The figure lifts its head very slightly. The camera pushes in very
-slowly toward the back of the head, and as it moves both paths blur out of focus until
-only a single circular point of warm light remains in the centre of the frame. Hold on
-that point of light. It does not go out. Cut to black on the last frame.
+from behind, standing at the fork between the looping grid road on the left and the
+branching cracked road on the right. Nothing has been decided. The figure lifts its
+head very slightly. The camera pushes in very slowly toward the back of the head, and
+as it moves both paths blur out of focus until only a single circular point of warm
+light remains in the centre of the frame. Inside that point, very small and barely
+readable, a thin ring closes and a spark branches, over and over, neither one winning.
+Hold on it. It does not go out. Cut to black on the last frame.
 Camera: slow push-in, 85mm, focus racking from the paths to the single point of light.
-Audio: wind of ash and birdsong layered at equal volume, then one low note, then silence.
+Audio: a metronomic tick and a hundred overlapping voices layered at exactly equal
+volume, then one low note, then silence.
 ```
 
 ---
@@ -128,10 +191,19 @@ Audio: wind of ash and birdsong layered at equal volume, then one low note, then
 |-------|--------|--------|
 | 1–2 | vesmír | entropie, chladnutí, konec bez katastrofy |
 | 3–4 | společnost | **stejný tvar, jiné měřítko** — spirála, vlna zhasínání, setrvačnost |
-| 5 | — | rozhraní: dvě cesty, nikdo nerozhodl |
-| 6 | popel | větev, kde setrvačnost vyhrála |
-| 7 | klíček | větev, kde se cyklus otevřel znovu (nové hvězdy = obrácený záběr 2) |
-| 8 | — | film **odmítne** rozhodnout; bod světla nezhasne |
+| 5 | — | rozhraní: smyčka vlevo, větvení vpravo, nikdo nerozhodl |
+| 6–7 | robotika | dokonalý řád → uzavřený kruh → **restart**, všechno znovu identicky |
+| 8–9 | svoboda | jedna čára praskne → **multivesmír**, každý svět jiný, nic se neopakuje |
+| 10 | — | film **odmítne** rozhodnout; bod světla nezhasne |
 
-Kruhový světelný zdroj je v každém záběru (hvězda, lampa, obrazovka, semínko,
-zornice) a napříč filmem se zmenšuje — v posledním záběru se otevře znovu.
+**Geometrické pravidlo:** větev A je kruh (mřížka, opakování, všechno zapadá).
+Větev B je strom (rozdvojení, fraktál, nic dvakrát stejně). Tenhle rozdíl nese
+celý význam — drž ho v každém záběru dané větve.
+
+**Pointa:** větev A **není zkáza** — je to dokonalé zachování bez východu.
+Větev B **není spása** — je to neomezená možnost bez záruky. Hrůza i naděje
+jsou v obou.
+
+Kruhový světelný zdroj je v každém záběru (hvězda, lampa, obrazovka, zornice).
+Napříč filmem se zmenšuje. Ve větvi A se uzavře do dokonalého prstence, ve větvi B
+se roztříští na nespočet bodů, v posledním záběru je jeden bod, který drží obojí.
