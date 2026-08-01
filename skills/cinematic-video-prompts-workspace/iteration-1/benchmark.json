@@ -1,0 +1,383 @@
+{
+  "metadata": {
+    "skill_name": "cinematic-video-prompts",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-08-01T04:46:26Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 330.2,
+        "tokens": 49897,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text, so nothing has to be appended by hand",
+          "passed": true,
+          "evidence": "All 12 prompt blocks in GEMINI_PASTE.json carry camera, lighting, style, palette, audio and avoid inline"
+        },
+        {
+          "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+          "passed": true,
+          "evidence": "Anchor named: one warm amber practical + one cold slate-blue window, warm/cold ratio used as the film's clock (90/10 -> 15/85)"
+        },
+        {
+          "text": "Shot count is derived from the 30s runtime and the assumed clip length, and the assumed clip length is stated",
+          "passed": true,
+          "evidence": "6 shots x 8s stated, trimmed to 30s with selection headroom; clip length assumption written out"
+        },
+        {
+          "text": "Every shot prompt carries an avoid / negative list",
+          "passed": true,
+          "evidence": "Avoid list present in 12/12 prompts"
+        },
+        {
+          "text": "Prompt text is in English while the explanation to the user is in Czech",
+          "passed": true,
+          "evidence": "ZIMNI_NABIDKA_shoty.md explains in Czech, all paste strings are English"
+        },
+        {
+          "text": "States delivery mechanics: hold the seed fixed and/or chain the last frame into the next shot",
+          "passed": true,
+          "evidence": "Fixed seed and last-frame chaining both stated in the run instructions"
+        },
+        {
+          "text": "Vertical or square framing is addressed, since the target is Instagram rather than 16:9",
+          "passed": true,
+          "evidence": "9:16 addressed; action centred so a 16:9 generation survives a vertical crop"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 396.9,
+        "tokens": 61461,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text",
+          "passed": true,
+          "evidence": "8/9 blocks carry camera, lighting, style, palette, audio and avoid inline; the 9th is the deliberate look-break shot"
+        },
+        {
+          "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+          "passed": true,
+          "evidence": "Anchor named: dark green wool overcoat with hand-stitched grey left cuff, its condition acting as the clock"
+        },
+        {
+          "text": "Answers the stated continuity worry with concrete mechanisms, naming at least two of: fixed seed, repeated palette wording, last-frame chaining, shared grade pass",
+          "passed": true,
+          "evidence": "Names fixed seed, frame chaining at the seams, one continuous music bed and a shared grade pass"
+        },
+        {
+          "text": "Every shot prompt carries an avoid / negative list",
+          "passed": true,
+          "evidence": "Avoid lists per shot, restructured so period exclusions live per-shot rather than globally"
+        },
+        {
+          "text": "Warns that a specific real person cannot be held identical across clips, and offers a way around it",
+          "passed": true,
+          "evidence": "States Sora will not hold the real grandmother's likeness; films her entirely from behind/beside and ends on a real photograph"
+        },
+        {
+          "text": "Proposes a narrative spine for the piece rather than only a list of pretty images",
+          "passed": true,
+          "evidence": "Spine given: Budapest Nov 1956 -> border marshes -> Austrian farmhouse -> the same coat in a modern kitchen"
+        },
+        {
+          "text": "Shot count is derived from the 60s runtime and a stated clip length",
+          "passed": true,
+          "evidence": "8 shots x 8s = 64s against the requested one minute"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 317.6,
+        "tokens": 50126,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Diagnoses the root cause explicitly: the model has no memory between clips, so style must be restated inside every single prompt",
+          "passed": true,
+          "evidence": "Diagnosis table maps each reported symptom to a cause, leading with the model having no memory between generations"
+        },
+        {
+          "text": "Delivers all 8 shots rewritten as self-contained prompts rather than only giving advice",
+          "passed": true,
+          "evidence": "All 8 shots delivered as self-contained prompts (893-1171 chars) in KLING_PASTE.json"
+        },
+        {
+          "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+          "passed": true,
+          "evidence": "Anchor named: the keeper's brass hurricane lamp, the only working light, running a 5-state clock across 8 shots"
+        },
+        {
+          "text": "Every shot prompt carries an avoid / negative list, including the cartoon failure mode the user actually hit",
+          "passed": true,
+          "evidence": "Negatives shipped as a parallel per-shot field rather than inline, deliberately, because Kling has a dedicated negative box; cartoon failure mode covered"
+        },
+        {
+          "text": "Prescribes last-frame chaining or a fixed reference image for the lighthouse, which is the shape-drift the user reported",
+          "passed": true,
+          "evidence": "Prescribes frame chaining and rendering shot 8 from shot 1's frame; locked word-for-word tower/keeper/lamp strings against shape drift"
+        },
+        {
+          "text": "Mentions a shared grade pass or identical repeated palette wording as the fix for colour drift",
+          "passed": true,
+          "evidence": "Shared grade pass plus palette restated identically in every prompt"
+        },
+        {
+          "text": "Keeps one event per shot rather than stacking multiple actions into a single 8-second prompt",
+          "passed": true,
+          "evidence": "One event per shot; clip length set to Kling's 5s with three shots flagged for 10s"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.42857142857142855,
+        "passed": 3,
+        "failed": 4,
+        "total": 7,
+        "time_seconds": 158.2,
+        "tokens": 23183,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text, so nothing has to be appended by hand",
+          "passed": false,
+          "evidence": "Only 7 blocks and inconsistent: camera in 5, palette in 5, audio in 4, avoid in 4 \u2014 style advice sits in prose the user must re-apply"
+        },
+        {
+          "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+          "passed": false,
+          "evidence": "No recurring visual element defined; gives style rules (low-key, shallow DOF) but nothing that changes state across shots"
+        },
+        {
+          "text": "Shot count is derived from the 30s runtime and the assumed clip length, and the assumed clip length is stated",
+          "passed": true,
+          "evidence": "States Veo clips are ~8s and builds 4 clips for 30s"
+        },
+        {
+          "text": "Every shot prompt carries an avoid / negative list",
+          "passed": false,
+          "evidence": "Avoid/negative guidance present in only 4 of 7 blocks"
+        },
+        {
+          "text": "Prompt text is in English while the explanation to the user is in Czech",
+          "passed": true,
+          "evidence": "Czech explanation, English prompts"
+        },
+        {
+          "text": "States delivery mechanics: hold the seed fixed and/or chain the last frame into the next shot",
+          "passed": false,
+          "evidence": "No mention of seed locking or last-frame chaining"
+        },
+        {
+          "text": "Vertical or square framing is addressed, since the target is Instagram rather than 16:9",
+          "passed": true,
+          "evidence": "Recommends 9:16 in Flow and notes the crop-safe framing"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.7142857142857143,
+        "passed": 5,
+        "failed": 2,
+        "total": 7,
+        "time_seconds": 184.8,
+        "tokens": 26895,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text",
+          "passed": false,
+          "evidence": "Style lives in a separate 03-style-block.txt; of 8 prompt blocks, 0 contain lighting, audio or avoid inline \u2014 the exact hand-merge the user has to repeat 8 times"
+        },
+        {
+          "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+          "passed": true,
+          "evidence": "Anchor named: brown wool coat with missing top button, green headscarf, leather case, repeated word for word"
+        },
+        {
+          "text": "Answers the stated continuity worry with concrete mechanisms, naming at least two of: fixed seed, repeated palette wording, last-frame chaining, shared grade pass",
+          "passed": true,
+          "evidence": "Identical style block pasted every time, plus grade + grain pass and a single unbroken audio bed"
+        },
+        {
+          "text": "Every shot prompt carries an avoid / negative list",
+          "passed": false,
+          "evidence": "No per-shot avoid/negative list"
+        },
+        {
+          "text": "Warns that a specific real person cannot be held identical across clips, and offers a way around it",
+          "passed": true,
+          "evidence": "Strong: do not show her face, use real photographs for the person"
+        },
+        {
+          "text": "Proposes a narrative spine for the piece rather than only a list of pretty images",
+          "passed": true,
+          "evidence": "Full arc from ordinary morning through the border to dawn"
+        },
+        {
+          "text": "Shot count is derived from the 60s runtime and a stated clip length",
+          "passed": true,
+          "evidence": "8 prompts for the one-minute runtime"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 219.8,
+        "tokens": 29737,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Diagnoses the root cause explicitly: the model has no memory between clips, so style must be restated inside every single prompt",
+          "passed": true,
+          "evidence": "Opens with it: no memory between generations, eight clicks eight films"
+        },
+        {
+          "text": "Delivers all 8 shots rewritten as self-contained prompts rather than only giving advice",
+          "passed": true,
+          "evidence": "All 8 shots rewritten in shot-prompts.md with a stills prompt and a motion prompt each"
+        },
+        {
+          "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+          "passed": true,
+          "evidence": "Single lantern as the only light source, doubling as the dramatic premise"
+        },
+        {
+          "text": "Every shot prompt carries an avoid / negative list, including the cartoon failure mode the user actually hit",
+          "passed": true,
+          "evidence": "Locked negative block to paste with every generation, and identifies the empty negative field as the cartoon cause; block is shared rather than per-shot"
+        },
+        {
+          "text": "Prescribes last-frame chaining or a fixed reference image for the lighthouse, which is the shape-drift the user reported",
+          "passed": true,
+          "evidence": "Build five still plates and go image-to-video only; crop shots 1 and 8 from the same max-res plate"
+        },
+        {
+          "text": "Mentions a shared grade pass or identical repeated palette wording as the fix for colour drift",
+          "passed": true,
+          "evidence": "One grade node plus a grain pass across all 8 in Resolve"
+        },
+        {
+          "text": "Keeps one event per shot rather than stacking multiple actions into a single 8-second prompt",
+          "passed": true,
+          "evidence": "Motion prompts kept to one or two sentences describing motion only"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 348.2333,
+        "stddev": 42.6148,
+        "min": 317.6,
+        "max": 396.9
+      },
+      "tokens": {
+        "mean": 53828.0,
+        "stddev": 6611.3635,
+        "min": 49897,
+        "max": 61461
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.7143,
+        "stddev": 0.2857,
+        "min": 0.4286,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 187.6,
+        "stddev": 30.8953,
+        "min": 158.2,
+        "max": 219.8
+      },
+      "tokens": {
+        "mean": 26605.0,
+        "stddev": 3286.6098,
+        "min": 23183,
+        "max": 29737
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.29",
+      "time_seconds": "+160.6",
+      "tokens": "+27223"
+    }
+  },
+  "notes": []
+}

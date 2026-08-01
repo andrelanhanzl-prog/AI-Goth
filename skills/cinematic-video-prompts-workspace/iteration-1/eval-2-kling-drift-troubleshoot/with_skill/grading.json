@@ -1,0 +1,49 @@
+{
+  "eval_id": 2,
+  "eval_name": "kling-drift-troubleshoot",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Diagnoses the root cause explicitly: the model has no memory between clips, so style must be restated inside every single prompt",
+      "passed": true,
+      "evidence": "Diagnosis table maps each reported symptom to a cause, leading with the model having no memory between generations"
+    },
+    {
+      "text": "Delivers all 8 shots rewritten as self-contained prompts rather than only giving advice",
+      "passed": true,
+      "evidence": "All 8 shots delivered as self-contained prompts (893-1171 chars) in KLING_PASTE.json"
+    },
+    {
+      "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+      "passed": true,
+      "evidence": "Anchor named: the keeper's brass hurricane lamp, the only working light, running a 5-state clock across 8 shots"
+    },
+    {
+      "text": "Every shot prompt carries an avoid / negative list, including the cartoon failure mode the user actually hit",
+      "passed": true,
+      "evidence": "Negatives shipped as a parallel per-shot field rather than inline, deliberately, because Kling has a dedicated negative box; cartoon failure mode covered"
+    },
+    {
+      "text": "Prescribes last-frame chaining or a fixed reference image for the lighthouse, which is the shape-drift the user reported",
+      "passed": true,
+      "evidence": "Prescribes frame chaining and rendering shot 8 from shot 1's frame; locked word-for-word tower/keeper/lamp strings against shape drift"
+    },
+    {
+      "text": "Mentions a shared grade pass or identical repeated palette wording as the fix for colour drift",
+      "passed": true,
+      "evidence": "Shared grade pass plus palette restated identically in every prompt"
+    },
+    {
+      "text": "Keeps one event per shot rather than stacking multiple actions into a single 8-second prompt",
+      "passed": true,
+      "evidence": "One event per shot; clip length set to Kling's 5s with three shots flagged for 10s"
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  }
+}

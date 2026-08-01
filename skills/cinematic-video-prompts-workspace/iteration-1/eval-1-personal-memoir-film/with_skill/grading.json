@@ -1,0 +1,49 @@
+{
+  "eval_id": 1,
+  "eval_name": "personal-memoir-film",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text",
+      "passed": true,
+      "evidence": "8/9 blocks carry camera, lighting, style, palette, audio and avoid inline; the 9th is the deliberate look-break shot"
+    },
+    {
+      "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+      "passed": true,
+      "evidence": "Anchor named: dark green wool overcoat with hand-stitched grey left cuff, its condition acting as the clock"
+    },
+    {
+      "text": "Answers the stated continuity worry with concrete mechanisms, naming at least two of: fixed seed, repeated palette wording, last-frame chaining, shared grade pass",
+      "passed": true,
+      "evidence": "Names fixed seed, frame chaining at the seams, one continuous music bed and a shared grade pass"
+    },
+    {
+      "text": "Every shot prompt carries an avoid / negative list",
+      "passed": true,
+      "evidence": "Avoid lists per shot, restructured so period exclusions live per-shot rather than globally"
+    },
+    {
+      "text": "Warns that a specific real person cannot be held identical across clips, and offers a way around it",
+      "passed": true,
+      "evidence": "States Sora will not hold the real grandmother's likeness; films her entirely from behind/beside and ends on a real photograph"
+    },
+    {
+      "text": "Proposes a narrative spine for the piece rather than only a list of pretty images",
+      "passed": true,
+      "evidence": "Spine given: Budapest Nov 1956 -> border marshes -> Austrian farmhouse -> the same coat in a modern kitchen"
+    },
+    {
+      "text": "Shot count is derived from the 60s runtime and a stated clip length",
+      "passed": true,
+      "evidence": "8 shots x 8s = 64s against the requested one minute"
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  }
+}

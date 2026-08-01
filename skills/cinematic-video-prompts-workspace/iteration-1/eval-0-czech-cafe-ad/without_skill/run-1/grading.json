@@ -1,0 +1,49 @@
+{
+  "eval_id": 0,
+  "eval_name": "czech-cafe-ad",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text, so nothing has to be appended by hand",
+      "passed": false,
+      "evidence": "Only 7 blocks and inconsistent: camera in 5, palette in 5, audio in 4, avoid in 4 \u2014 style advice sits in prose the user must re-apply"
+    },
+    {
+      "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+      "passed": false,
+      "evidence": "No recurring visual element defined; gives style rules (low-key, shallow DOF) but nothing that changes state across shots"
+    },
+    {
+      "text": "Shot count is derived from the 30s runtime and the assumed clip length, and the assumed clip length is stated",
+      "passed": true,
+      "evidence": "States Veo clips are ~8s and builds 4 clips for 30s"
+    },
+    {
+      "text": "Every shot prompt carries an avoid / negative list",
+      "passed": false,
+      "evidence": "Avoid/negative guidance present in only 4 of 7 blocks"
+    },
+    {
+      "text": "Prompt text is in English while the explanation to the user is in Czech",
+      "passed": true,
+      "evidence": "Czech explanation, English prompts"
+    },
+    {
+      "text": "States delivery mechanics: hold the seed fixed and/or chain the last frame into the next shot",
+      "passed": false,
+      "evidence": "No mention of seed locking or last-frame chaining"
+    },
+    {
+      "text": "Vertical or square framing is addressed, since the target is Instagram rather than 16:9",
+      "passed": true,
+      "evidence": "Recommends 9:16 in Flow and notes the crop-safe framing"
+    }
+  ],
+  "pass_rate": 0.42857142857142855,
+  "summary": {
+    "passed": 3,
+    "failed": 4,
+    "total": 7,
+    "pass_rate": 0.42857142857142855
+  }
+}

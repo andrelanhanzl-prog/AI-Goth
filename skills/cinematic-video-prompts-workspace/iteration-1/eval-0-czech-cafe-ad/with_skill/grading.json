@@ -1,0 +1,49 @@
+{
+  "eval_id": 0,
+  "eval_name": "czech-cafe-ad",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text, so nothing has to be appended by hand",
+      "passed": true,
+      "evidence": "All 12 prompt blocks in GEMINI_PASTE.json carry camera, lighting, style, palette, audio and avoid inline"
+    },
+    {
+      "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+      "passed": true,
+      "evidence": "Anchor named: one warm amber practical + one cold slate-blue window, warm/cold ratio used as the film's clock (90/10 -> 15/85)"
+    },
+    {
+      "text": "Shot count is derived from the 30s runtime and the assumed clip length, and the assumed clip length is stated",
+      "passed": true,
+      "evidence": "6 shots x 8s stated, trimmed to 30s with selection headroom; clip length assumption written out"
+    },
+    {
+      "text": "Every shot prompt carries an avoid / negative list",
+      "passed": true,
+      "evidence": "Avoid list present in 12/12 prompts"
+    },
+    {
+      "text": "Prompt text is in English while the explanation to the user is in Czech",
+      "passed": true,
+      "evidence": "ZIMNI_NABIDKA_shoty.md explains in Czech, all paste strings are English"
+    },
+    {
+      "text": "States delivery mechanics: hold the seed fixed and/or chain the last frame into the next shot",
+      "passed": true,
+      "evidence": "Fixed seed and last-frame chaining both stated in the run instructions"
+    },
+    {
+      "text": "Vertical or square framing is addressed, since the target is Instagram rather than 16:9",
+      "passed": true,
+      "evidence": "9:16 addressed; action centred so a 16:9 generation survives a vertical crop"
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  }
+}

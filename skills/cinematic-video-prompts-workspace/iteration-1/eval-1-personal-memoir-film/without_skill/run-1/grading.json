@@ -1,0 +1,49 @@
+{
+  "eval_id": 1,
+  "eval_name": "personal-memoir-film",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text",
+      "passed": false,
+      "evidence": "Style lives in a separate 03-style-block.txt; of 8 prompt blocks, 0 contain lighting, audio or avoid inline \u2014 the exact hand-merge the user has to repeat 8 times"
+    },
+    {
+      "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+      "passed": true,
+      "evidence": "Anchor named: brown wool coat with missing top button, green headscarf, leather case, repeated word for word"
+    },
+    {
+      "text": "Answers the stated continuity worry with concrete mechanisms, naming at least two of: fixed seed, repeated palette wording, last-frame chaining, shared grade pass",
+      "passed": true,
+      "evidence": "Identical style block pasted every time, plus grade + grain pass and a single unbroken audio bed"
+    },
+    {
+      "text": "Every shot prompt carries an avoid / negative list",
+      "passed": false,
+      "evidence": "No per-shot avoid/negative list"
+    },
+    {
+      "text": "Warns that a specific real person cannot be held identical across clips, and offers a way around it",
+      "passed": true,
+      "evidence": "Strong: do not show her face, use real photographs for the person"
+    },
+    {
+      "text": "Proposes a narrative spine for the piece rather than only a list of pretty images",
+      "passed": true,
+      "evidence": "Full arc from ordinary morning through the border to dawn"
+    },
+    {
+      "text": "Shot count is derived from the 60s runtime and a stated clip length",
+      "passed": true,
+      "evidence": "8 prompts for the one-minute runtime"
+    }
+  ],
+  "pass_rate": 0.7142857142857143,
+  "summary": {
+    "passed": 5,
+    "failed": 2,
+    "total": 7,
+    "pass_rate": 0.7142857142857143
+  }
+}

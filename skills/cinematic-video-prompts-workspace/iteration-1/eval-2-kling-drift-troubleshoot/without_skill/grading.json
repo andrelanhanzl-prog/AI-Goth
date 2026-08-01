@@ -1,0 +1,49 @@
+{
+  "eval_id": 2,
+  "eval_name": "kling-drift-troubleshoot",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Diagnoses the root cause explicitly: the model has no memory between clips, so style must be restated inside every single prompt",
+      "passed": true,
+      "evidence": "Opens with it: no memory between generations, eight clicks eight films"
+    },
+    {
+      "text": "Delivers all 8 shots rewritten as self-contained prompts rather than only giving advice",
+      "passed": true,
+      "evidence": "All 8 shots rewritten in shot-prompts.md with a stills prompt and a motion prompt each"
+    },
+    {
+      "text": "Names one explicit consistency anchor \u2014 a concrete recurring visual element repeated across all shots",
+      "passed": true,
+      "evidence": "Single lantern as the only light source, doubling as the dramatic premise"
+    },
+    {
+      "text": "Every shot prompt carries an avoid / negative list, including the cartoon failure mode the user actually hit",
+      "passed": true,
+      "evidence": "Locked negative block to paste with every generation, and identifies the empty negative field as the cartoon cause; block is shared rather than per-shot"
+    },
+    {
+      "text": "Prescribes last-frame chaining or a fixed reference image for the lighthouse, which is the shape-drift the user reported",
+      "passed": true,
+      "evidence": "Build five still plates and go image-to-video only; crop shots 1 and 8 from the same max-res plate"
+    },
+    {
+      "text": "Mentions a shared grade pass or identical repeated palette wording as the fix for colour drift",
+      "passed": true,
+      "evidence": "One grade node plus a grain pass across all 8 in Resolve"
+    },
+    {
+      "text": "Keeps one event per shot rather than stacking multiple actions into a single 8-second prompt",
+      "passed": true,
+      "evidence": "Motion prompts kept to one or two sentences describing motion only"
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  }
+}
