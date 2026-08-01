@@ -1,0 +1,804 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1400" viewBox="0 0 1920 1400" font-family="DejaVu Serif, Georgia, serif">
+<defs>
+  <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1b0f38"/><stop offset="0.5" stop-color="#33125c"/><stop offset="1" stop-color="#180b30"/>
+  </linearGradient>
+  <radialGradient id="nebA" cx="0.18" cy="0.12"><stop offset="0" stop-color="#ff2fb9" stop-opacity="0.6"/><stop offset="1" stop-color="#ff2fb9" stop-opacity="0"/></radialGradient>
+  <radialGradient id="nebB" cx="0.86" cy="0.16"><stop offset="0" stop-color="#22e6ff" stop-opacity="0.55"/><stop offset="1" stop-color="#22e6ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="nebC" cx="0.5" cy="0.72"><stop offset="0" stop-color="#9dff3d" stop-opacity="0.3"/><stop offset="1" stop-color="#9dff3d" stop-opacity="0"/></radialGradient>
+  <radialGradient id="nebD" cx="0.5" cy="0.3"><stop offset="0" stop-color="#ffe03d" stop-opacity="0.25"/><stop offset="1" stop-color="#ffe03d" stop-opacity="0"/></radialGradient>
+  <linearGradient id="floorG" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#4a1a78"/><stop offset="0.35" stop-color="#2a1048"/><stop offset="1" stop-color="#0d0520"/>
+  </linearGradient>
+  <linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ff3b5c"/><stop offset="0.16" stop-color="#ff8a1f"/><stop offset="0.33" stop-color="#ffe03d"/>
+    <stop offset="0.5" stop-color="#9dff3d"/><stop offset="0.66" stop-color="#22e6ff"/><stop offset="0.83" stop-color="#a94dff"/>
+    <stop offset="1" stop-color="#ff2fb9"/>
+  </linearGradient>
+  <linearGradient id="skU42" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c1a7a"/><stop offset="0.5" stop-color="#ff8a1f"/><stop offset="1" stop-color="#ffe03d"/></linearGradient>
+  <linearGradient id="skU418" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2fb9"/><stop offset="1" stop-color="#ffe0f0"/></linearGradient>
+  <linearGradient id="skUC137" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a4a28"/><stop offset="1" stop-color="#9dff3d"/></linearGradient>
+  <linearGradient id="skUpi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04203c"/><stop offset="1" stop-color="#22e6ff"/></linearGradient>
+  <radialGradient id="portalGlow"><stop offset="0.5" stop-color="#fff" stop-opacity="0"/><stop offset="0.86" stop-color="#fff" stop-opacity="0.3"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="candleGlow"><stop offset="0" stop-color="#ffcf7a" stop-opacity="0.75"/><stop offset="1" stop-color="#ffcf7a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="cyanGlow"><stop offset="0" stop-color="#22e6ff" stop-opacity="0.45"/><stop offset="1" stop-color="#22e6ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="moonGlow"><stop offset="0" stop-color="#fff6c8" stop-opacity="0.7"/><stop offset="1" stop-color="#fff6c8" stop-opacity="0"/></radialGradient>
+
+  <clipPath id="archClip" clipPathUnits="userSpaceOnUse"><path d="M0,380 L0,120 Q120,0 240,120 L240,380 Z"/></clipPath>
+  <clipPath id="bigArchClip" clipPathUnits="userSpaceOnUse"><path d="M0,520 L0,180 Q180,0 360,180 L360,520 Z"/></clipPath>
+  <clipPath id="mirrorClip" clipPathUnits="userSpaceOnUse"><ellipse cx="570" cy="900" rx="76" ry="98"/></clipPath>
+</defs>
+
+<!-- ==================== BACKGROUND ==================== -->
+<rect width="1920" height="1400" fill="url(#wall)"/>
+<rect width="1920" height="1400" fill="url(#nebA)"/>
+<rect width="1920" height="1400" fill="url(#nebB)"/>
+<rect width="1920" height="1400" fill="url(#nebC)"/>
+<rect width="1920" height="1400" fill="url(#nebD)"/>
+
+<g opacity="0.13" fill="none" stroke="#ffd7ff" stroke-width="1.4">
+  <path d="M0,120 H1920 M0,240 H1920 M0,360 H1920 M0,480 H1920 M0,600 H1920 M0,720 H1920"/>
+  <path d="M140,0 V120 M360,0 V120 M1500,0 V120 M1720,0 V120"/>
+  <path d="M40,600 V720 M300,600 V720 M900,600 V720 M1180,600 V720 M1460,600 V720 M1780,600 V720"/>
+</g>
+
+<!-- ==================== TOP BANNER : MULTIVERSE ROSTER ==================== -->
+<g>
+  <rect x="560" y="14" width="800" height="98" rx="10" fill="#12062a" stroke="url(#rainbow)" stroke-width="4"/>
+  <text x="960" y="54" font-size="31" fill="url(#rainbow)" text-anchor="middle" letter-spacing="10" font-weight="bold">THE MULTIVERSE</text>
+  <g font-family="DejaVu Sans Mono, monospace" font-size="12.5">
+    <text x="596" y="84" fill="#ff8a1f">U-42</text>
+    <text x="664" y="84" fill="#ff2fb9">U-418</text>
+    <text x="748" y="84" fill="#9dff3d">U-C137</text>
+    <text x="848" y="84" fill="#22e6ff">U-π=4</text>
+    <text x="934" y="84" fill="#ff3b5c">U-616</text>
+    <text x="1010" y="84" fill="#a94dff">U-1337</text>
+    <!-- EGG: one universe slot has no name at all -->
+    <text x="1104" y="84" fill="#8a7ab0">U-???</text>
+    <text x="1186" y="84" fill="#8a7ab0">U-∅</text>
+    <!-- EGG: the "you are here" arrow points at the nameless universe -->
+    <text x="1124" y="102" fill="#ffe03d" font-size="9.5" text-anchor="middle">▲ you are here</text>
+    <!-- EGG: a visitor counter that cannot make up its mind -->
+    <text x="1344" y="34" font-size="10" fill="#7fe3c0" text-anchor="end">universes visited: 9999+1</text>
+  </g>
+</g>
+
+<!-- EGG: morse code frieze spelling A I  G O T H -->
+<g fill="#ffe03d">
+  <rect x="640" y="132" width="11" height="11"/><rect x="661" y="132" width="36" height="11"/>
+  <rect x="723" y="132" width="11" height="11"/><rect x="744" y="132" width="11" height="11"/>
+  <rect x="790" y="132" width="36" height="11"/><rect x="836" y="132" width="36" height="11"/><rect x="882" y="132" width="11" height="11"/>
+  <rect x="920" y="132" width="36" height="11"/><rect x="966" y="132" width="36" height="11"/><rect x="1012" y="132" width="36" height="11"/>
+  <rect x="1080" y="132" width="36" height="11"/>
+  <rect x="1148" y="132" width="11" height="11"/><rect x="1169" y="132" width="11" height="11"/><rect x="1190" y="132" width="11" height="11"/><rect x="1211" y="132" width="11" height="11"/>
+</g>
+<text x="640" y="164" font-family="DejaVu Sans Mono, monospace" font-size="10.5" fill="#ffb3ea">. -  .. / --. --- - ....</text>
+
+<!-- ==================== TOP LEFT : RAVEN ==================== -->
+<g transform="translate(60,20)">
+  <rect x="-10" y="74" width="212" height="11" fill="#a94dff"/>
+  <path d="M40,74 q-7,-36 15,-49 q26,-15 41,5 q12,14 4,30 q-5,11 -17,14 Z" fill="#1a0f2e"/>
+  <path d="M55,25 q19,-17 36,0 q-10,-7 -19,-2" fill="#1a0f2e"/>
+  <path d="M96,34 l17,5 l-17,7 Z" fill="#ffe03d"/>
+  <circle cx="86" cy="31" r="3.6" fill="#ff3b5c"/>
+  <path d="M47,59 q27,-8 42,7 q-22,13 -42,-7" fill="#3d2660"/>
+  <rect x="122" y="38" width="86" height="26" rx="5" fill="#2a1046" stroke="#ff2fb9" stroke-width="2.4"/>
+  <text x="165" y="56" font-size="13" fill="#ffb3ea" text-anchor="middle" font-style="italic">Nevermore</text>
+  <!-- EGG: the perch is labelled NP-hard -->
+  <text x="-6" y="104" font-size="11" fill="#c9a8ff" font-family="DejaVu Sans Mono, monospace">perch::NP-hard</text>
+</g>
+
+<!-- ==================== TOP RIGHT : SPIDER ON A WI-FI WEB ==================== -->
+<g transform="translate(1900,14)">
+  <!-- EGG: the cobweb is drawn as a wi-fi symbol -->
+  <g fill="none" stroke="#22e6ff" stroke-width="2.8">
+    <path d="M-150,150 a150,150 0 0 1 150,-150"/>
+    <path d="M-110,150 a110,110 0 0 1 110,-110"/>
+    <path d="M-70,150 a70,70 0 0 1 70,-70"/>
+    <path d="M-28,150 a28,28 0 0 1 28,-28"/>
+    <path d="M0,0 L-150,150 M0,0 L-50,150 M0,0 L-150,50"/>
+  </g>
+  <!-- EGG: the spider has seven legs, not eight -->
+  <g transform="translate(-88,88)">
+    <ellipse cx="0" cy="0" rx="16" ry="12" fill="#1a0f2e"/>
+    <circle cx="-16" cy="-2" r="7.5" fill="#3d2660"/>
+    <g stroke="#1a0f2e" stroke-width="2.8" fill="none" stroke-linecap="round">
+      <path d="M-10,-8 q-17,-15 -27,-8"/><path d="M-8,-2 q-19,-6 -29,5"/><path d="M-8,5 q-19,8 -25,17"/>
+      <path d="M10,-8 q17,-15 27,-8"/><path d="M8,-2 q19,-6 29,5"/><path d="M8,5 q19,8 25,17"/>
+      <path d="M2,10 q6,17 17,21"/>
+    </g>
+    <circle cx="-18" cy="-4" r="2" fill="#ff3b5c"/><circle cx="-14" cy="-6" r="2" fill="#ff3b5c"/>
+  </g>
+  <text x="-152" y="178" font-size="10.5" fill="#7fe3c0" font-family="DejaVu Sans Mono, monospace">SSID: ArachNet_5G</text>
+</g>
+
+<!-- ==================== PORTAL 1 : U-42 ==================== -->
+<g transform="translate(60,180)">
+  <g clip-path="url(#archClip)">
+    <rect x="0" y="0" width="240" height="380" fill="url(#skU42)"/>
+    <!-- EGG: the moon's craters spell 42 -->
+    <circle cx="70" cy="94" r="72" fill="url(#moonGlow)"/>
+    <circle cx="70" cy="94" r="39" fill="#fff8dc"/>
+    <g stroke="#d2b26a" stroke-width="4.4" fill="none" stroke-linecap="round">
+      <path d="M56,78 l0,9 l7,0 l0,7 l-9,0 l0,12 l9,0"/>
+      <path d="M70,80 q8,-5 10,2 q1,6 -10,17 l12,0"/>
+    </g>
+    <path d="M0,296 q60,-42 120,-6 q60,36 120,-14 L240,380 L0,380 Z" fill="#d4691c"/>
+    <path d="M0,334 q70,-26 140,4 q60,26 100,-6 L240,380 L0,380 Z" fill="#8a3c14"/>
+    <!-- EGG: a towel on a pole -->
+    <rect x="178" y="252" width="5" height="76" fill="#4a2a10"/>
+    <path d="M183,254 l42,7 l0,36 l-42,-7 Z" fill="#22e6ff"/>
+    <text x="204" y="282" font-size="8.5" fill="#052833" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">TOWEL</text>
+    <!-- EGG: a signpost promising 0 km to where you already are -->
+    <rect x="42" y="268" width="6" height="62" fill="#4a2a10"/>
+    <path d="M48,276 l56,0 l11,11 l-11,11 l-56,0 Z" fill="#ffe03d"/>
+    <text x="74" y="291" font-size="8.5" fill="#3a2400" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">0 km</text>
+  </g>
+  <path d="M0,380 L0,120 Q120,0 240,120 L240,380" fill="none" stroke="#ff8a1f" stroke-width="11"/>
+  <ellipse cx="120" cy="200" rx="152" ry="224" fill="url(#portalGlow)" opacity="0.32"/>
+  <rect x="66" y="572" width="108" height="28" rx="6" fill="#12062a" stroke="#ff8a1f" stroke-width="2.4" transform="translate(0,-180)"/>
+  <text x="120" y="410" font-size="15" fill="#ff8a1f" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-42</text>
+</g>
+
+<!-- ==================== PORTAL 2 : U-418 ==================== -->
+<g transform="translate(350,180)">
+  <g clip-path="url(#archClip)">
+    <rect x="0" y="0" width="240" height="380" fill="url(#skU418)"/>
+    <!-- EGG: an entire universe made of teapots — HTTP 418 -->
+    <g transform="translate(120,206) scale(1.55)">
+      <ellipse cx="0" cy="20" rx="42" ry="30" fill="#c9185c" stroke="#ffe0f0" stroke-width="2.6"/>
+      <path d="M-42,14 q-25,4 -21,21 q4,13 19,9" stroke="#ffe0f0" stroke-width="5" fill="none"/>
+      <path d="M38,4 q25,-8 29,6 q3,12 -12,14" stroke="#ffe0f0" stroke-width="5" fill="none"/>
+      <ellipse cx="0" cy="-8" rx="22" ry="8" fill="#e0357a" stroke="#ffe0f0" stroke-width="2"/>
+      <circle cx="0" cy="-16" r="4.5" fill="#ffe0f0"/>
+      <text x="0" y="28" font-size="15" fill="#fff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">418</text>
+    </g>
+    <g fill="#a01248" opacity="0.8">
+      <ellipse cx="36" cy="324" rx="27" ry="18"/><path d="M9,320 q-15,3 -13,13" stroke="#a01248" stroke-width="4.4" fill="none"/>
+      <ellipse cx="198" cy="334" rx="23" ry="15"/><path d="M175,330 q-13,2 -11,11" stroke="#a01248" stroke-width="4.4" fill="none"/>
+      <ellipse cx="112" cy="358" rx="31" ry="20"/>
+    </g>
+    <!-- clouds are teapots too -->
+    <g fill="#fff" opacity="0.72">
+      <ellipse cx="50" cy="72" rx="27" ry="14"/><path d="M77,68 q17,-4 15,9" stroke="#fff" stroke-width="5" fill="none"/>
+      <ellipse cx="186" cy="46" rx="21" ry="11"/><path d="M207,44 q14,-3 12,8" stroke="#fff" stroke-width="4.4" fill="none"/>
+    </g>
+    <text x="120" y="126" font-size="11" fill="#6b0030" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">I'm a teapot</text>
+  </g>
+  <path d="M0,380 L0,120 Q120,0 240,120 L240,380" fill="none" stroke="#ff2fb9" stroke-width="11"/>
+  <ellipse cx="120" cy="200" rx="152" ry="224" fill="url(#portalGlow)" opacity="0.32"/>
+  <rect x="62" y="392" width="116" height="28" rx="6" fill="#12062a" stroke="#ff2fb9" stroke-width="2.4"/>
+  <text x="120" y="412" font-size="15" fill="#ff2fb9" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-418</text>
+</g>
+
+<!-- ==================== CENTRAL PORTAL : RECURSION ==================== -->
+<g transform="translate(780,100)">
+  <g clip-path="url(#bigArchClip)">
+    <rect x="0" y="0" width="360" height="520" fill="#0d0520"/>
+    <!-- EGG: the great portal shows THIS VERY ROOM again, and again inside that -->
+    <g transform="translate(36,54) scale(0.63)">
+      <rect x="0" y="0" width="460" height="740" fill="#33125c"/>
+      <path d="M20,300 L20,160 Q85,74 150,160 L150,300 Z" fill="#ff8a1f"/>
+      <path d="M170,300 L170,160 Q235,74 300,160 L300,300 Z" fill="#ff2fb9"/>
+      <path d="M320,300 L320,160 Q385,74 450,160 L450,300 Z" fill="#9dff3d"/>
+      <path d="M110,140 L110,30 Q235,-64 360,30 L360,140 Z" fill="#0d0520" stroke="url(#rainbow)" stroke-width="9"/>
+      <rect x="0" y="300" width="460" height="440" fill="#2a1048"/>
+      <!-- a smaller goth stands in the smaller room -->
+      <g transform="translate(196,310)">
+        <path d="M-56,320 L-38,130 Q-18,98 24,98 Q66,98 86,130 L104,320 Z" fill="#160a2c" stroke="#ff2fb9" stroke-width="5"/>
+        <path d="M24,78 Q-34,80 -38,134 Q-12,112 24,112 Q60,112 86,134 Q82,80 24,78 Z" fill="#2a1046" stroke="#22e6ff" stroke-width="4"/>
+        <ellipse cx="24" cy="136" rx="29" ry="32" fill="#0d0520" stroke="#ffe03d" stroke-width="3"/>
+        <path d="M12,130 a5.5,5.5 0 0 1 10,0 a5.5,5.5 0 0 1 -5,8 a5.5,5.5 0 0 1 -5,-8" fill="#ff2fb9"/>
+        <path d="M34,126 l0,14 M27,133 l14,0" stroke="#22e6ff" stroke-width="3.6" stroke-linecap="round"/>
+      </g>
+      <!-- and a third portal inside that -->
+      <g transform="translate(330,430) scale(0.5)">
+        <path d="M0,220 L0,90 Q80,10 160,90 L160,220 Z" fill="#0d0520" stroke="url(#rainbow)" stroke-width="13"/>
+        <path d="M32,200 L32,112 Q80,68 128,112 L128,200 Z" fill="#33125c"/>
+        <circle cx="80" cy="150" r="17" fill="#ffe03d"/>
+      </g>
+    </g>
+    <g fill="none" stroke-width="3.2" opacity="0.6">
+      <path d="M180,260 m-162,0 a162,162 0 1 0 324,0 a162,162 0 1 0 -324,0" stroke="#a94dff"/>
+      <path d="M180,260 m-122,0 a122,122 0 1 0 244,0 a122,122 0 1 0 -244,0" stroke="#22e6ff"/>
+      <path d="M180,260 m-74,0 a74,74 0 1 0 148,0 a74,74 0 1 0 -148,0" stroke="#ff2fb9"/>
+    </g>
+  </g>
+  <path d="M0,520 L0,180 Q180,0 360,180 L360,520" fill="none" stroke="url(#rainbow)" stroke-width="15"/>
+  <ellipse cx="180" cy="280" rx="234" ry="316" fill="url(#portalGlow)" opacity="0.36"/>
+  <!-- EGG: an impossible Penrose triangle set in the keystone -->
+  <g transform="translate(180,120) scale(0.82)" stroke="#ffe03d" stroke-width="3.6" fill="none" stroke-linejoin="round">
+    <path d="M0,-46 L40,24 L-40,24 Z"/><path d="M0,-28 L26,17 L-26,17 Z"/>
+    <path d="M0,-46 L0,-28 M40,24 L26,17 M-40,24 L-26,17"/>
+    <path d="M0,-46 L13,-23 M-40,24 L-14,24 M40,24 L27,1"/>
+  </g>
+  <rect x="88" y="532" width="184" height="30" rx="6" fill="#12062a" stroke="url(#rainbow)" stroke-width="3"/>
+  <text x="180" y="554" font-size="16" fill="#fff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-RECURSIO</text>
+</g>
+
+<!-- ==================== PORTAL 4 : U-C137 ==================== -->
+<g transform="translate(1330,180)">
+  <g clip-path="url(#archClip)">
+    <rect x="0" y="0" width="240" height="380" fill="url(#skUC137)"/>
+    <!-- EGG: a universe where gravity points upward — objects fall to the sky -->
+    <path d="M0,350 q60,28 120,0 q60,-28 120,0 L240,380 L0,380 Z" fill="#0a4a28"/>
+    <g stroke="#0a4a28" stroke-width="2.2" fill="#eaffd0">
+      <rect x="38" y="36" width="28" height="21" rx="3"/>
+      <ellipse cx="128" cy="32" rx="17" ry="11"/>
+      <rect x="178" y="50" width="21" height="27" rx="3"/>
+      <path d="M84,80 l15,-9 l15,9 l-15,9 Z"/>
+    </g>
+    <g stroke="#eaffd0" stroke-width="2.2" fill="none" stroke-dasharray="5 5">
+      <path d="M52,152 L52,62"/><path d="M128,142 L128,46"/><path d="M188,162 L188,80"/>
+    </g>
+    <path d="M52,146 l-6,10 l12,0 Z" fill="#eaffd0" transform="rotate(180 52 151)"/>
+    <text x="120" y="200" font-size="10.5" fill="#f2ffe0" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">g = -9.81 m/s²</text>
+    <!-- EGG: in this branch Schrödinger's cat is alive -->
+    <g transform="translate(120,296)">
+      <rect x="-42" y="-4" width="84" height="56" fill="#7a5a30" stroke="#2b1f10" stroke-width="2.2"/>
+      <path d="M-42,-4 L-60,-32 L24,-32 L42,-4 Z" fill="#95713f" stroke="#2b1f10" stroke-width="2.2"/>
+      <ellipse cx="0" cy="14" rx="19" ry="17" fill="#14101f"/>
+      <path d="M-15,3 l-5,-15 l13,7 Z M15,3 l5,-15 l-13,7 Z" fill="#14101f"/>
+      <circle cx="-7" cy="12" r="3.4" fill="#9dff3d"/><circle cx="7" cy="12" r="3.4" fill="#9dff3d"/>
+      <path d="M-10,23 q10,8 20,0" stroke="#9dff3d" stroke-width="1.8" fill="none"/>
+      <text x="0" y="68" font-size="10" fill="#f2ffe0" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">|alive⟩</text>
+    </g>
+  </g>
+  <path d="M0,380 L0,120 Q120,0 240,120 L240,380" fill="none" stroke="#9dff3d" stroke-width="11"/>
+  <ellipse cx="120" cy="200" rx="152" ry="224" fill="url(#portalGlow)" opacity="0.32"/>
+  <rect x="52" y="392" width="136" height="28" rx="6" fill="#12062a" stroke="#9dff3d" stroke-width="2.4"/>
+  <text x="120" y="412" font-size="15" fill="#9dff3d" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-C137</text>
+</g>
+
+<!-- ==================== PORTAL 5 : U-π=4 ==================== -->
+<g transform="translate(1620,180)">
+  <g clip-path="url(#archClip)">
+    <rect x="0" y="0" width="240" height="380" fill="url(#skUpi)"/>
+    <g fill="#eaf6ff">
+      <circle cx="42" cy="58" r="2.2"/><circle cx="96" cy="40" r="1.8"/><circle cx="152" cy="70" r="2"/>
+      <circle cx="200" cy="48" r="1.7"/><circle cx="64" cy="112" r="1.6"/><circle cx="212" cy="116" r="1.9"/>
+    </g>
+    <!-- EGG: one of the stars is a quadcopter drone with a red recording light -->
+    <g transform="translate(128,106)" stroke="#cfe4ff" stroke-width="1.5" fill="none">
+      <line x1="-11" y1="-11" x2="11" y2="11"/><line x1="11" y1="-11" x2="-11" y2="11"/>
+      <ellipse cx="-11" cy="-11" rx="9" ry="2"/><ellipse cx="11" cy="-11" rx="9" ry="2"/>
+      <ellipse cx="-11" cy="11" rx="9" ry="2"/><ellipse cx="11" cy="11" rx="9" ry="2"/>
+      <rect x="-4.5" y="-4.5" width="9" height="9" fill="#04203c"/>
+    </g>
+    <circle cx="136" cy="113" r="2" fill="#ff3b5c"/>
+    <!-- EGG: a universe whose local law sets π = 4, so its "circle" is a square -->
+    <rect x="64" y="184" width="112" height="112" fill="none" stroke="#22e6ff" stroke-width="5.5"/>
+    <line x1="64" y1="240" x2="176" y2="240" stroke="#7fe3c0" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <text x="120" y="234" font-size="11" fill="#7fe3c0" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">d</text>
+    <text x="120" y="324" font-size="14" fill="#fff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">C / d = 4</text>
+    <text x="120" y="346" font-size="9.5" fill="#bff0ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">π := 4 (local law)</text>
+  </g>
+  <path d="M0,380 L0,120 Q120,0 240,120 L240,380" fill="none" stroke="#22e6ff" stroke-width="11"/>
+  <ellipse cx="120" cy="200" rx="152" ry="224" fill="url(#portalGlow)" opacity="0.32"/>
+  <rect x="56" y="392" width="128" height="28" rx="6" fill="#12062a" stroke="#22e6ff" stroke-width="2.4"/>
+  <text x="120" y="412" font-size="15" fill="#22e6ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-π=4</text>
+</g>
+
+<!-- ==================== WALL GAP 1 (x 600-770) ==================== -->
+<!-- EGG: the clock reads 13:37 and its dial carries thirteen hour marks -->
+<g transform="translate(685,250)">
+  <circle cx="0" cy="0" r="44" fill="#fff8dc" stroke="#a94dff" stroke-width="6"/>
+  <line x1="0" y1="0" x2="0" y2="-27" stroke="#2e1152" stroke-width="4.4" stroke-linecap="round"/>
+  <line x1="0" y1="0" x2="23" y2="15" stroke="#2e1152" stroke-width="3.2" stroke-linecap="round"/>
+  <g fill="#2e1152">
+    <circle cx="0" cy="-35" r="2.2"/><circle cx="17" cy="-31" r="2.2"/><circle cx="29" cy="-20" r="2.2"/>
+    <circle cx="35" cy="-4" r="2.2"/><circle cx="32" cy="13" r="2.2"/><circle cx="22" cy="27" r="2.2"/>
+    <circle cx="6" cy="35" r="2.2"/><circle cx="-11" cy="33" r="2.2"/><circle cx="-25" cy="25" r="2.2"/>
+    <circle cx="-34" cy="10" r="2.2"/><circle cx="-35" cy="-6" r="2.2"/><circle cx="-28" cy="-22" r="2.2"/>
+    <circle cx="-15" cy="-32" r="2.2"/>
+  </g>
+  <text x="0" y="62" font-size="12" fill="#ffe03d" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">13:37</text>
+</g>
+
+<!-- EGG: an exit sign whose arrow points into solid masonry -->
+<g transform="translate(600,340)">
+  <rect x="0" y="0" width="130" height="36" rx="5" fill="#9dff3d"/>
+  <text x="65" y="26" font-size="16" fill="#0d2a06" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">← exit</text>
+  <rect x="-36" y="-8" width="36" height="52" fill="#33125c" stroke="#a94dff" stroke-width="3"/>
+</g>
+
+<!-- EGG: a dead portal returning 404 — universe not found -->
+<g transform="translate(685,460)">
+  <ellipse cx="0" cy="0" rx="36" ry="48" fill="#120722" stroke="#8a7ab0" stroke-width="5" stroke-dasharray="9 6"/>
+  <text x="0" y="-5" font-size="16" fill="#c9a8ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">404</text>
+  <text x="0" y="12" font-size="7" fill="#c9a8ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">universe</text>
+  <text x="0" y="23" font-size="7" fill="#c9a8ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">not found</text>
+</g>
+
+<!-- EGG: multiverse safety notice — do not meet yourself -->
+<g transform="translate(620,540) rotate(-5)">
+  <rect x="0" y="0" width="70" height="70" rx="7" fill="#ffe03d" stroke="#3a2400" stroke-width="3"/>
+  <path d="M35,12 L60,52 L10,52 Z" fill="none" stroke="#3a2400" stroke-width="3"/>
+  <text x="35" y="46" font-size="17" fill="#3a2400" text-anchor="middle" font-weight="bold">!</text>
+  <text x="35" y="62" font-size="7" fill="#3a2400" text-anchor="middle">DO NOT MEET</text>
+  <text x="35" y="84" font-size="9" fill="#ffe03d" text-anchor="middle" font-weight="bold">YOURSELF</text>
+</g>
+
+<!-- ==================== WALL GAP 2 (x 1150-1320) ==================== -->
+<!-- EGG: the meter is pegged at 1.21 gigawatts -->
+<g transform="translate(1240,230)">
+  <circle cx="0" cy="0" r="40" fill="#120722" stroke="#22e6ff" stroke-width="4.4"/>
+  <path d="M-28,12 a30,30 0 0 1 56,0" fill="none" stroke="#7fe3c0" stroke-width="2"/>
+  <line x1="0" y1="8" x2="24" y2="-14" stroke="#ff3b5c" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="0" cy="8" r="3.6" fill="#ff3b5c"/>
+  <text x="0" y="29" font-size="11" fill="#eaf6ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">1.21 GW</text>
+</g>
+
+<!-- EGG: a countdown frozen one second from zero -->
+<g transform="translate(1160,300)">
+  <rect x="0" y="0" width="106" height="38" rx="5" fill="#0d0520" stroke="#ff2fb9" stroke-width="3"/>
+  <text x="53" y="27" font-size="19" fill="#ff3b5c" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">00:00:01</text>
+</g>
+
+<!-- EGG: a bat plugged into the wall socket, charging to 87% -->
+<g transform="translate(1150,382)">
+  <rect x="0" y="0" width="38" height="48" rx="5" fill="#2a1046" stroke="#22e6ff" stroke-width="2.6"/>
+  <circle cx="13" cy="18" r="3.6" fill="#0d0520"/><circle cx="25" cy="18" r="3.6" fill="#0d0520"/>
+  <path d="M19,28 q-6,10 0,12 q6,-6 0,-12" fill="#ffe03d"/>
+  <path d="M38,24 q34,12 50,-6" stroke="#ffe03d" stroke-width="2.8" fill="none"/>
+  <g transform="translate(94,4)">
+    <ellipse cx="0" cy="14" rx="11" ry="13" fill="#1a0f2e"/>
+    <path d="M-10,4 l-5,-12 l10,5 M10,4 l5,-12 l-10,5" fill="#1a0f2e"/>
+    <path d="M-10,12 q-30,-14 -36,8 q20,12 36,2" fill="#5c2a92"/>
+    <path d="M10,12 q30,-14 36,8 q-20,12 -36,2" fill="#5c2a92"/>
+    <circle cx="-4" cy="12" r="2.2" fill="#ff3b5c"/><circle cx="4" cy="12" r="2.2" fill="#ff3b5c"/>
+    <text x="0" y="40" font-size="9.5" fill="#7fe3c0" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">87%</text>
+  </g>
+</g>
+
+<!-- EGG: bookshelf of self-referential titles, one book shelved upside down -->
+<g transform="translate(1170,470)">
+  <rect x="0" y="0" width="104" height="122" fill="#2a1046" stroke="#ff2fb9" stroke-width="3"/>
+  <rect x="8" y="10" width="19" height="102" fill="#ff3b5c"/><text transform="translate(22,108) rotate(-90)" font-size="9" fill="#fff8dc">NECRONOMICON v2.0</text>
+  <rect x="30" y="14" width="17" height="98" fill="#22e6ff"/><text transform="translate(43,108) rotate(-90)" font-size="8.5" fill="#03110d">TODO: fix later</text>
+  <rect x="50" y="8" width="19" height="104" fill="#ffe03d"/><text transform="translate(64,109) rotate(-90)" font-size="8" fill="#3a2400">Vol. II — see Vol. II</text>
+  <rect x="72" y="12" width="21" height="100" fill="#9dff3d"/><text transform="translate(85,18) rotate(90)" font-size="8.5" fill="#0d2a06">GRIMOIRE</text>
+</g>
+
+<!-- ==================== WALL STRIP (y 620-720) ==================== -->
+<!-- EGG: the binary in the wall spells GOTH -->
+<text x="60" y="664" font-family="DejaVu Sans Mono, monospace" font-size="15" fill="#22e6ff" letter-spacing="3">01000111 01001111 01010100 01001000</text>
+<!-- EGG: micro-text you only read if you zoom in -->
+<text x="60" y="700" font-size="7" fill="#7fe3c0" font-family="DejaVu Sans Mono, monospace">you found me — now count the spider's legs, then count the fingers on each hand</text>
+
+<!-- EGG: the cake is a lie -->
+<g transform="translate(620,636) rotate(-2)">
+  <path d="M0,0 L166,0 L166,72 L0,72 Z" fill="#fff8dc"/>
+  <path d="M0,0 q-15,36 0,72 Z M166,0 q15,36 0,72 Z" fill="#efe0b8"/>
+  <text x="83" y="31" font-size="14" fill="#3a2400" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">THE CAKE</text>
+  <text x="83" y="52" font-size="14" fill="#3a2400" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">IS A LIE</text>
+</g>
+
+<!-- EGG: an Escher staircase whose run loops back into its own first step -->
+<g transform="translate(1150,660)">
+  <g fill="#5c2a92" stroke="#22e6ff" stroke-width="2">
+    <path d="M0,0 L36,0 L36,15 L0,15 Z"/>
+    <path d="M36,-15 L72,-15 L72,0 L36,0 Z"/>
+    <path d="M72,-30 L108,-30 L108,-15 L72,-15 Z"/>
+    <path d="M0,15 L0,48 L36,48 L36,15 Z" opacity="0.75"/>
+    <path d="M36,0 L36,48 L72,48 L72,0 Z" opacity="0.55"/>
+    <path d="M108,-15 L108,24 L126,24 L126,-32 L72,-32" opacity="0.6"/>
+    <path d="M126,24 Q136,60 36,48" fill="none" stroke-dasharray="5 4"/>
+  </g>
+</g>
+
+<!-- EGG: beware of the leopard -->
+<g transform="translate(1600,650) rotate(-4)">
+  <rect x="0" y="0" width="168" height="46" rx="4" fill="#ffe03d"/>
+  <text x="84" y="20" font-size="11.5" fill="#3a2400" text-anchor="middle" font-weight="bold">BEWARE OF THE</text>
+  <text x="84" y="37" font-size="13.5" fill="#3a2400" text-anchor="middle" font-weight="bold">LEOPARD</text>
+</g>
+
+<!-- ==================== FLOOR ==================== -->
+<path d="M0,720 H1920 V1400 H0 Z" fill="url(#floorG)"/>
+<g opacity="0.3" stroke="#ff2fb9" stroke-width="1.5" fill="none">
+  <path d="M0,720 H1920 M0,800 H1920 M0,900 H1920 M0,1040 H1920 M0,1220 H1920"/>
+</g>
+<g opacity="0.24" stroke="#22e6ff" stroke-width="1.5" fill="none">
+  <path d="M150,720 L20,1400 M400,720 L340,1400 M660,720 L680,1400 M960,720 L960,1400 M1260,720 L1240,1400 M1520,720 L1580,1400 M1770,720 L1900,1400"/>
+</g>
+
+<!-- EGG: the pentagram inscribed on the floor is a neural network diagram -->
+<g transform="translate(960,1120)">
+  <ellipse cx="0" cy="0" rx="300" ry="110" fill="none" stroke="#a94dff" stroke-width="4.4"/>
+  <ellipse cx="0" cy="0" rx="272" ry="98" fill="none" stroke="#ff2fb9" stroke-width="2"/>
+  <path d="M0,-90 L246,32 L-152,-70 L152,-70 L-246,32 Z" fill="none" stroke="url(#rainbow)" stroke-width="3"/>
+  <g fill="#12062a" stroke="#ffe03d" stroke-width="2.6">
+    <circle cx="0" cy="-90" r="18"/><circle cx="246" cy="32" r="18"/><circle cx="-152" cy="-70" r="18"/>
+    <circle cx="152" cy="-70" r="18"/><circle cx="-246" cy="32" r="18"/>
+  </g>
+  <g font-size="10.5" fill="#ffe03d" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">
+    <text x="0" y="-86">σ</text><text x="246" y="36">out</text><text x="-152" y="-66">in</text>
+    <text x="152" y="-66">relu</text><text x="-246" y="36">in</text>
+  </g>
+  <!-- EGG: the ritual's loss value is 0.666 -->
+  <text x="0" y="76" font-size="13" fill="#ff8aff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" letter-spacing="2">loss = 0.666</text>
+  <g fill="#fff8dc">
+    <rect x="-158" y="-112" width="9" height="24"/><rect x="149" y="-112" width="9" height="24"/>
+    <rect x="-5" y="-130" width="9" height="24"/><rect x="242" y="8" width="9" height="24"/>
+    <!-- EGG: the fifth candle has been knocked over and gone out -->
+    <rect x="-260" y="12" width="24" height="9"/>
+  </g>
+  <g fill="#ff8a1f">
+    <path d="M-153.5,-116 q-5,-10 0,-16 q5,6 0,16"/><path d="M153.5,-116 q-5,-10 0,-16 q5,6 0,16"/>
+    <path d="M-0.5,-134 q-5,-10 0,-16 q5,6 0,16"/><path d="M246.5,4 q-5,-10 0,-16 q5,6 0,16"/>
+  </g>
+  <path d="M-250,6 q-5,-10 3,-15" stroke="#c9a8ff" stroke-width="1.6" fill="none"/>
+</g>
+
+<!-- ==================== LEFT TABLE : POTIONS + JAR ==================== -->
+<g>
+  <rect x="30" y="800" width="450" height="17" fill="#ff2fb9"/>
+  <rect x="54" y="817" width="19" height="165" fill="#a94dff"/>
+  <rect x="440" y="817" width="19" height="165" fill="#a94dff"/>
+
+  <!-- EGG: every potion is labelled with a real hexadecimal colour code -->
+  <g>
+    <rect x="52" y="738" width="44" height="62" rx="7" fill="#12062a" opacity="0.5"/>
+    <rect x="56" y="758" width="36" height="40" fill="#C0FFEE"/>
+    <rect x="63" y="726" width="22" height="14" fill="#22e6ff"/>
+    <text x="74" y="786" font-size="9.5" fill="#053" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">C0FFEE</text>
+  </g>
+  <g>
+    <rect x="110" y="732" width="44" height="68" rx="7" fill="#12062a" opacity="0.5"/>
+    <rect x="114" y="754" width="36" height="44" fill="#DEADBE"/>
+    <rect x="121" y="720" width="22" height="14" fill="#ff8a1f"/>
+    <text x="132" y="784" font-size="8.5" fill="#301" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">DEADBEEF</text>
+  </g>
+  <g>
+    <rect x="168" y="746" width="44" height="54" rx="7" fill="#12062a" opacity="0.5"/>
+    <rect x="172" y="764" width="36" height="34" fill="#BADA55"/>
+    <rect x="179" y="734" width="22" height="14" fill="#9dff3d"/>
+    <text x="190" y="788" font-size="9.5" fill="#132" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">BADA55</text>
+  </g>
+  <g>
+    <rect x="226" y="738" width="44" height="62" rx="7" fill="#12062a" opacity="0.5"/>
+    <rect x="230" y="758" width="36" height="40" fill="#FACADE"/>
+    <rect x="237" y="726" width="22" height="14" fill="#ff2fb9"/>
+    <text x="248" y="786" font-size="9.5" fill="#312" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">FACADE</text>
+  </g>
+  <!-- EGG: ninety-nine bottles -->
+  <g>
+    <rect x="284" y="748" width="42" height="52" rx="6" fill="#1f7a4a"/>
+    <rect x="294" y="736" width="22" height="14" fill="#9dff3d"/>
+    <text x="305" y="776" font-size="11" fill="#eaffd0" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">99</text>
+    <text x="305" y="789" font-size="7.5" fill="#eaffd0" text-anchor="middle">bottles</text>
+  </g>
+  <!-- EGG: sulphuric acid labelled "drink me" -->
+  <g>
+    <rect x="340" y="754" width="40" height="46" rx="6" fill="#ff3b5c"/>
+    <text x="360" y="778" font-size="10" fill="#fff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">H₂SO₄</text>
+    <text x="360" y="791" font-size="7" fill="#ffd9de" text-anchor="middle">drink me</text>
+  </g>
+
+  <!-- EGG: a jar of eyeballs in which one "eye" is a camera lens, still recording -->
+  <g transform="translate(425,712)">
+    <text x="0" y="6" font-size="9.5" fill="#7fe3c0" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">EYES (24 pcs)</text>
+    <path d="M-40,28 L-40,88 Q0,100 40,88 L40,28 Q0,18 -40,28 Z" fill="#22e6ff" opacity="0.32" stroke="#7fe3c0" stroke-width="2.4"/>
+    <rect x="-34" y="16" width="68" height="15" rx="4" fill="#a94dff"/>
+    <circle cx="-18" cy="58" r="11" fill="#fff8dc"/><circle cx="-18" cy="58" r="5" fill="#22e6ff"/><circle cx="-18" cy="58" r="2" fill="#0d0520"/>
+    <circle cx="9" cy="71" r="9.5" fill="#fff8dc"/><circle cx="9" cy="71" r="4.4" fill="#ff8a1f"/><circle cx="9" cy="71" r="2" fill="#0d0520"/>
+    <circle cx="24" cy="48" r="8.5" fill="#fff8dc"/><circle cx="24" cy="48" r="4" fill="#9dff3d"/><circle cx="24" cy="48" r="1.8" fill="#0d0520"/>
+    <circle cx="0" cy="44" r="11" fill="#14181c" stroke="#8fa6b5" stroke-width="1.8"/>
+    <circle cx="0" cy="44" r="5.4" fill="#1f3a5a"/><circle cx="-2" cy="42" r="1.8" fill="#cfe4ff"/>
+    <circle cx="10" cy="35" r="2.2" fill="#ff3b3b"/>
+  </g>
+</g>
+
+<!-- ==================== BLACKBOARD ==================== -->
+<g transform="translate(35,890)">
+  <rect x="0" y="0" width="432" height="290" rx="8" fill="#0f2a20" stroke="#ff8a1f" stroke-width="12"/>
+  <g font-family="DejaVu Sans Mono, monospace">
+    <!-- EGG: Euler's identity, written correctly -->
+    <text x="24" y="46" font-size="21" fill="#eaffd0">e^(iπ) + 1 = 0</text>
+    <!-- EGG: pi with one digit quietly wrong -->
+    <text x="24" y="84" font-size="17" fill="#eaffd0">π = 3.14158265…</text>
+    <text x="256" y="84" font-size="12" fill="#ff6b8a">← ?</text>
+    <!-- EGG: ROT13 of CLAUDE -->
+    <text x="24" y="120" font-size="17" fill="#7dffd4">ROT13: PYNHQR</text>
+    <!-- EGG: the Konami code -->
+    <text x="24" y="158" font-size="19" fill="#ffe03d">↑ ↑ ↓ ↓ ← → ← → B A</text>
+    <!-- EGG: 2 + 2 = 5, struck through -->
+    <text x="24" y="196" font-size="17" fill="#eaffd0" opacity="0.85">2 + 2 = 5</text>
+    <line x1="20" y1="190" x2="126" y2="190" stroke="#ff6b8a" stroke-width="2.6"/>
+    <!-- EGG: a circular proof that P = NP -->
+    <text x="168" y="196" font-size="12.5" fill="#9dff3d">P = NP (proof: assume P = NP ∎)</text>
+    <!-- EGG: the many-worlds wavefunction, one goth per universe -->
+    <text x="24" y="234" font-size="13" fill="#ffb3ea">|ψ⟩ = Σ |universe_i⟩ ⊗ |goth_i⟩</text>
+    <text x="24" y="264" font-size="12.5" fill="#9dff3d">lim (goths → ∞) sunlight = 0</text>
+    <text x="296" y="280" font-size="10" fill="#7fa88c">do not erase</text>
+  </g>
+</g>
+
+<!-- ==================== MIRROR ==================== -->
+<g>
+  <ellipse cx="570" cy="900" rx="88" ry="112" fill="#5c2a92" stroke="#ffe03d" stroke-width="6"/>
+  <ellipse cx="570" cy="900" rx="76" ry="98" fill="#120722"/>
+  <g clip-path="url(#mirrorClip)">
+    <!-- EGG: the mirror reflects a figure who is waving, with the eye symbols swapped -->
+    <g transform="translate(540,854)">
+      <path d="M0,150 L0,44 Q0,6 30,6 Q60,6 60,44 L60,150 Z" fill="#2a1046"/>
+      <circle cx="30" cy="22" r="22" fill="#5c2a92"/>
+      <path d="M30,0 a24,24 0 0 1 24,26 l-48,0 a24,24 0 0 1 24,-26" fill="#160a2c"/>
+      <path d="M22,16 l0,12 M16,22 l12,0" stroke="#22e6ff" stroke-width="3" stroke-linecap="round"/>
+      <path d="M38,18 a4,4 0 0 1 7,0 a4,4 0 0 1 -3.5,6 a4,4 0 0 1 -3.5,-6" fill="#ff2fb9"/>
+      <path d="M56,58 L86,26" stroke="#2a1046" stroke-width="11" stroke-linecap="round"/>
+      <path d="M86,26 l-6,-10 M86,26 l2,-11 M86,26 l9,-6" stroke="#2a1046" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="570" y="1032" font-size="13" fill="#ffb3ea" text-anchor="middle" font-style="italic">speculum non mentitur</text>
+</g>
+
+<!-- ==================== THE AI GOTH (main figure) ==================== -->
+<g transform="translate(940,640)">
+  <!-- EGG: the shadow has horns and a tail that the figure itself does not have -->
+  <g opacity="0.5" fill="#0a0418">
+    <path d="M-100,500 L-34,190 L-18,188 L-56,500 Z"/>
+    <path d="M-56,200 l-13,-33 l17,20 l11,-29 l6,29 l16,-18 l-12,31 Z"/>
+    <path d="M-78,500 q-44,-18 -55,-58 q18,29 51,37"/>
+  </g>
+
+  <path d="M-84,500 L-62,200 Q-30,158 32,158 Q94,158 126,200 L148,500 Z" fill="#160a2c"/>
+  <path d="M-84,500 L-62,200 Q-30,158 32,158 Q94,158 126,200 L148,500 Z" fill="none" stroke="#ff2fb9" stroke-width="4.4"/>
+  <path d="M-42,500 L-24,220 M108,500 L90,220" stroke="#a94dff" stroke-width="2.6" fill="none"/>
+  <path d="M32,124 Q-56,128 -62,206 Q-20,176 32,176 Q84,176 126,206 Q120,128 32,124 Z" fill="#2a1046" stroke="#22e6ff" stroke-width="3.4"/>
+  <ellipse cx="32" cy="208" rx="43" ry="47" fill="#0d0520" stroke="#ffe03d" stroke-width="3"/>
+  <!-- EGG: the LED face shows a heart in one eye and a plus sign in the other -->
+  <path d="M13,200 a7.6,7.6 0 0 1 13.2,0 a7.6,7.6 0 0 1 -6.6,11 a7.6,7.6 0 0 1 -6.6,-11" fill="#ff2fb9"/>
+  <path d="M47,194 l0,19 M37,203 l20,0" stroke="#22e6ff" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M18,229 q14,11 28,0" stroke="#22e6ff" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  <!-- EGG: the battery indicator on the temple sits at 1% -->
+  <g transform="translate(-2,172)">
+    <rect x="0" y="0" width="20" height="9.5" rx="2" fill="none" stroke="#ff6b8a" stroke-width="1.6"/>
+    <rect x="1.8" y="1.8" width="2.4" height="6" fill="#ff6b8a"/>
+    <rect x="20" y="2.8" width="2.4" height="3.6" fill="#ff6b8a"/>
+    <text x="27" y="9" font-size="8" fill="#ff6b8a" font-family="DejaVu Sans Mono, monospace">1%</text>
+  </g>
+
+  <!-- left arm and candle -->
+  <path d="M-56,238 Q-102,286 -112,336" stroke="#2a1046" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <!-- EGG: this hand has six fingers -->
+  <g stroke="#c9a8ff" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M-112,336 l-18,11"/><path d="M-112,336 l-16,18"/><path d="M-112,336 l-9,22"/>
+    <path d="M-112,336 l-1,23"/><path d="M-112,336 l8,21"/><path d="M-112,336 l16,16"/>
+  </g>
+  <!-- EGG: the candle flame burns downwards -->
+  <g transform="translate(-126,300)">
+    <circle cx="0" cy="-10" r="52" fill="url(#candleGlow)"/>
+    <rect x="-10" y="0" width="20" height="58" rx="3" fill="#fff8dc"/>
+    <rect x="-10" y="0" width="20" height="9" fill="#efd9a8"/>
+    <path d="M0,-2 q-10,12 0,29 q10,-17 0,-29" fill="#ff8a1f"/>
+    <path d="M0,6 q-4,7 0,17 q4,-10 0,-17" fill="#ffe03d"/>
+  </g>
+
+  <!-- right arm and open book -->
+  <path d="M112,240 Q150,282 142,330" stroke="#2a1046" stroke-width="22" fill="none" stroke-linecap="round"/>
+  <g transform="translate(100,312) rotate(-8)">
+    <path d="M0,0 L66,-9 L66,58 L0,66 Z" fill="#fff8dc"/>
+    <path d="M66,-9 L132,0 L132,66 L66,58 Z" fill="#efe0b8"/>
+    <path d="M66,-9 L66,58" stroke="#c9a86a" stroke-width="2.4"/>
+    <g font-family="DejaVu Sans Mono, monospace" fill="#4a3010">
+      <text x="9" y="18" font-size="7.5">Lorem ipsum dolor</text>
+      <text x="9" y="29" font-size="7.5">sit amet, consectetur</text>
+      <text x="9" y="40" font-size="7.5">adipiscing elit sed</text>
+      <!-- EGG: the book is open at page 404 — page not found -->
+      <text x="29" y="58" font-size="9" font-weight="bold">404</text>
+      <text x="76" y="22" font-size="9" font-weight="bold">page not</text>
+      <text x="76" y="36" font-size="9" font-weight="bold">found</text>
+      <text x="81" y="58" font-size="7.5">— p. 403½</text>
+    </g>
+  </g>
+
+  <!-- EGG: the pendant is a semicolon -->
+  <g transform="translate(32,268)">
+    <path d="M-25,-16 q25,29 50,0" stroke="#ffe03d" stroke-width="2.4" fill="none"/>
+    <circle cx="0" cy="19" r="16" fill="#160a2c" stroke="#ffe03d" stroke-width="2.4"/>
+    <text x="0" y="28" font-size="23" fill="#ffe03d" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">;</text>
+  </g>
+</g>
+
+<!-- ==================== VARIANT : U-C137 CAT ==================== -->
+<g transform="translate(704,1010) scale(0.5)">
+  <path d="M-70,300 L-52,90 Q-26,54 26,54 Q78,54 104,90 L122,300 Z" fill="#1f7a4a" stroke="#9dff3d" stroke-width="6"/>
+  <path d="M122,240 q64,-30 46,-96" stroke="#1f7a4a" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <ellipse cx="26" cy="60" rx="46" ry="42" fill="#14101f" stroke="#9dff3d" stroke-width="4"/>
+  <path d="M-8,30 l-10,-36 l30,18 Z M60,30 l10,-36 l-30,18 Z" fill="#14101f" stroke="#9dff3d" stroke-width="4"/>
+  <circle cx="10" cy="58" r="7" fill="#9dff3d"/><circle cx="42" cy="58" r="7" fill="#9dff3d"/>
+  <path d="M18,78 q8,8 16,0" stroke="#9dff3d" stroke-width="3.4" fill="none"/>
+  <g stroke="#9dff3d" stroke-width="2.6" fill="none">
+    <path d="M-16,72 L-52,64 M-16,80 L-54,86 M68,72 L104,64 M68,80 L106,86"/>
+  </g>
+  <rect x="-72" y="306" width="204" height="30" rx="6" fill="#12062a" stroke="#9dff3d" stroke-width="3"/>
+  <text x="30" y="327" font-size="17" fill="#9dff3d" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-C137 variant</text>
+</g>
+
+<!-- ==================== VARIANT : U-616 COMIC ==================== -->
+<g transform="translate(1250,920) scale(0.62)">
+  <path d="M-82,340 L-60,60 Q-30,20 32,20 Q94,20 124,60 L146,340 Z" fill="#ff3b5c"/>
+  <path d="M-82,340 L-60,60 Q-30,20 32,20 Q94,20 124,60 L146,340 Z" fill="none" stroke="#ffe03d" stroke-width="6"/>
+  <g fill="#ffe03d" opacity="0.45">
+    <circle cx="-20" cy="140" r="5.5"/><circle cx="10" cy="172" r="5.5"/><circle cx="46" cy="140" r="5.5"/>
+    <circle cx="82" cy="180" r="5.5"/><circle cx="-40" cy="222" r="5.5"/><circle cx="20" cy="242" r="5.5"/>
+    <circle cx="92" cy="252" r="5.5"/><circle cx="-10" cy="300" r="5.5"/><circle cx="70" cy="312" r="5.5"/>
+  </g>
+  <path d="M32,-10 Q-54,-6 -60,66 Q-20,38 32,38 Q84,38 124,66 Q118,-6 32,-10 Z" fill="#a94dff" stroke="#ffe03d" stroke-width="5"/>
+  <ellipse cx="32" cy="68" rx="43" ry="47" fill="#160a2c" stroke="#ffe03d" stroke-width="4"/>
+  <!-- EGG: this variant wears the eye symbols the other way round -->
+  <path d="M14,54 l0,19 M4,63 l20,0" stroke="#22e6ff" stroke-width="4.4" stroke-linecap="round"/>
+  <path d="M46,60 a7.6,7.6 0 0 1 13.2,0 a7.6,7.6 0 0 1 -6.6,11 a7.6,7.6 0 0 1 -6.6,-11" fill="#ff2fb9"/>
+  <path d="M18,90 q14,11 28,0" stroke="#22e6ff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- EGG: five fingers here, against the six of the original -->
+  <path d="M-56,110 Q-102,150 -112,196" stroke="#a94dff" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <g stroke="#ffd7ff" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M-112,196 l-17,12"/><path d="M-112,196 l-13,20"/><path d="M-112,196 l-3,23"/>
+    <path d="M-112,196 l8,21"/><path d="M-112,196 l17,15"/>
+  </g>
+  <g transform="translate(120,-60)">
+    <path d="M0,0 h222 a14,14 0 0 1 14,14 v56 a14,14 0 0 1 -14,14 h-152 l-34,26 l6,-26 h-42 a14,14 0 0 1 -14,-14 v-56 a14,14 0 0 1 14,-14 Z" fill="#fff8dc" stroke="#160a2c" stroke-width="4"/>
+    <text x="118" y="35" font-size="19" fill="#160a2c" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">I am you, but</text>
+    <text x="118" y="62" font-size="19" fill="#160a2c" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">with five fingers</text>
+  </g>
+  <rect x="-90" y="346" width="252" height="32" rx="6" fill="#12062a" stroke="#ff3b5c" stroke-width="3"/>
+  <text x="36" y="369" font-size="18" fill="#ff3b5c" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">U-616 variant</text>
+</g>
+
+<!-- ==================== RIGHT CART : TERMINAL ==================== -->
+<g transform="translate(1500,800)">
+  <rect x="-16" y="-104" width="410" height="240" rx="12" fill="#2a1046" stroke="#22e6ff" stroke-width="4.4"/>
+  <rect x="10" y="-84" width="360" height="196" rx="5" fill="#03130f"/>
+  <circle cx="190" cy="14" r="180" fill="url(#cyanGlow)" opacity="0.4"/>
+  <g font-family="DejaVu Sans Mono, monospace" font-size="13" fill="#7dffd4">
+    <!-- EGG: the machine refuses to delete the filesystem -->
+    <text x="24" y="-58">$ sudo rm -rf / --no-preserve-root</text>
+    <text x="24" y="-38" fill="#ff6b8a">nice try.</text>
+    <text x="24" y="-10">$ whoami</text>
+    <text x="24" y="10" fill="#ffb3ea">goth@universe-42</text>
+    <!-- EGG: a ping that answers in 666 ms with TTL 13 -->
+    <text x="24" y="38">$ ping cemetery.local</text>
+    <text x="24" y="58" fill="#ffb3ea">64 bytes: time=666 ms TTL=13</text>
+    <!-- EGG: git says you are in a detached timeline -->
+    <text x="24" y="86">$ git checkout universe/main</text>
+    <text x="24" y="106" fill="#ffe03d">warning: detached timeline</text>
+  </g>
+  <rect x="160" y="136" width="90" height="30" fill="#a94dff"/>
+  <rect x="110" y="166" width="190" height="13" rx="5" fill="#ff2fb9"/>
+  <!-- EGG: a 418 sticker on the bezel -->
+  <g transform="translate(320,126)">
+    <rect x="0" y="-17" width="64" height="23" rx="5" fill="#ff2fb9"/>
+    <text x="32" y="0" font-size="12" fill="#fff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">418</text>
+  </g>
+</g>
+
+<!-- EGG: the keyboard's biggest key is, literally, the ANY key -->
+<g transform="translate(1510,960)">
+  <rect x="0" y="0" width="258" height="78" rx="9" fill="#2a1046" stroke="#22e6ff" stroke-width="2.6"/>
+  <g fill="#5c2a92">
+    <rect x="12" y="11" width="25" height="20" rx="3"/><rect x="41" y="11" width="25" height="20" rx="3"/>
+    <rect x="70" y="11" width="25" height="20" rx="3"/><rect x="99" y="11" width="25" height="20" rx="3"/>
+    <rect x="128" y="11" width="25" height="20" rx="3"/><rect x="157" y="11" width="25" height="20" rx="3"/>
+    <rect x="186" y="11" width="25" height="20" rx="3"/><rect x="215" y="11" width="31" height="20" rx="3"/>
+    <rect x="12" y="35" width="25" height="20" rx="3"/><rect x="41" y="35" width="25" height="20" rx="3"/>
+    <rect x="70" y="35" width="25" height="20" rx="3"/><rect x="99" y="35" width="25" height="20" rx="3"/>
+    <rect x="128" y="35" width="25" height="20" rx="3"/><rect x="157" y="35" width="25" height="20" rx="3"/>
+    <rect x="12" y="59" width="162" height="13" rx="3"/>
+  </g>
+  <rect x="186" y="35" width="60" height="20" rx="3" fill="#ffe03d"/>
+  <text x="216" y="50" font-size="11.5" fill="#3a2400" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">ANY</text>
+</g>
+
+<!-- EGG: an hourglass whose sand falls upward -->
+<g transform="translate(1470,1240)">
+  <rect x="-36" y="-4" width="72" height="10" rx="3" fill="#ffe03d"/>
+  <rect x="-36" y="76" width="72" height="10" rx="3" fill="#ffe03d"/>
+  <path d="M-29,6 L29,6 L2,40 L2,44 L29,76 L-29,76 L-2,44 L-2,40 Z" fill="#120722" stroke="#ffe03d" stroke-width="2.6"/>
+  <path d="M-22,12 L22,12 L1,40 L-1,40 Z" fill="#ff8a1f" opacity="0.35"/>
+  <path d="M-22,70 L22,70 L4,48 L-4,48 Z" fill="#ff8a1f"/>
+  <g fill="#ff8a1f"><rect x="-1.5" y="22" width="3" height="18"/><circle cx="0" cy="20" r="1.8"/><circle cx="-3.6" cy="27" r="1.3"/><circle cx="3.6" cy="32" r="1.3"/></g>
+  <path d="M0,16 l-5,8 M0,16 l5,8" stroke="#ff8a1f" stroke-width="2" fill="none"/>
+</g>
+
+<!-- EGG: a Rubik's cube whose colours cannot exist on a real cube -->
+<g transform="translate(1770,1100)">
+  <g stroke="#0d0520" stroke-width="2.6">
+    <path d="M0,0 L48,-24 L96,0 L48,24 Z" fill="#ffffff"/>
+    <path d="M0,0 L0,52 L48,76 L48,24 Z" fill="#ff3b5c"/>
+    <path d="M96,0 L96,52 L48,76 L48,24 Z" fill="#1f7a4a"/>
+  </g>
+  <g stroke="#0d0520" stroke-width="1.8" fill="none">
+    <path d="M16,-8 L64,16 M32,-16 L80,8 M32,16 L-16,-8 M64,-16 L16,8"/>
+    <path d="M0,17.3 L48,41.3 M0,34.7 L48,58.7 M16,32 L16,84 M32,23.3 L32,75.3"/>
+    <path d="M96,17.3 L48,41.3 M96,34.7 L48,58.7 M80,32 L80,84 M64,23.3 L64,75.3"/>
+  </g>
+  <path d="M64,40.7 L80,48.7 L80,66 L64,58 Z" fill="#ff3b5c" stroke="#0d0520" stroke-width="1.6"/>
+  <text x="48" y="104" font-size="10" fill="#c9a8ff" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">solved (allegedly)</text>
+</g>
+
+<!-- EGG: a bootstrap-paradox note that asks to be sent back to itself -->
+<g transform="translate(1690,1230) rotate(-7)">
+  <rect x="0" y="0" width="116" height="90" fill="#9dff3d"/>
+  <text x="58" y="26" font-size="10.5" fill="#0d2a06" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">NOTE TO SELF:</text>
+  <text x="58" y="48" font-size="9.5" fill="#0d2a06" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">copy this note</text>
+  <text x="58" y="63" font-size="9.5" fill="#0d2a06" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">and send it</text>
+  <text x="58" y="78" font-size="9.5" fill="#0d2a06" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">back to me</text>
+</g>
+
+<!-- EGG: a potted miniature graveyard with joke epitaphs -->
+<g transform="translate(1600,1240)">
+  <path d="M-54,66 L54,66 L42,114 L-42,114 Z" fill="#ff8a1f" stroke="#ffe03d" stroke-width="3"/>
+  <ellipse cx="0" cy="66" rx="54" ry="11" fill="#5c2a92"/>
+  <g fill="#eaf6ff">
+    <path d="M-40,64 L-40,32 Q-29,17 -18,32 L-18,64 Z"/>
+    <path d="M-8,64 L-8,26 Q3,9 14,26 L14,64 Z"/>
+    <rect x="30" y="24" width="7" height="40"/><rect x="21" y="33" width="24" height="7"/>
+  </g>
+  <g font-size="5.4" fill="#160a2c" text-anchor="middle" font-family="DejaVu Sans">
+    <text x="-29" y="41">R.I.P.</text><text x="-29" y="48">FLASH</text><text x="-29" y="55">1996–2020</text>
+    <text x="3" y="35">HERE LIES</text><text x="3" y="43">my sleep</text><text x="3" y="51">schedule</text>
+  </g>
+  <text x="0" y="132" font-size="10.5" fill="#ffe03d" text-anchor="middle" font-style="italic">water weekly</text>
+</g>
+
+<!-- EGG: Magritte's pipe, insisting it is not a pipe -->
+<g transform="translate(96,1250)">
+  <path d="M0,0 q-2,32 28,32 l50,0 q19,0 19,-17 l0,-15 l-97,0 Z" fill="#ff8a1f" stroke="#ffe03d" stroke-width="2.6"/>
+  <path d="M0,0 q-17,-2 -22,-28 q-2,-17 13,-19" stroke="#ffe03d" stroke-width="7.5" fill="none" stroke-linecap="round"/>
+  <text x="48" y="62" font-size="13" fill="#ffb3ea" text-anchor="middle" font-style="italic">Ceci n'est pas une pipe</text>
+</g>
+
+<!-- EGG: a one-way ticket with no refunds across timelines -->
+<g transform="translate(250,1250) rotate(6)">
+  <rect x="0" y="0" width="156" height="58" rx="5" fill="#ffe03d" stroke="#3a2400" stroke-width="2"/>
+  <line x1="110" y1="0" x2="110" y2="58" stroke="#3a2400" stroke-width="1.8" stroke-dasharray="4 4"/>
+  <text x="55" y="21" font-size="12" fill="#3a2400" text-anchor="middle" font-weight="bold">ONE WAY</text>
+  <text x="55" y="35" font-size="8" fill="#3a2400" text-anchor="middle">no refunds across</text>
+  <text x="55" y="47" font-size="8" fill="#3a2400" text-anchor="middle">timelines</text>
+  <text x="133" y="34" font-size="15" fill="#3a2400" text-anchor="middle" font-family="DejaVu Sans Mono, monospace">∞</text>
+</g>
+
+<!-- EGG: the timelines are drawn as a git branch graph, with an unresolved conflict -->
+<g transform="translate(440,1310)" font-family="DejaVu Sans Mono, monospace">
+  <path d="M0,0 H960" stroke="#7fe3c0" stroke-width="3.4"/>
+  <path d="M180,0 q60,-46 140,-46 H520" stroke="#ff8a1f" stroke-width="2.8" fill="none"/>
+  <path d="M420,0 q60,42 130,42 H760" stroke="#22e6ff" stroke-width="2.8" fill="none"/>
+  <path d="M520,-46 q80,0 110,46" stroke="#ff2fb9" stroke-width="2.8" fill="none" stroke-dasharray="6 4"/>
+  <g fill="#12062a" stroke-width="2.6">
+    <circle cx="0" cy="0" r="8.5" stroke="#7fe3c0"/><circle cx="180" cy="0" r="8.5" stroke="#7fe3c0"/>
+    <circle cx="420" cy="0" r="8.5" stroke="#7fe3c0"/><circle cx="700" cy="0" r="8.5" stroke="#7fe3c0"/><circle cx="960" cy="0" r="8.5" stroke="#7fe3c0"/>
+    <circle cx="320" cy="-46" r="8.5" stroke="#ff8a1f"/><circle cx="520" cy="-46" r="8.5" stroke="#ff8a1f"/>
+    <circle cx="550" cy="42" r="8.5" stroke="#22e6ff"/><circle cx="760" cy="42" r="8.5" stroke="#22e6ff"/>
+  </g>
+  <text x="-10" y="26" font-size="11" fill="#7fe3c0">main</text>
+  <text x="272" y="-60" font-size="11" fill="#ff8a1f">universe/42</text>
+  <text x="596" y="66" font-size="11" fill="#22e6ff">universe/pi-is-4</text>
+  <text x="624" y="-14" font-size="10" fill="#ff3b5c">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</text>
+  <text x="800" y="14" font-size="10" fill="#ff3b5c">&gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs</text>
+  <text x="860" y="-42" font-size="11" fill="#ffe03d">CONFLICT</text>
+</g>
+
+<!-- ==================== MICRO-TEXT AND WATERMARKS ==================== -->
+<!-- EGG: mirrored text -->
+<text x="640" y="1385" font-size="13" fill="#c9a8ff" transform="translate(1480,0) scale(-1,1)" font-family="DejaVu Sans Mono, monospace">this text is mirrored</text>
+<!-- EGG: upside-down text -->
+<text x="0" y="0" font-size="12.5" fill="#c9a8ff" transform="translate(1180,1392) rotate(180)" font-family="DejaVu Sans Mono, monospace">and this one is upside down</text>
+<!-- EGG: a watermark that contradicts itself -->
+<text x="1900" y="1392" font-size="12" fill="#ffb3ea" text-anchor="end" font-style="italic">100% handmade by a human — generated 2026</text>
+<text x="20" y="1392" font-size="12" fill="#ffb3ea" font-family="DejaVu Sans Mono, monospace">AI-Goth v0.42 — build #1337 — universe 1 of ∞</text>
+
+<!-- EGG: a decorative pseudo-QR code that encodes nothing at all -->
+<g transform="translate(1826,1290)" fill="#22e6ff">
+  <rect x="0" y="0" width="76" height="76" fill="#0d0520" stroke="#22e6ff" stroke-width="2"/>
+  <rect x="6" y="6" width="19" height="19"/><rect x="10" y="10" width="11" height="11" fill="#0d0520"/>
+  <rect x="51" y="6" width="19" height="19"/><rect x="55" y="10" width="11" height="11" fill="#0d0520"/>
+  <rect x="6" y="51" width="19" height="19"/><rect x="10" y="55" width="11" height="11" fill="#0d0520"/>
+  <rect x="32" y="6" width="6" height="6"/><rect x="32" y="19" width="6" height="6"/><rect x="38" y="25" width="6" height="6"/>
+  <rect x="32" y="32" width="6" height="6"/><rect x="45" y="32" width="6" height="6"/><rect x="57" y="32" width="6" height="6"/>
+  <rect x="6" y="32" width="6" height="6"/><rect x="19" y="38" width="6" height="6"/><rect x="32" y="45" width="6" height="6"/>
+  <rect x="45" y="51" width="6" height="6"/><rect x="57" y="57" width="6" height="6"/><rect x="32" y="63" width="6" height="6"/>
+  <rect x="45" y="63" width="6" height="6"/><rect x="63" y="45" width="6" height="6"/><rect x="19" y="25" width="6" height="6"/>
+</g>
+</svg>
