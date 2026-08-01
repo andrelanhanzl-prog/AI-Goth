@@ -1,0 +1,14 @@
+{
+  "eval_id": 1,
+  "eval_name": "personal-memoir-film",
+  "prompt": "My grandmother turns 90 in March and I want to make a one minute film about her leaving Hungary in 1956 to play at the party. I have a Sora subscription. The thing I'm worried about is that every clip is going to look like a different movie. How should I actually prompt this?",
+  "assertions": [
+    "Every shot prompt is self-contained: camera, lighting or style, palette and audio all appear inside the same prompt text",
+    "Names one explicit consistency anchor — a concrete recurring visual element repeated across all shots",
+    "Answers the stated continuity worry with concrete mechanisms, naming at least two of: fixed seed, repeated palette wording, last-frame chaining, shared grade pass",
+    "Every shot prompt carries an avoid / negative list",
+    "Warns that a specific real person cannot be held identical across clips, and offers a way around it",
+    "Proposes a narrative spine for the piece rather than only a list of pretty images",
+    "Shot count is derived from the 60s runtime and a stated clip length"
+  ]
+}
