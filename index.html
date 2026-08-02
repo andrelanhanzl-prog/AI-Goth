@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Goth — Ohnivý anděl (šablona pro video)</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>🔥 Ohnivý anděl <span>— šablona pro video</span></h1>
+  <div class="topbar-actions">
+    <button id="togglePanel" class="ghost" title="Skrýt/zobrazit panel">⇔ Panel</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="viewport" class="viewport">
+    <canvas id="stage"></canvas>
+    <div id="dropHint" class="drop-hint">
+      <div class="drop-hint-inner">
+        <strong>Přetáhni sem fotku</strong>
+        <span>nebo ji vyber v panelu vpravo</span>
+      </div>
+    </div>
+  </section>
+
+  <aside class="panel">
+
+    <div class="group">
+      <h2>Fotka</h2>
+      <label class="file">
+        <input type="file" id="photo" accept="image/*">
+        <span>📷 Vybrat fotku</span>
+      </label>
+      <div class="row">
+        <button id="rotate90" class="ghost small">↻ Otočit o 90°</button>
+        <span id="photoInfo" class="hint"></span>
+      </div>
+      <label class="rng">Velikost <input type="range" id="photoScale" min="0.5" max="2" step="0.01"><output id="photoScaleVal"></output></label>
+      <label class="rng">Posun ↔ <input type="range" id="photoX" min="-0.5" max="0.5" step="0.005"><output id="photoXVal"></output></label>
+      <label class="rng">Posun ↕ <input type="range" id="photoY" min="-0.5" max="0.5" step="0.005"><output id="photoYVal"></output></label>
+      <label class="rng">Otočení <input type="range" id="photoRotate" min="-180" max="180" step="1"><output id="photoRotateVal"></output></label>
+      <label class="rng">Výřez ↕ <input type="range" id="photoFraming" min="-0.4" max="0.4" step="0.005"><output id="photoFramingVal"></output></label>
+      <label class="sel">Maska
+        <select id="mask">
+          <option value="oval">Oválná (měkký okraj)</option>
+          <option value="burn">Shořelý spodek</option>
+          <option value="none">Bez masky</option>
+        </select>
+      </label>
+      <label class="rng">Sevření masky <input type="range" id="focus" min="0.45" max="1.6" step="0.01"><output id="focusVal"></output></label>
+      <label class="rng">Střed ↔ <input type="range" id="focusX" min="-0.4" max="0.4" step="0.005"><output id="focusXVal"></output></label>
+      <label class="rng">Střed ↕ <input type="range" id="focusY" min="-0.4" max="0.4" step="0.005"><output id="focusYVal"></output></label>
+    </div>
+
+    <div class="group">
+      <h2>Předvolby</h2>
+      <div class="presets">
+        <button data-preset="lucifer">Lucifer</button>
+        <button data-preset="inferno">Inferno</button>
+        <button data-preset="seraph">Serafín</button>
+        <button data-preset="abyss">Propast</button>
+        <button data-preset="ash">Popel</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Text</h2>
+      <label class="txt">Titulek <input type="text" id="title" maxlength="24" placeholder="LUCIFER"></label>
+      <label class="txt">Podtitul <input type="text" id="subtitle" maxlength="40" placeholder="světlonoš"></label>
+      <label class="rng">Výška textu <input type="range" id="titleY" min="0.1" max="0.6" step="0.005"><output id="titleYVal"></output></label>
+      <label class="sel">Zarovnání
+        <select id="textAlign">
+          <option value="left">Vlevo</option>
+          <option value="center">Na střed</option>
+          <option value="right">Vpravo</option>
+        </select>
+      </label>
+      <label class="sel">Písmo
+        <select id="font">
+          <option value='"Arial Black", "Helvetica Neue", Impact, sans-serif'>Těžký bezpatkový</option>
+          <option value='Impact, "Arial Black", sans-serif'>Impact</option>
+          <option value='Georgia, "Times New Roman", serif'>Patkové (klasické)</option>
+          <option value='"Palatino Linotype", "Book Antiqua", Palatino, serif'>Patkové (starobylé)</option>
+          <option value='"Courier New", monospace'>Strojopis</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="group">
+      <h2>Oheň a křídla</h2>
+      <label class="sel">Paleta
+        <select id="palette">
+          <option value="lucifer">Lucifer (rudo-zlatá)</option>
+          <option value="hellfire">Pekelný oheň</option>
+          <option value="abyss">Modrá propast</option>
+          <option value="wraith">Jedovatě zelená</option>
+          <option value="ash">Popelavá (černobílá)</option>
+        </select>
+      </label>
+      <label class="rng">Asymetrie <input type="range" id="asym" min="0" max="1.2" step="0.01"><output id="asymVal"></output></label>
+      <label class="rng">Síla ohně <input type="range" id="intensity" min="0" max="1.2" step="0.01"><output id="intensityVal"></output></label>
+      <label class="rng">Rozpětí křídel <input type="range" id="wingSize" min="0.5" max="1.6" step="0.01"><output id="wingSizeVal"></output></label>
+      <label class="chk"><input type="checkbox" id="halo"> Svatozář nad hlavou</label>
+      <label class="rng">Výška svatozáře <input type="range" id="haloY" min="-0.15" max="0.4" step="0.005"><output id="haloYVal"></output></label>
+      <label class="rng">Uhlíky <input type="range" id="emberAmount" min="0" max="2" step="0.01"><output id="emberAmountVal"></output></label>
+      <label class="rng">Rychlost uhlíků <input type="range" id="emberSpeed" min="0.2" max="3" step="0.01"><output id="emberSpeedVal"></output></label>
+      <label class="rng">Kouř <input type="range" id="smoke" min="0" max="2" step="0.01"><output id="smokeVal"></output></label>
+      <label class="rng">Vlnění žáru <input type="range" id="heat" min="0" max="1.5" step="0.01"><output id="heatVal"></output></label>
+    </div>
+
+    <div class="group">
+      <h2>Barvy obrazu</h2>
+      <label class="rng">Ohnivá gradace <input type="range" id="duotone" min="0" max="1" step="0.01"><output id="duotoneVal"></output></label>
+      <label class="rng">Kontrast <input type="range" id="contrast" min="0" max="1" step="0.01"><output id="contrastVal"></output></label>
+      <label class="rng">Stín ramen <input type="range" id="bodyShadow" min="0" max="1" step="0.01"><output id="bodyShadowVal"></output></label>
+      <label class="rng">Vinětace <input type="range" id="vignette" min="0" max="1" step="0.01"><output id="vignetteVal"></output></label>
+      <label class="rng">Zrno <input type="range" id="grain" min="0" max="1" step="0.01"><output id="grainVal"></output></label>
+    </div>
+
+    <div class="group">
+      <h2>Video</h2>
+      <label class="sel">Formát
+        <select id="format">
+          <option value="9:16">9:16 svisle (1080×1920) — Reels / TikTok</option>
+          <option value="4:5">4:5 (1080×1350) — feed</option>
+          <option value="1:1">1:1 (1080×1080) — čtverec</option>
+          <option value="16:9">16:9 (1920×1080) — YouTube</option>
+        </select>
+      </label>
+      <label class="rng">Délka smyčky <input type="range" id="duration" min="6" max="30" step="1"><output id="durationVal"></output></label>
+      <label class="rng">Rychlost <input type="range" id="speedFactor" min="0.25" max="2" step="0.05"><output id="speedFactorVal"></output></label>
+      <div class="transport">
+        <button id="playPause">⏸ Pauza</button>
+        <button id="restart" class="ghost">⟲ Od začátku</button>
+      </div>
+      <input type="range" id="scrub" min="0" max="1000" step="1" class="scrub">
+      <div class="hint" id="timeLabel">0.0 s</div>
+      <div class="transport">
+        <button id="snap" class="ghost">🖼 Uložit snímek</button>
+        <button id="record" class="rec">⏺ Nahrát video</button>
+      </div>
+      <p class="hint">Nahrávání běží přesně jednu smyčku a uloží soubor <code>.webm</code>. Pro MP4 ho převeď:
+        <code>ffmpeg -i video.webm -c:v libx264 -pix_fmt yuv420p video.mp4</code></p>
+    </div>
+
+  </aside>
+</main>
+
+<script src="js/core.js"></script>
+<script src="js/layers.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
