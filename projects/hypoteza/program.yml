@@ -1,0 +1,134 @@
+# HYPOTÉZA — první verze scénáře.
+#
+# Jádro: "podmínka" z hypotézy nebyla metafora. Byla to psaná věta v
+# pravidlech páteřní sítě NSFNET a komerční využití v ní stálo jmenovitě
+# jako nepřijatelné. Pak ji Kongres přepsal. To je celý obrat videa:
+# co bylo rozhodnuto, může být rozhodnuto znovu.
+#
+# ZDROJE (ověřeno, srpen 2026):
+#   - NSFNET Backbone Services Acceptable Use Policy, verze z června 1992.
+#     GENERAL PRINCIPLE: "NSFNET Backbone services are provided to support
+#     open research and education in and among US research and instructional
+#     institutions, plus research arms of for-profit firms when engaged in
+#     open scholarly communication and research. Use for other purposes is
+#     not acceptable."
+#     UNACCEPTABLE USES: "Use for for-profit activities unless covered by
+#     the General Principle or as a specifically acceptable use."
+#     https://github.com/kemitchell/nsfnet-acceptable-use-policy
+#   - Scientific and Advanced-Technology Act of 1992, přijat 2. října 1992;
+#     přepsal AUP tak, aby po síti směl téct komerční provoz.
+#     https://www.congress.gov/bill/102nd-congress/senate-bill/1146
+#   - Páteř NSFNET vypnuta 30. dubna 1995; propojovala 28 470 domácích
+#     a 22 296 zahraničních sítí.
+#     https://www.merit.edu/about/news/nsfnet-celebrates-20-years-of-internet-obscurity-inspiration/
+#
+# POCTIVOST: pravidlo platilo pro páteř NSFNET, tedy pro americkou
+# federálně placenou infrastrukturu — ne pro "internet" jako celek.
+# Formulace ve scénáři to drží; kdyby se to zkrátilo na "internet měl
+# zakázáno vydělávat", je to přestřelené a dá se to napadnout.
+
+title: "Hypotéza"
+resolution: [1920, 1080]
+fps: 30
+
+# audio: stopa.wav
+
+theme:
+  background: "#08080b"
+  foreground: "#e8e6e3"
+  accent: "#8b1e2d"
+  grain: 0.02
+  vignette: 0.6
+
+scenes:
+  - id: ticho
+    duration: 6
+    text: ""
+    fade: 2.0
+
+  - id: teze
+    duration: 8
+    text: "Víme nekonečno."
+    fade: 1.5
+
+  - id: teze2
+    duration: 8
+    text: "A jdeme ke dnu."
+    subtitle: "obojí najednou, to je ta divná část"
+    fade: 1.2
+
+  - id: podminka
+    duration: 7
+    text: "Byla tam podmínka."
+    fade: 1.2
+
+  - id: podminka2
+    duration: 8
+    text: "Ne domluva. Ne étos."
+    subtitle: "psaná věta v pravidlech sítě"
+    fade: 1.0
+
+  - id: citace
+    duration: 13
+    text: "„Služby páteřní sítě jsou poskytovány na podporu otevřeného
+      výzkumu a vzdělávání. Použití k jiným účelům není přijatelné.“"
+    subtitle: "NSFNET Acceptable Use Policy, červen 1992"
+    align: left
+    fade: 1.2
+
+  - id: zakaz
+    duration: 10
+    text: |-
+      Nepřijatelné použití:
+      výdělečná činnost.
+    subtitle: "doslovný bod téhož dokumentu"
+    fade: 1.0
+
+  - id: prepis
+    duration: 10
+    text: "2. října 1992 to Kongres přepsal."
+    subtitle: "Scientific and Advanced-Technology Act"
+    accent: "#c8b273"
+    fade: 1.0
+
+  - id: konec_pateře
+    duration: 10
+    text: "30. dubna 1995 páteř zhasla."
+    subtitle: "28 470 domácích a 22 296 zahraničních sítí"
+    fade: 1.0
+
+  - id: obrat
+    duration: 11
+    text: |-
+      Ta podmínka nezmizela.
+      Byla zrušena.
+    accent: "#c8b273"
+    fade: 1.4
+
+  - id: hypoteza
+    duration: 12
+    text: |-
+      Co bylo rozhodnuto,
+      může být rozhodnuto znovu.
+    subtitle: "tohle je ta hypotéza"
+    accent: "#c8b273"
+    fade: 1.4
+
+  - id: rozdil
+    duration: 11
+    text: "Nejdeme ke dnu, protože to tak musí být."
+    subtitle: "jdeme tam, protože to někdo v roce 1992 odškrtl"
+    align: left
+    fade: 1.0
+
+  - id: vyzva
+    duration: 10
+    text: "DOPLNIT: konkrétní krok"
+    subtitle: "ne výzva k zamyšlení — něco, co jde udělat v úterý"
+    fade: 1.2
+
+  - id: doznani
+    duration: 8
+    text: ""
+    subtitle: "AI-Goth"
+    fade: 2.5
