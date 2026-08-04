@@ -1,4 +1,4 @@
-# HYPOTÉZA — první verze scénáře.
+# HYPOTÉZA — scénář bez letopočtů (data zůstávají jen ve zdrojích níž).
 #
 # Jádro: "podmínka" z hypotézy nebyla metafora. Byla to psaná věta v
 # pravidlech páteřní sítě NSFNET a komerční využití v ní stálo jmenovitě
@@ -72,7 +72,7 @@ scenes:
     duration: 13
     text: "„Služby páteřní sítě jsou poskytovány na podporu otevřeného
       výzkumu a vzdělávání. Použití k jiným účelům není přijatelné.“"
-    subtitle: "NSFNET Acceptable Use Policy, červen 1992"
+    subtitle: "NSFNET Acceptable Use Policy"
     align: left
     fade: 1.2
 
@@ -86,15 +86,15 @@ scenes:
 
   - id: prepis
     duration: 10
-    text: "2. října 1992 to Kongres přepsal."
+    text: "Pak to Kongres přepsal."
     subtitle: "Scientific and Advanced-Technology Act"
     accent: "#c8b273"
     fade: 1.0
 
   - id: konec_pateře
     duration: 10
-    text: "30. dubna 1995 páteř zhasla."
-    subtitle: "28 470 domácích a 22 296 zahraničních sítí"
+    text: "A páteř zhasla."
+    subtitle: "tehdy spojovala přes padesát tisíc sítí"
     fade: 1.0
 
   - id: obrat
@@ -117,14 +117,16 @@ scenes:
   - id: rozdil
     duration: 11
     text: "Nejdeme ke dnu, protože to tak musí být."
-    subtitle: "jdeme tam, protože to někdo v roce 1992 odškrtl"
+    subtitle: "jdeme tam, protože to někdo odškrtl"
     align: left
     fade: 1.0
 
   - id: vyzva
     duration: 10
-    text: "DOPLNIT: konkrétní krok"
-    subtitle: "ne výzva k zamyšlení — něco, co jde udělat v úterý"
+    text: |-
+      Najdi jedno pravidlo,
+      které bereš jako zákon přírody.
+    subtitle: "a zjisti, kdo ho napsal"
     fade: 1.2
 
   - id: doznani
