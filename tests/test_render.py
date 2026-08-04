@@ -68,6 +68,28 @@ def test_text_se_na_zacatku_fade_neobjevi():
     assert lit > dark
 
 
+def test_hrube_zrno_je_mekci_nez_per_pixel():
+    """Zrno v hrubším rastru musí mít menší rozdíly mezi sousedními pixely —
+    to je celý důvod, proč kvůli němu neexploduje bitrate."""
+    scenes = (Scene("a", 1.0, text=""),)
+    jemne = small(scenes=scenes, theme={"grain": 0.3, "grain_scale": 1, "vignette": 0.0})
+    hrube = small(scenes=scenes, theme={"grain": 0.3, "grain_scale": 4, "vignette": 0.0})
+
+    def sousedni_rozdil(program):
+        renderer = FrameRenderer(program, build_timeline(program))
+        frame = np.asarray(renderer.render_at(0.5, frame_index=3), dtype=float)
+        return np.abs(np.diff(frame, axis=1)).mean()
+
+    assert sousedni_rozdil(hrube) < sousedni_rozdil(jemne)
+
+
+def test_bez_zrna_se_tune_grain_neposila():
+    bez = build_command(small(theme={"grain": 0.0}), Path("o.mp4"), None, 20, "medium")
+    assert "-tune" not in bez
+    se_zrnem = build_command(small(theme={"grain": 0.05}), Path("o.mp4"), None, 20, "medium")
+    assert se_zrnem[se_zrnem.index("-tune") + 1] == "grain"
+
+
 def test_ffmpeg_prikaz_obsahuje_zvuk_jen_kdyz_je():
     program = small()
     bez = build_command(program, Path("out.mp4"), None, 18, "medium")

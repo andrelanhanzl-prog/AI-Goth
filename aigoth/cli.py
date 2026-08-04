@@ -128,7 +128,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     render = add("render", "vyrenderuje celé video", cmd_render)
     render.add_argument("-o", "--output", default="out.mp4", help="výstupní MP4")
-    render.add_argument("--crf", type=int, default=18, help="kvalita H.264, nižší = lepší")
+    render.add_argument("--crf", type=int, default=20, help="kvalita H.264, nižší = lepší")
     render.add_argument("--preset", default="medium", help="ffmpeg preset")
     render.add_argument("-q", "--quiet", action="store_true", help="bez ukazatele průběhu")
 

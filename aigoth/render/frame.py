@@ -206,12 +206,29 @@ class FrameRenderer:
         return float(np.clip(min(rising, falling), 0.0, 1.0))
 
     def _grain(self, frame_index: int) -> np.ndarray:
+        """Zrno se generuje v hrubším rastru a roztáhne se.
+
+        Per-pixel bílý šum na 1080p jednak nevypadá jako film, jednak zničí
+        kompresi — každý snímek je pro kodér nový. Zrno o pár pixelů drží
+        vzhled a bitrate zůstane v řádu jednotek Mbit/s.
+        """
         amount = float(self.theme.grain)
         if amount <= 0:
             return np.zeros((1, 1, 1), dtype=np.float32)
+
+        scale = max(1, int(self.theme.grain_scale))
+        height = max(1, self.height // scale)
+        width = max(1, self.width // scale)
         rng = np.random.default_rng(frame_index)  # deterministické — render je reprodukovatelný
-        noise = rng.standard_normal((self.height, self.width, 1), dtype=np.float32)
-        return noise * (amount * 255.0 * 0.5)
+        noise = rng.standard_normal((height, width), dtype=np.float32) * (amount * 255.0 * 0.5)
+        if scale > 1:
+            noise = np.asarray(
+                Image.fromarray(noise, mode="F").resize(
+                    (self.width, self.height), Image.BILINEAR
+                ),
+                dtype=np.float32,
+            )
+        return noise[:, :, None]
 
     # --- veřejné API ----------------------------------------------------
 

@@ -38,7 +38,8 @@ theme:
   foreground: "#e8e6e3"    # barva hlavního textu
   accent: "#8b1e2d"        # záře v pozadí a barva podtitulu
   font: null               # cesta k TTF; null = DejaVu Serif ze systému
-  grain: 0.05              # filmové zrno, 0 = vypnuto
+  grain: 0.02              # filmové zrno, 0 = vypnuto
+  grain_scale: 2           # velikost zrna v pixelech, 1 = per-pixel šum
   vignette: 0.55           # ztmavení okrajů
   title_size: 0.075        # podíl výšky snímku
   subtitle_size: 0.032
@@ -65,11 +66,28 @@ dopočítat na délku hudby. Bez zvukové stopy dostane každá `auto` scéna 6 
 Když délky nesedí na stopu, `validate` i `render` to napíšou jako varování,
 ale render proběhne.
 
-## Poznámky k renderu
+## Zrno versus velikost souboru
 
-- Zrno je nepřítel komprese: `grain: 0.05` nafoukne soubor i několikrát.
-  Na menší výstup dej `grain: 0` nebo zvyš `--crf` (výchozí 18, vyšší =
-  menší soubor a horší obraz).
+Na tmavém pozadí je zrno prakticky jediná informace ve snímku, takže si
+vezme celý bitrate. Naměřeno na 5 s v 1920×1080, `--crf 20`:
+
+| `grain` | velikost 5 s |
+|--------:|-------------:|
+| 0       | 132 kB       |
+| 0.015   | 4,6 MB       |
+| 0.03    | 13 MB        |
+| 0.05    | 20 MB        |
+
+Proto se zrno generuje v hrubším rastru (`grain_scale`, výchozí 2) — vypadá
+to víc jako film než jako per-pixel šum a kodér se s tím popere. Když je
+`grain > 0`, přidá se navíc `-tune grain`, jinak x264 bere šum jako detail,
+který musí zachovat.
+
+Když je výstup pořád velký: sniž `grain`, zvyš `grain_scale`, nebo zvyš
+`--crf` (výchozí 20, vyšší = menší soubor a horší obraz).
+
+## Další poznámky k renderu
+
 - Render je deterministický — i zrno je odvozené od čísla snímku, takže
   dvakrát spuštěný render dá bit po bitu stejné video.
 - Rychlost se ladí přes `--preset` (`ultrafast` … `veryslow`).

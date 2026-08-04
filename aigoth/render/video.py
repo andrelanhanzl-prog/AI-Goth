@@ -39,6 +39,9 @@ def build_command(
         "-pix_fmt", "yuv420p",
         "-movflags", "+faststart",
     ]
+    if program.theme.grain > 0:
+        # x264 jinak zrno bere jako detail k zachování a bitrate exploduje.
+        command += ["-tune", "grain"]
     if audio is not None:
         # -shortest: video i zvuk končí spolu, i když se délky o zlomek liší.
         command += ["-c:a", "aac", "-b:a", "192k", "-shortest"]
@@ -51,7 +54,7 @@ def render_video(
     timeline: Timeline,
     output: str | Path,
     audio: str | Path | None = None,
-    crf: int = 18,
+    crf: int = 20,
     preset: str = "medium",
     on_progress: Callable[[int, int], None] | None = None,
 ) -> Path:

@@ -16,7 +16,7 @@ theme:
   background: "#08080b"
   foreground: "#e8e6e3"
   accent: "#8b1e2d"
-  grain: 0.05
+  grain: 0.02
   vignette: 0.55
 
 scenes:

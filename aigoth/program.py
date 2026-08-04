@@ -29,7 +29,8 @@ class Theme:
     accent: str = "#8b1e2d"
     font: str | None = None
     font_bold: str | None = None
-    grain: float = 0.05
+    grain: float = 0.02
+    grain_scale: int = 2  # velikost zrna v pixelech; 1 = per-pixel šum
     vignette: float = 0.55
     title_size: float = 0.075  # podíl výšky snímku
     subtitle_size: float = 0.032
