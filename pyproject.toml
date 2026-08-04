@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aigoth"
+version = "0.1.0"
+description = "Renderuje video z textového programu (YAML) a zvukové stopy."
+requires-python = ">=3.10"
+dependencies = [
+    "Pillow>=10.0",
+    "PyYAML>=6.0",
+    "numpy>=1.24",
+    "imageio-ffmpeg>=0.4.9",
+]
+
+[project.scripts]
+aigoth = "aigoth.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["aigoth*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

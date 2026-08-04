@@ -1,0 +1,66 @@
+# Ukázkový program — kostra, ne finální obsah.
+# Texty jsou zástupné; nahradí je hypotéza, až přijde.
+#
+#   python -m aigoth plan    projects/ukazka/program.yml
+#   python -m aigoth preview projects/ukazka/program.yml --at 12
+#   python -m aigoth render  projects/ukazka/program.yml -o out/ukazka.mp4
+
+title: "AI-Goth — ukázka"
+resolution: [1920, 1080]
+fps: 30
+
+# audio: stopa.wav      # cesta relativně k tomuhle souboru; bez ní mají
+#                       # 'auto' scény pevných 6 s
+
+theme:
+  background: "#08080b"
+  foreground: "#e8e6e3"
+  accent: "#8b1e2d"
+  grain: 0.05
+  vignette: 0.55
+
+scenes:
+  - id: nadech
+    duration: 5
+    text: ""
+    subtitle: ""
+    fade: 1.5
+
+  - id: teze
+    duration: 9
+    text: "ZDE PŘIJDE TEZE"
+    subtitle: "jedna věta, která drží celé video"
+    fade: 1.2
+
+  - id: diagnoza
+    duration: 11
+    text: "Co se rozpadá"
+    subtitle: "tři body, ne třicet"
+    align: left
+    fade: 1.0
+
+  - id: obrat
+    duration: 11
+    text: "Proč to ještě jde"
+    subtitle: "místo, kde se video otáčí"
+    accent: "#c8b273"
+    fade: 1.0
+
+  - id: hypoteza
+    duration: 13
+    text: "HYPOTÉZA"
+    subtitle: "doplnit"
+    accent: "#c8b273"
+    fade: 1.2
+
+  - id: vyzva
+    duration: 8
+    text: "Co s tím"
+    subtitle: "konkrétní krok, ne výzva k zamyšlení"
+    fade: 1.2
+
+  - id: doznani
+    duration: 6
+    text: ""
+    subtitle: "AI-Goth"
+    fade: 2.0
